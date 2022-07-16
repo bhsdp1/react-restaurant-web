@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import "../css/navbar.css";
-import '../css/base.css';
+import "../assets/css/navbar.css";
+import '../assets/css/base.css';
 import { Outlet , Link } from "react-router-dom";
 
 export default function Navbar(props) {

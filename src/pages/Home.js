@@ -1,9 +1,15 @@
 import React from 'react';
+import Menucards from '../components/Menucards';
 import Swiperreview from '../components/Swiperreview';
-import '../css/base.css';
-import '../css/home.css';
+import '../assets/css/base.css';
+import '../assets/css/home.css';
+import data from '../data/MenuCards';
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
+import Bounce from 'react-reveal/Bounce';
 
 export default function Home() {
+    const { homeMenuCards } = data;
 return (
     <>
     <div id="carouselExampleFade" className="carousel carousel-light slide carousel-fade" data-bs-ride="carousel">
@@ -49,14 +55,20 @@ return (
     </div>
 
     <div className="container pt-2 mt-lg-3 main-content">
+
         <div className="container my-lg-5 my-lg-3 about-container overflow-x-hidden">
             <div className="row">
+                <Fade left duration="1500" delay='500'>
                 <div className="col-md-4 about-image-container">
                 <img src="images/about-us/about-us.jpg" alt="about" className="img-fluid" />
                 </div>
+                </Fade>
+                <Fade right duration="1500" delay='500'>
                 <div className="col-md-7 about-text p-lg-4">
                     <img src="images/about-us/pizza-inline.jpg" alt="about pizza inline" id="pizza-inline" className="mx-auto d-block my-3" />
+                    <Zoom top cascade delay='1500'>
                     <div className="about-title text-center">MODERN &#38; CLASSIC DISHES</div>
+                    </Zoom>
                     <div className="about-sub-title text-center text-capitalize">traditional italian dishes</div>
                     <div className="about-discription mt-2">
                         When you sit down at Uncle Sammy's Restaurent, you're dining with the Molinari family and over 45 years of restaurant experience.
@@ -65,47 +77,64 @@ return (
                         occasions of every kind. From exceptional veal cuts, to fresh pasta and seafood, to an award-winning wine list, our made-from-scratch 
                         menu and warm service bring out the best in classic Italian cuisine. Whether you're from down the street or out of town, you'll find the faces friendly, the conversation lively, and the food and flavors unforgettable</div>
                 </div>
+                </Fade>
             </div>
         </div>
-        <h1 className="d-block menu-heading text-uppercase text-center fst-italic mb-4 mt-5">also famous for</h1>
 
-        <div className="row overflow-x-hidden overflow-visible">
+        <Zoom  left cascade duration="1150" delay='600'>
+        <h1 className="d-block menu-heading text-uppercase text-center fst-italic mb-4 mt-5 overflow-hidden">also famous for</h1>
+        </Zoom>
 
-            <div className="col-md-4 col-sm-12 pt-2 ">
-                <a href="/">
-                    <div className="special-item-container mx-auto position-relative my-3" id="sp-container-1">
-                        <div className="special-item-circle position-absolute"></div>
-                        <img className="special-item-img position-relative" src="./images/home-page/special-item/special-burger.png" alt="Burger img"/>
-                        <h1 className="special-item-title">Burger Bologona</h1>
-                        <div className="special-item-price"><span className="d-block text-center">500 &#8377;</span></div>
-                    </div>
-                </a>
-            </div>
+        <div className="row overflow-hidden">
+            <Fade left duration="1300" delay='2000'>
+                <div className="col-md-4 col-sm-12 pt-2 ">
+                    <a href="/">
+                        <div className="special-item-container mx-auto position-relative my-3" id="sp-container-1">
+                            <div className="special-item-circle position-absolute"></div>
+                            <img className="special-item-img position-relative" src="./images/home-page/special-item/special-burger.png" alt="Burger img"/>
+                            <h1 className="special-item-title">Burger Bologona</h1>
+                            <div className="special-item-price"><span className="d-block text-center">350 &#8377;</span></div>
+                        </div>
+                    </a>
+                </div>
+            </Fade>
 
-            <div className="col-md-4 col-sm-12 pt-2">
-                <a href="/">
-                    <div className="special-item-container mx-auto position-relative my-3" id="sp-container-2">
-                        <div className="special-item-circle position-absolute"></div>
-                        <img className="special-item-img position-relative" src="./images/home-page/special-item/special-pizza.png" alt="Pizza" />
-                        <h1 className="special-item-title">Pepperoni Pizza</h1>
-                        <div className="special-item-price"><span className="d-block text-center">350 &#8377;</span></div>
-                    </div>
-                </a>
-            </div>
+            <Fade top duration="1300" delay='2000'>
+                <div className="col-md-4 col-sm-12 pt-2">
+                    <a href="/">
+                        <div className="special-item-container mx-auto position-relative my-3" id="sp-container-2">
+                            <div className="special-item-circle position-absolute"></div>
+                            <img className="special-item-img position-relative" src="./images/home-page/special-item/special-pizza.png" alt="Pizza" />
+                            <h1 className="special-item-title">Pepperoni Pizza</h1>
+                            <div className="special-item-price"><span className="d-block text-center">350 &#8377;</span></div>
+                        </div>
+                    </a>
+                </div>
+            </Fade>
 
-            <div className="col-md-4 col-sm-12 pt-2">
-                <a href="/">
-                    <div className="special-item-container mx-auto position-relative my-3" id="sp-container-3">
-                        <div className="special-item-circle position-absolute"></div>
-                        <img className="special-item-img position-relative" src="./images/home-page/special-item/special-wine.png" alt="wine" />
-                        <h1 className="special-item-title">Red Wine</h1>
-                        <div className="special-item-price"><span className="d-block text-center">1750 &#8377;</span></div>
-                    </div>
-                </a>
-            </div>
+            <Fade right duration="1300" delay='2000'>
+                <div className="col-md-4 col-sm-12 pt-2">
+                    <a href="/">
+                        <div className="special-item-container mx-auto position-relative my-3" id="sp-container-3">
+                            <div className="special-item-circle position-absolute"></div>
+                            <img className="special-item-img position-relative" src="./images/home-page/special-item/special-wine.png" alt="wine" />
+                            <h1 className="special-item-title">Red Wine</h1>
+                            <div className="special-item-price"><span className="d-block text-center">1750 &#8377;</span></div>
+                        </div>
+                    </a>
+                </div>
+            </Fade>
+        </div>
+    
+
+        <Fade top cascade delay='500' distance='60px'>
+        <h1 className="d-block menu-heading text-uppercase text-center fst-italic mb-4 mt-5">menus</h1>
+        </Fade>
+
+        <div className="row">
+                <Menucards cards={homeMenuCards}/>
         </div>
     </div>
-
     <div className="shape-divider mt-5 overflow-x-hidden">
 
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -119,7 +148,9 @@ return (
         </svg>
 
         <div className="container-fluid pb-4" id="swiper-container">
+        <Bounce top cascade delay='800' distance='60px'>
             <h1 className="d-block menu-heading text-uppercase text-center fst-italic mb-3" id="reviews-heading">happy costumer's</h1>
+        </Bounce>
 
             <h4 className="my-3 align-items-center justify-content-center" id="swipe-indicator"><i className="fa-solid fa-right-left"></i></h4>
             <Swiperreview/>

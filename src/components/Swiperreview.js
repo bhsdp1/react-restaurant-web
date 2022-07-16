@@ -3,8 +3,8 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import '../css/base.css';
-import '../css/swiper.css';
+import '../assets/css/base.css';
+import '../assets/css/swiper.css';
 
 export default function Swiperreview() {
 
@@ -31,7 +31,7 @@ return (
                 spaceBetween={25}
                 slidesPerView={3}
                 
-                className="slide-content">
+                className="slide-content overflow-x-hidden">
                         <SwiperSlide className="card swiper-slide">
                             <div className="image-content">
                                 <span className="overlay"></span>

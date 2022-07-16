@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/footer.css'
+import '../assets/css/footer.css'
 
 export default function Footer() {
     const whatsapp = new URL('https://api.whatsapp.com/send/?phone=%2B919518556937&text&app_absent=0" class="nav-link d-block text-center mx-auto"><i class="fa-brands fa-whatsapp')
