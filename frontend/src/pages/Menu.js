@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../assets/css/thumbnail.css';
 import '../assets/css/menucards.css';
 import Menucards from '../components/Menucards';
-import data from '../data/Menucardsdata';
 import Bounce from 'react-reveal/Bounce';
 import ScrollToTop from "react-scroll-to-top";
 import Thumbnail from '../components/Thumbnail';
+import axios from 'axios';
 
 export default function Menu() {
-  const { MenuPageCards } = data;
+  const [menupagecards, setmenupagecards] = useState([]);
+    useEffect(() => {
+        const fecthData = async () => {
+            const { data } = await axios.get('/api/menupagecards');
+            setmenupagecards(data);
+        };
+        fecthData()
+    }, []);
   return (
     <>
   
@@ -20,7 +27,7 @@ export default function Menu() {
             <Bounce left cascade>
             <div className="d-block menu-heading text-uppercase text-center fst-italic mt-2 mb-md-3">please select the menu</div>
             </Bounce>
-            <Menucards cards={MenuPageCards}/>
+            <Menucards cards={menupagecards}/>
         </div>
     </div>
     </>

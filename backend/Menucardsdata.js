@@ -1,4 +1,4 @@
-const data = {
+const cardsdata = {
 // Note : class name is returned to display background images
 homeMenuCards: [
     {
@@ -69,4 +69,4 @@ MenuPageCards: [
 ]
 };
 
-export default data;
+export default cardsdata;

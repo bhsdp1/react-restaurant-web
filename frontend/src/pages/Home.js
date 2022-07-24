@@ -3,16 +3,28 @@ import Menucards from '../components/Menucards';
 import Swiperreview from '../components/Swiperreview';
 import '../assets/css/base.css';
 import '../assets/css/home.css';
-import data from '../data/Menucardsdata';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Bounce from 'react-reveal/Bounce';
 import ScrollToTop from "react-scroll-to-top";
 import Specialitems from '../components/Specialitems';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 
 export default function Home() {
-    const { homeMenuCards } = data;
+
+    const [homemenucards, sethomemenucards] = useState([]);
+    
+    useEffect(() => {
+        const fecthData = async () => {
+            const { data } = await axios.get('/api/homemenucards');
+            sethomemenucards(data);
+        };
+        fecthData()
+    }, []);
+
 return (
     <>
 
@@ -103,7 +115,7 @@ return (
         </Fade>
 
         <div className="row">
-            <Menucards cards={homeMenuCards}/>
+            <Menucards cards={homemenucards}/>
         </div>
     </div>
 

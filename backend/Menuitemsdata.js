@@ -1,6 +1,6 @@
-export const data = {
+const itemsdata = {
     burgerMenu : {
-        menuitemsLeft : [
+        left: [
             {
                 id : 'bl1',
                 name : 'Crispy Chicken Double Patty',
@@ -23,7 +23,7 @@ export const data = {
                 text: 'Our original New York cheesecake is made with rich cream cheese swirled with real French raspberry puree.'
             }
         ],
-        menuitemsRight : [
+        right : [
             {
                 id : 'br1',
                 name : 'Veg Whopper',
@@ -48,7 +48,7 @@ export const data = {
         ]
     },
     pizzaMenu : {
-        menuitemsLeft : [
+        left: [
             {
                 id : 'pl1',
                 name : 'Cheese Pizza 10 | 13 | 15',
@@ -71,7 +71,7 @@ export const data = {
                 text: 'Creamy Vodka Sauce Topped with Fresh Shrimp. each additional topping 30 ₹ | $45 ₹ | 65 ₹'
             }
         ],
-        menuitemsRight : [
+        right : [
             {
                 id : 'pr1',
                 name : 'Bianco 14 | 16 | 18',
@@ -96,7 +96,7 @@ export const data = {
         ]
     },
     appetizer : {
-        menuitemsLeft : [
+        left: [
             {
                 id : 'al1',
                 name : 'Chicken Marsala',
@@ -119,7 +119,7 @@ export const data = {
                 text: 'Chicken piccata is a lovely light dish with hints of lemon and wine, along with salty capers for excellent balance.'
             }
         ],
-        menuitemsRight : [
+        right : [
             {
                 id : 'ar1',
                 name : 'Fried Chicken Wings',
@@ -144,7 +144,7 @@ export const data = {
         ]
     },
     mainMenu : {
-        menuitemsLeft : [
+        left: [
             {
                 id : 'ml1',
                 name : 'Slow-Cooked Italian Meatballs',
@@ -167,7 +167,7 @@ export const data = {
                 text: 'we make the pesto, oven-dried tomatoes and roasted red peppers, but store-bought versions work too.'
             }
         ],
-        menuitemsRight : [
+        right : [
             {
                 id : 'mr1',
                 name : 'Slow-Cooker Pizza Dip',
@@ -192,7 +192,7 @@ export const data = {
         ]
     },
     dessertMenu : {
-        menuitemsLeft : [
+        left: [
             {
                 id : 'del1',
                 name : 'Cannoli',
@@ -215,7 +215,7 @@ export const data = {
                 text: 'Our original New York cheesecake is made with rich cream cheese swirled with real French raspberry puree.'
             }
         ],
-        menuitemsRight : [
+        right : [
             {
                 id : 'der1',
                 name : 'Hot Fudge Brownie',
@@ -240,3 +240,5 @@ export const data = {
         ]
     }
 }
+
+export default itemsdata;

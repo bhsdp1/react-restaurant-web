@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Innerpagenav from '../components/Innerpagenav';
 import Menuitems from '../components/Menuitems';
-import { data } from '../data/Menuitemsdata';
 import ScrollToTop from "react-scroll-to-top";
 import Thumbnail from '../components/Thumbnail';
+import axios from 'axios';
 
 export default function Burgermenu(props) {
-    const {burgerMenu} = data,
-        {menuitemsLeft} = burgerMenu,
-        {menuitemsRight} = burgerMenu;
+    const [burgermenuleft, setburgermenuleft] = useState([]);
+    
+    useEffect(() => {
+        const fecthData = async () => {
+            const { data } = await axios.get('/api/burgermenuleft');
+            setburgermenuleft(data);
+        };
+        fecthData()
+    }, []);
+
+    const [burgermenuright, setburgermenuright] = useState([]);
+    useEffect(() => {
+        const fecthData = async () => {
+            const { data } = await axios.get('/api/burgermenuright');
+            setburgermenuright(data);
+        };
+        fecthData()
+    }, []);
     const {onAdd} = props;
 return (
     <>
@@ -18,10 +33,10 @@ return (
         <Innerpagenav active='Burger' navto='/Burgermenu'/>
         <div className="row overflow-x-hidden pt-1">
             <div className="col-lg-6 col-12 menu-item-left">
-                <Menuitems menuitem={menuitemsLeft} onAdd={onAdd}/>
+                <Menuitems menuitem={burgermenuleft} onAdd={onAdd}/>
             </div>
             <div className="col-lg-6 col-12 menu-item-right">
-                <Menuitems menuitem={menuitemsRight} onAdd={onAdd}/>
+                <Menuitems menuitem={burgermenuright} onAdd={onAdd}/>
             </div>
         </div>
     </div>
