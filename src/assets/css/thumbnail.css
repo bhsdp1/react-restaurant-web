@@ -1,9 +1,0 @@
-#menu-thumbnail {
-    background-image: var(--bg-img-darken), url(../images/menu/menu-thumbnail.jpg);
-    background-repeat: var(--bg-no-repeat);
-    background-position: var(--bg-center-xy);
-    background-size: var(--bg-size-cover);
-    font-weight: 300;
-    text-shadow: 2px 2px 3px black;
-    font-family: 'Carter One', cursive;
-}
