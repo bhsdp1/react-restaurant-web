@@ -11,23 +11,38 @@ import Specialitems from '../components/Specialitems';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import Preloader from '../components/Preloader';
+import MessageBox from '../components/MessageBox';
 
 
 export default function Home() {
 
     const [homemenucards, sethomemenucards] = useState([]);
-    
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+
     useEffect(() => {
         const fecthData = async () => {
+        try {
+            setLoading(true);
             const { data } = await axios.get('/api/homemenucards');
+            setLoading(false);
             sethomemenucards(data);
-        };
+        } catch(err) {
+            setError(err.message);
+            setLoading(false);
+        }
+    };
         fecthData()
     }, []);
 
 return (
     <>
-
+    {loading? <Preloader class='preloader'/>:
+            error? (
+                <MessageBox variant='danger'>{error}</MessageBox>
+            ):
+    <div>
     <ScrollToTop smooth className='scroll-up' top='800' component={<i className="fa-solid fa-arrow-up"></i>}/>
 
     <div id="carouselExampleFade" className="carousel carousel-light slide carousel-fade" data-bs-ride="carousel">
@@ -140,6 +155,7 @@ return (
         <Swiperreview/>
         </div>
     </div>
+    </div>}
     </>
 )
 }
