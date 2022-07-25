@@ -1,31 +1,12 @@
-import { applyMiddleware, createStore } from 'redux';
-import cardsdata from './data/Menucardsdata';
-import itemsdata from './data/Menuitemsdata'
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { menuCardReducer } from './reducers/menuCardReducers';
 
 const initialState = {};
-const reducer = (state, action) => {
-    return {
-        homemenucards : cardsdata.homeMenuCards,
-        menupagecards : cardsdata.MenuPageCards,
-
-        burgerright: itemsdata.burgerMenu.right,
-        burgerleft: itemsdata.burgerMenu.left,
-
-        pizzamenuleft : itemsdata.pizzaMenu.left,
-        pizzamenuright : itemsdata.pizzaMenu.right,
-
-        appitizzerleft : itemsdata.appetizer.left,
-        appitizzerright : itemsdata.appetizer.right,
-
-        mainmenuleft : itemsdata.mainMenu.left,
-        mainmenuright : itemsdata.mainMenu.right,
-
-        dessertleft: itemsdata.dessertMenu.left,
-        dessertright: itemsdata.dessertMenu.right
-} 
-}
+const reducer = combineReducers({
+    homeCardList : menuCardReducer
+})
 
 const store = createStore(
     reducer, 

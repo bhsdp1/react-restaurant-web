@@ -8,33 +8,21 @@ import Zoom from 'react-reveal/Zoom';
 import Bounce from 'react-reveal/Bounce';
 import ScrollToTop from "react-scroll-to-top";
 import Specialitems from '../components/Specialitems';
-import { useState } from 'react';
 import { useEffect } from 'react';
-import axios from 'axios';
 import Preloader from '../components/Preloader';
 import MessageBox from '../components/MessageBox';
+import {useDispatch, useSelector} from 'react-redux'
+import { menuCardList } from '../actions/menuCardAction';
 
 
 export default function Home() {
-
-    const [homemenucards, sethomemenucards] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch()
+    const homeCardList = useSelector((state) => state.homeCardList);
+    const {loading, error, homecards} = homeCardList;
 
     useEffect(() => {
-        const fecthData = async () => {
-        try {
-            setLoading(true);
-            const { data } = await axios.get('/api/homemenucards');
-            setLoading(false);
-            sethomemenucards(data);
-        } catch(err) {
-            setError(err.message);
-            setLoading(false);
-        }
-    };
-        fecthData()
-    }, []);
+        dispatch(menuCardList())
+    }, [dispatch]);
 
 return (
     <>
@@ -130,7 +118,7 @@ return (
         </Fade>
 
         <div className="row">
-            <Menucards cards={homemenucards}/>
+            <Menucards cards={homecards}/>
         </div>
     </div>
 
