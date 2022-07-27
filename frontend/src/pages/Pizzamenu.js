@@ -1,44 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect} from 'react';
 import Innerpagenav from '../components/Innerpagenav';
 import Menuitems from '../components/Menuitems';
 import ScrollToTop from "react-scroll-to-top";
 import Thumbnail from '../components/Thumbnail';
-import axios from 'axios';
+import {useDispatch, useSelector} from 'react-redux'
+import MessageBox from '../components/MessageBox';
+import Preloader from '../components/Preloader';
+import { PizzaMenuList } from '../actions/menuItemsActions';
 
 export default function Pizzamenu(props) {
-    const [pizzamenuleft, setpizzamenuleft] = useState([]);
+    const dispatch = useDispatch()
+    const pizzaMenuList = useSelector((state) => state.pizzaMenuList);
+    var {loading, error, pizzamenu} = pizzaMenuList;
+  
     useEffect(() => {
-        const fecthData = async () => {
-            const { data } = await axios.get('/api/pizzamenuleft');
-            setpizzamenuleft(data);
-        };
-        fecthData()
-    }, []);
-
-    const [pizzamenuright, setpizzamenuright] = useState([]);
-    useEffect(() => {
-        const fecthData = async () => {
-            const { data } = await axios.get('/api/pizzamenuright');
-            setpizzamenuright(data);
-        };
-        fecthData()
-    }, []);
+        dispatch(PizzaMenuList())
+    }, [dispatch]);
+    
     const {onAdd} = props;
 return (
     <>
+    {loading? <Preloader class='menu-preloader'/>:
+    error? (
+    <MessageBox variant='danger'>{error}</MessageBox>
+    ):
+    <>
+
     <ScrollToTop smooth className='scroll-up' top='800' component={<i className="fa-solid fa-arrow-up"></i>}/>
+
     <Thumbnail id="menu-pizza" title="Pizza's"/>
+
     <div className="container-fluid pt-3">
+
         <Innerpagenav active="Pizza's" navto='/Pizzamenu'/>
-        <div className="row overflow-x-hidden pt-1">
-            <div className="col-lg-6 col-12 menu-item-left">
-                <Menuitems menuitem={pizzamenuleft} onAdd={onAdd}/>
-            </div>
-            <div className="col-lg-6 col-12 menu-item-right">
-                <Menuitems menuitem={pizzamenuright} onAdd={onAdd}/>
-            </div>
-        </div>
+
+    <div class="row overflow-x-hidden pt-1">
+
+        <Menuitems onAdd={onAdd} menuitem={pizzamenu}/>
+
     </div>
+
+    </div>
+
+    </>}
+
     </>
 )
 }

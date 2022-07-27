@@ -20,7 +20,7 @@ homeMenuCards: [
         name : 'snacks',
         link: '/',
         class: 'home-card-3',
-        utilities: "col-xxl-4 col-md-6 col-sm-12 mt-lg-3 my-4"
+        utilities: "col-xxl-4 col-sm-12 mt-lg-3 my-4 col-12"
     }
 ],
 MenuPageCards: [

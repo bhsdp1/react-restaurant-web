@@ -1,49 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import '../assets/css/base.css';
 import '../assets/css/menuitems.css';
 import Innerpagenav from '../components/Innerpagenav';
 import Menuitems from '../components/Menuitems';
 import ScrollToTop from "react-scroll-to-top";
 import Thumbnail from '../components/Thumbnail';
-import axios from 'axios';
+import {useDispatch, useSelector} from 'react-redux'
+import MessageBox from '../components/MessageBox';
+import Preloader from '../components/Preloader';
+import { AppetizerMenuList } from '../actions/menuItemsActions';
 
 export default function Appetizermenu(props) {
-  const [appetizerleft, setappetizerleft] = useState([]);
-    
-    useEffect(() => {
-        const fecthData = async () => {
-            const { data } = await axios.get('/api/appetizerleft');
-            setappetizerleft(data);
-        };
-        fecthData()
-    }, []);
 
-  const [appetizerright, setappetizerright] = useState([]);
-    
-    useEffect(() => {
-        const fecthData = async () => {
-            const { data } = await axios.get('/api/appetizerright');
-            setappetizerright(data);
-        };
-        fecthData()
-    }, []);
+  const dispatch = useDispatch()
+  const appetizerMenuList = useSelector((state) => state.appetizerMenuList);
+  var {loading, error, appetizermenu} = appetizerMenuList;
+
+  useEffect(() => {
+      dispatch(AppetizerMenuList())
+  }, [dispatch]);
 
   const {onAdd} = props;
   return (
+  <>
+    {loading? <Preloader class='preloader'/>:
+            error? (
+                <MessageBox variant='danger'>{error}</MessageBox>
+            ):
     <>
+
     <ScrollToTop smooth className='scroll-up' top='800' component={<i className="fa-solid fa-arrow-up"></i>}/>
+
     <Thumbnail id="menu-appetizer" title='Appetizer'/>
+
     <div className="container-fluid pt-3">
+
       <Innerpagenav active='Appetizer' navto='/Appetizermenu'/>
-      <div className="row overflow-x-hidden pt-1">
-        <div className="col-lg-6 col-12 menu-item-left">
-          <Menuitems menuitem={appetizerleft} onAdd={onAdd}/>
-        </div>
-        <div className="col-lg-6 col-12 menu-item-right">
-          <Menuitems menuitem={appetizerright} onAdd={onAdd}/>
-        </div>
+
+      <div class="row overflow-x-hidden pt-1">
+
+        <Menuitems onAdd={onAdd} menuitem={appetizermenu}/>
+
       </div>
+
     </div>
+
     </>
+    }
+  </>
   )
 }

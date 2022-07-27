@@ -12,39 +12,24 @@ app.get('/api/menupagecards', (req, res) => {
     res.send(cardsdata.MenuPageCards)
 })
 
-app.get('/api/burgermenurightleft', (req, res) => {
-    res.send(itemsdata.burgerMenu.left)
-})
-app.get('/api/burgermenuright', (req, res) => {
-    res.send(itemsdata.burgerMenu.right)
+app.get('/api/burgermenu', (req, res) => {
+    res.send(itemsdata.burgerMenu)
 })
 
-app.get('/api/pizzamenuleft', (req, res) => {
-    res.send(itemsdata.pizzaMenu.left)
-})
-app.get('/api/pizzamenuright', (req, res) => {
-    res.send(itemsdata.pizzaMenu.right)
+app.get('/api/pizzamenu', (req, res) => {
+    res.send(itemsdata.pizzaMenu)
 })
 
-app.get('/api/appetizerleft', (req, res) => {
-    res.send(itemsdata.appetizer.left)
-})
-app.get('/api/appetizerright', (req, res) => {
-    res.send(itemsdata.appetizer.right)
+app.get('/api/appetizermenu', (req, res) => {
+    res.send(itemsdata.appetizerMenu)
 })
 
-app.get('/api/mainmenuleft', (req, res) => {
-    res.send(itemsdata.mainMenu.left)
-})
-app.get('/api/mainmenuright', (req, res) => {
-    res.send(itemsdata.mainMenu.right)
+app.get('/api/mainmenu', (req, res) => {
+    res.send(itemsdata.mainMenu)
 })
 
-app.get('/api/dessertmenuleft', (req, res) => {
-    res.send(itemsdata.dessertMenu.left)
-})
 app.get('/api/dessertmenu', (req, res) => {
-    res.send(itemsdata.dessertMenu.right)
+    res.send(itemsdata.dessertMenu)
 })
 
 app.get('/', (req, res) => {

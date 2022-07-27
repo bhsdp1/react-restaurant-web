@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 import Preloader from '../components/Preloader';
 import MessageBox from '../components/MessageBox';
 import {useDispatch, useSelector} from 'react-redux'
-import { menuCardList } from '../actions/menuCardAction';
+import { HomeMenuCardList } from '../actions/menuCardAction';
 
 
 export default function Home() {
@@ -21,16 +21,16 @@ export default function Home() {
     const {loading, error, homecards} = homeCardList;
 
     useEffect(() => {
-        dispatch(menuCardList())
+        dispatch(HomeMenuCardList())
     }, [dispatch]);
 
 return (
     <>
-    {loading? <Preloader class='preloader'/>:
+    {loading? <Preloader class='menu-preloader'/>:
             error? (
                 <MessageBox variant='danger'>{error}</MessageBox>
             ):
-    <div>
+    <>
     <ScrollToTop smooth className='scroll-up' top='800' component={<i className="fa-solid fa-arrow-up"></i>}/>
 
     <div id="carouselExampleFade" className="carousel carousel-light slide carousel-fade" data-bs-ride="carousel">
@@ -143,7 +143,7 @@ return (
         <Swiperreview/>
         </div>
     </div>
-    </div>}
+    </>}
     </>
 )
 }
