@@ -19,6 +19,12 @@
     background-position: var(--bg-center-xy);
     background-size: var(--bg-size-cover);
 }
+#menu-seafood {
+    background-image: var(--bg-img-darken), url(../images/menu/menu-seafood.jpg);
+    background-repeat: var(--bg-no-repeat);
+    background-position: var(--bg-center-xy);
+    background-size: var(--bg-size-cover);
+}
 #menu-pizza {
     background-image: var(--bg-img-darken), url(../images/menu/menu-pizza.jpg);
     background-repeat: var(--bg-no-repeat);
@@ -31,9 +37,17 @@
     background-position: var(--bg-center-xy);
     background-size: var(--bg-size-cover);
 }
+
 #menu-burger {
     background-image: var(--bg-img-darken), url(../images/home/menucards/menu-burger.jpg);
     background-repeat: var(--bg-no-repeat);
     background-position: center 75%;
+    background-size: var(--bg-size-cover);
+}
+
+#menu-cocktail {
+    background-image: var(--bg-img-darken), url(../images/menu/menu-cocktail.jpg);
+    background-repeat: var(--bg-no-repeat);
+    background-position: center 25%;
     background-size: var(--bg-size-cover);
 }

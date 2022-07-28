@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect}  from 'react';
 import Innerpagenav from '../components/Innerpagenav';
 import Menuitems from '../components/Menuitems';
 import ScrollToTop from "react-scroll-to-top";
@@ -6,17 +6,17 @@ import Thumbnail from '../components/Thumbnail';
 import {useDispatch, useSelector} from 'react-redux'
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
-import { PizzaMenuList } from '../actions/menuItemsActions';
+import { SeafoodMenuList } from '../actions/menuItemsActions';
 
-export default function Pizzamenu(props) {
+export default function Seafoodmenu(props) {
     const dispatch = useDispatch()
-    const pizzaMenuList = useSelector((state) => state.pizzaMenuList);
-    var {loading, error, pizzamenu} = pizzaMenuList;
-  
+    const seafoodMenuList = useSelector((state) => state.seafoodMenuList);
+    var {loading, error, seafoodmenu} = seafoodMenuList;
+
     useEffect(() => {
-        dispatch(PizzaMenuList())
+        dispatch(SeafoodMenuList())
     }, [dispatch]);
-    
+
     const {onAdd} = props;
 return (
     <>
@@ -28,22 +28,21 @@ return (
 
     <ScrollToTop smooth className='scroll-up' top='800' component={<i className="fa-solid fa-arrow-up"></i>}/>
 
-    <Thumbnail id="menu-pizza" title="Pizza's"/>
+    <Thumbnail id="menu-seafood" title="Seafood"/>
 
     <div className="container-fluid pt-3">
 
-        <Innerpagenav active="Pizza's" navto='/Pizzamenu'/>
+        <Innerpagenav active="Seafood" navto='/Seafood'/>
 
-    <div className="row overflow-x-hidden pt-1">
+    <div class="row overflow-x-hidden pt-1">
 
-        <Menuitems onAdd={onAdd} menuitem={pizzamenu}/>
+        <Menuitems onAdd={onAdd} menuitem={seafoodmenu}/>
 
     </div>
 
     </div>
 
     </>}
-
     </>
 )
 }

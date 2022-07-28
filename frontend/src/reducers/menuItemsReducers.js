@@ -1,4 +1,4 @@
-import { APPETIZER_MENU_FAIL, APPETIZER_MENU_REQUEST, APPETIZER_MENU_SUCCESS, BURGER_MENU_FAIL, BURGER_MENU_REQUEST, BURGER_MENU_SUCCESS, DESSERT_MENU_FAIL, DESSERT_MENU_REQUEST, DESSERT_MENU_SUCCESS, MAINMENU_MENU_FAIL, MAINMENU_MENU_REQUEST, MAINMENU_MENU_SUCCESS, PIZZA_MENU_FAIL, PIZZA_MENU_REQUEST, PIZZA_MENU_SUCCESS } from "../constants/menItemsConstant";
+import { APPETIZER_MENU_FAIL, APPETIZER_MENU_REQUEST, APPETIZER_MENU_SUCCESS, BURGER_MENU_FAIL, BURGER_MENU_REQUEST, BURGER_MENU_SUCCESS, COCKTAIL_MENU_FAIL, COCKTAIL_MENU_REQUEST, COCKTAIL_MENU_SUCCESS, DESSERT_MENU_FAIL, DESSERT_MENU_REQUEST, DESSERT_MENU_SUCCESS, MAINMENU_MENU_FAIL, MAINMENU_MENU_REQUEST, MAINMENU_MENU_SUCCESS, PIZZA_MENU_FAIL, PIZZA_MENU_REQUEST, PIZZA_MENU_SUCCESS, SEAFOOD_MENU_FAIL, SEAFOOD_MENU_REQUEST, SEAFOOD_MENU_SUCCESS } from "../constants/menItemsConstant";
 
 export const AppetizerItemsReducer = (state = {loading :true, appetizermenu:[]}, action) => {
     switch(action.type) {
@@ -59,6 +59,32 @@ export const BurgerMenuItemsReducer = (state = {loading :true, burgermenu:[]}, a
         case BURGER_MENU_SUCCESS:
             return{loading : false,  burgermenu : action.payload};
         case BURGER_MENU_FAIL: 
+            return{loading: false, error: action.payload}
+        default :
+            return state;
+    }
+}
+
+export const SeafoodMenuItemsReducer = (state = {loading :true, seafoodmenu:[]}, action) => {
+    switch(action.type) {
+        case SEAFOOD_MENU_REQUEST:
+            return {loading : true};
+        case SEAFOOD_MENU_SUCCESS:
+            return{loading : false,  seafoodmenu : action.payload};
+        case SEAFOOD_MENU_FAIL: 
+            return{loading: false, error: action.payload}
+        default :
+            return state;
+    }
+}
+
+export const CocktailMenuItemsReducer = (state = {loading :true, cocktailmenu:[]}, action) => {
+    switch(action.type) {
+        case COCKTAIL_MENU_REQUEST:
+            return {loading : true};
+        case COCKTAIL_MENU_SUCCESS:
+            return{loading : false,  cocktailmenu : action.payload};
+        case COCKTAIL_MENU_FAIL: 
             return{loading: false, error: action.payload}
         default :
             return state;

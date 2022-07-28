@@ -34,7 +34,7 @@ return (
 
         <Innerpagenav active='Burger' navto='/Burgermenu'/>
 
-        <div class="row overflow-x-hidden pt-1">
+        <div className="row overflow-x-hidden pt-1">
 
             <Menuitems onAdd={onAdd} menuitem={burgermenu}/>
 

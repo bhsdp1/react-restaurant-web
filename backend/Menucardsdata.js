@@ -41,7 +41,7 @@ MenuPageCards: [
     {
         id: '3',
         name : 'Seafood',
-        link : '/Menu',
+        link : '/Seafood',
         class : 'menu-card-3',
         utilities: "col-xl-4 col-md-6 col-sm-12 mt-5 my-sm-4"
     },
@@ -54,8 +54,8 @@ MenuPageCards: [
     },
     {
         id: '6',
-        name : "Drink's",
-        link : '/Menu',
+        name : "Cocktail's",
+        link : '/Cocktailmenu',
         class : 'menu-card-5',
         utilities: "col-xl-4 col-md-6 col-sm-12 mt-5 my-sm-4"
     },

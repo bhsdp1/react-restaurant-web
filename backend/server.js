@@ -28,6 +28,14 @@ app.get('/api/mainmenu', (req, res) => {
     res.send(itemsdata.mainMenu)
 })
 
+app.get('/api/seafoodmenu', (req, res) => {
+    res.send(itemsdata.seafoodMenu)
+})
+
+app.get('/api/cocktailmenu', (req, res) => {
+    res.send(itemsdata.cocktailMenu)
+})
+
 app.get('/api/dessertmenu', (req, res) => {
     res.send(itemsdata.dessertMenu)
 })

@@ -11,6 +11,8 @@ import Mainmenu from '../pages/Mainmenu';
 import Pizzamenu from '../pages/Pizzamenu';
 import Dessertmenu from '../pages/Dessertmenu';
 import Burgermenu from '../pages/Burgermenu';
+import Seafoodmenu from '../pages/Seafoodmenu';
+import Cocktailmenu from '../pages/Cocktailmenu';
 
 const Header = () => {
     const [cartItems, setCartitems] = useState([]);
@@ -50,7 +52,9 @@ const Header = () => {
                     <Route path='Contact' element={<Contact/>}></Route>
                     <Route path='Appetizermenu' element={<Appetizermenu onAdd={onAdd}/>}></Route>
                     <Route path='Main-Menu' element={<Mainmenu onAdd={onAdd}/>}></Route>
+                    <Route path='Seafood' element={<Seafoodmenu onAdd={onAdd}/>}></Route>
                     <Route path='Pizzamenu' element={<Pizzamenu onAdd={onAdd}/>}></Route>
+                    <Route path='Cocktailmenu' element={<Cocktailmenu onAdd={onAdd}/>}></Route>
                     <Route path='Dessertmenu' element={<Dessertmenu onAdd={onAdd}/>}></Route>
                     <Route path='Burgermenu' element={<Burgermenu onAdd={onAdd}/>}></Route>
                     <Route path='*' element={<Nopage/>}></Route>

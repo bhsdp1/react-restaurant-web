@@ -175,6 +175,94 @@ const itemsdata = {
                 text: "Here's a deliciously different sandwich. It's yummy warm from the oven or off the grill at a cookout."
             }
     ],
+    seafoodMenu: [
+        {
+            id : 'seafood1',
+            name : 'Perfect Ten Baked Cod',
+            price: '150',
+            image: './images/category-items/seafood/m1.jpg',
+            text: 'Lemon juice, wine, and crackers coat this easy baked cod.'
+        },
+        {
+            id : 'seafood2',
+            name : 'Pan-Seared Tilapia',
+            price: '200',
+            image: './images/category-items/seafood/m4.jpg',
+            text: 'Learn how to cook tilapia with this easy, 15-minute skillet recipe.'
+        },
+        {
+            id : 'seafood3',
+            name : 'Easy Tuna Patties',
+            price: '280',
+            image: './images/category-items/seafood/m3.jpg',
+            text: 'Serve these crispy tuna patties as a simple appetizer or hot sandwich.'
+        },
+        {
+            id : 'seafood4',
+            name : 'Southern Fried Catfish',
+            price: '130',
+            image: './images/category-items/seafood/m5.jpg',
+            text: "Buttermilk-marinated catfish fried in a light and crispy cornmeal batter."
+        },
+        {
+            id : 'seafood5',
+            name : 'Maple Salmon',
+            price: '195',
+            image: './images/category-items/seafood/m6.jpg',
+            text: "Easy maple glazed salmon baked in a marinade of maple syrup and soy sauce."
+        },
+        {
+            id : 'seafood6',
+            name : 'Spicy Grilled Shrimp',
+            price: '195',
+            image: './images/category-items/seafood/m2.jpg',
+            text: "Fast and easy, and bound to be a hit at your next cookout."
+        }
+    ],
+    cocktailMenu: [
+        {
+            id : 'cocktail1',
+            name : 'Hurricane cocktail',
+            price: '150',
+            image: './images/category-items/cocktails/m1.jpg',
+            text: 'Our tropical, rum-based hurricane cocktail is easy to make and sure to get your party started.'
+        },
+        {
+            id : 'cocktail2',
+            name : 'the beach cocktail',
+            price: '200',
+            image: './images/category-items/cocktails/m2.jpg',
+            text: 'Combine vodka with peach schnapps and cranberry juice to make a classic beach cocktail.'
+        },
+        {
+            id : 'cocktail3',
+            name : 'White lady',
+            price: '280',
+            image: './images/category-items/cocktails/m3.jpg',
+            text: 'Make a classic Christmas cocktail with gin, triple sec, lemon and egg white.'
+        },
+        {
+            id : 'cocktail4',
+            name : "Valentine's Day cocktail",
+            price: '130',
+            image: './images/category-items/cocktails/m4.jpg',
+            text: "Combine cranberry juice, vodka, raspberries and prosecco to make this ruby-red cocktail."
+        },
+        {
+            id : 'cocktail5',
+            name : 'Rhubarb & custard cocktail',
+            price: '195',
+            image: './images/category-items/cocktails/m5.jpg',
+            text: "An elegant vodka-based drink that'll wow your guests - it's made with creamy advocaat liqueur and homemade fruit syrup"
+        },
+        {
+            id : 'cocktail6',
+            name : 'Passion fruit martini',
+            price: '195',
+            image: './images/category-items/cocktails/m6.jpg',
+            text: "This easy passion fruit cocktail is bursting with zingy flavours and is perfect for celebrating with friends."
+        }
+    ],
     dessertMenu: [
             {
                 id : 'dessert1',

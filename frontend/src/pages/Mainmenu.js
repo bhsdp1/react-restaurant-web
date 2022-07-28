@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import Innerpagenav from '../components/Innerpagenav';
 import Menuitems from '../components/Menuitems';
 import ScrollToTop from "react-scroll-to-top";
@@ -20,7 +20,7 @@ export default function Mainmenu(props) {
     const {onAdd} = props;
 return (
 <>
-{loading? <Preloader class='preloader'/>:
+{loading? <Preloader class='menu-preloader'/>:
   error? (
     <MessageBox variant='danger'>{error}</MessageBox>
     ):
@@ -34,7 +34,7 @@ return (
 
       <Innerpagenav active='Main-Menu' navto='/Main-Menu'/>
 
-      <div class="row overflow-x-hidden pt-1">
+      <div className="row overflow-x-hidden pt-1">
 
         <Menuitems onAdd={onAdd} menuitem={mainmenu}/>
 
