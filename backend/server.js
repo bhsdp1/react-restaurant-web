@@ -16,6 +16,10 @@ app.get('/api/burgermenu', (req, res) => {
     res.send(itemsdata.burgerMenu)
 })
 
+app.get('/api/snacksmenu', (req, res) => {
+    res.send(itemsdata.snacksMenu)
+})
+
 app.get('/api/pizzamenu', (req, res) => {
     res.send(itemsdata.pizzaMenu)
 })

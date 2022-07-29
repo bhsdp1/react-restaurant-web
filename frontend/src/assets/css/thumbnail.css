@@ -7,6 +7,14 @@
     text-shadow: 2px 2px 3px black;
     font-family: 'Carter One', cursive;
 }
+
+#menu-snacks {
+    background-image: var(--bg-img-darken), url(../images/home/menucards/menu-snacks.jpg);
+    background-repeat: var(--bg-no-repeat);
+    background-position: var(--bg-center-xy);
+    background-size: var(--bg-size-cover);
+}
+
 #menu-appetizer {
     background-image: var(--bg-img-darken), url(../images/menu/menu-appetizers.jpg);
     background-repeat: var(--bg-no-repeat);

@@ -43,6 +43,50 @@ const itemsdata = {
                 text: "Fiery Chicken Burger."
             }
         ],
+        snacksMenu : [
+            {
+                id : 'snacks1',
+                name : 'Apple Nachos',
+                price: '238',
+                image: './images/category-items/snacks/m1.jpg',
+                text: 'Cut a small apple into wedges. Drizzle with 1-2 tbsp nut butter and add 1/4 cup of your favorite granola, and a sprinkle of cinnamon.'
+            },
+            {
+                id : 'snacks2',
+                name : 'Mini Protein Box',
+                price: '340',
+                image: './images/category-items/snacks/m2.jpg',
+                text: 'This is a totally customizable snack. Mix and match different sources of fiber, protein, and healthy fats.'
+            },
+            {
+                id : 'snacks3',
+                name : 'Popcorn Trail Mix',
+                price: '250',
+                image: './images/category-items/snacks/m3.jpg',
+                text: '2 cups air popped popcorn + ¼ cup of your favorite trail mix makes for a voluminous, portable snack that is great for munching.'
+            },
+            {
+                id : 'snacks4',
+                name : 'Edamame',
+                price: '300',
+                image: './images/category-items/snacks/m4.jpg',
+                text: '1 cup of steamed and lightly salted edamame is the perfect snack, as it contains fiber, protein, and healthy fats! To make this snack, just steam or boil frozen shelled edamame for about five minutes.'
+            },
+            {
+                id : 'snacks5',
+                name : 'Guacamole Stuffed Peppers',
+                price: '230',
+                image: './images/category-items/snacks/m5.jpg',
+                text: 'A refreshing snack to much on in warmer months. To make quick guacamole, mash up a ripe avocado with a squeeze of lime juice + a dash of both salt and garlic powder.'
+            },
+            {
+                id : 'snacks6',
+                name : 'Chocolate Coconut Energy Balls',
+                price: '260',
+                image: './images/category-items/snacks/m6.jpg',
+                text: 'These little energy balls are delicious, easy to make, and portable for on-the-go snacking.'
+            },
+        ],
     pizzaMenu : [
             {
                 id : 'pizza1',
