@@ -20,7 +20,7 @@ export default function Snacksmenu(props) {
     const {onAdd} = props;
 return (
     <>
-    {loading? <Preloader class='preloader'/>:
+    {loading? <Preloader class='menu-preloader'/>:
             error? (
                 <MessageBox variant='danger'>{error}</MessageBox>
             ):
