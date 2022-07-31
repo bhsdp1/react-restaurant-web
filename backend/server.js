@@ -20,6 +20,15 @@ app.get('/api/snacksmenu', (req, res) => {
     res.send(itemsdata.snacksMenu)
 })
 
+app.get('/api/snacksmenu/:id', (req, res) => {
+    const snackitem = itemsdata.snacksMenu.find((x) => x.id === req.params.id);
+    if(snackitem) {
+        res.send(snackitem);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
+})
+
 app.get('/api/pizzamenu', (req, res) => {
     res.send(itemsdata.pizzaMenu)
 })

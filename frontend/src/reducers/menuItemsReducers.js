@@ -1,4 +1,4 @@
-import { APPETIZER_MENU_FAIL, APPETIZER_MENU_REQUEST, APPETIZER_MENU_SUCCESS, BURGER_MENU_FAIL, BURGER_MENU_REQUEST, BURGER_MENU_SUCCESS, COCKTAIL_MENU_FAIL, COCKTAIL_MENU_REQUEST, COCKTAIL_MENU_SUCCESS, DESSERT_MENU_FAIL, DESSERT_MENU_REQUEST, DESSERT_MENU_SUCCESS, MAINMENU_MENU_FAIL, MAINMENU_MENU_REQUEST, MAINMENU_MENU_SUCCESS, PIZZA_MENU_FAIL, PIZZA_MENU_REQUEST, PIZZA_MENU_SUCCESS, SEAFOOD_MENU_FAIL, SEAFOOD_MENU_REQUEST, SEAFOOD_MENU_SUCCESS, SNACKS_MENU_FAIL, SNACKS_MENU_REQUEST, SNACKS_MENU_SUCCESS } from "../constants/menItemsConstant";
+import { APPETIZER_MENU_FAIL, APPETIZER_MENU_REQUEST, APPETIZER_MENU_SUCCESS, BURGER_MENU_FAIL, BURGER_MENU_REQUEST, BURGER_MENU_SUCCESS, COCKTAIL_MENU_FAIL, COCKTAIL_MENU_REQUEST, COCKTAIL_MENU_SUCCESS, DESSERT_MENU_FAIL, DESSERT_MENU_REQUEST, DESSERT_MENU_SUCCESS, MAINMENU_MENU_FAIL, MAINMENU_MENU_REQUEST, MAINMENU_MENU_SUCCESS, PIZZA_MENU_FAIL, PIZZA_MENU_REQUEST, PIZZA_MENU_SUCCESS, SEAFOOD_MENU_FAIL, SEAFOOD_MENU_REQUEST, SEAFOOD_MENU_SUCCESS, SNACKS_MENU_DETAILS_FAIL, SNACKS_MENU_DETAILS_REQUEST, SNACKS_MENU_DETAILS_SUCCESS, SNACKS_MENU_FAIL, SNACKS_MENU_REQUEST, SNACKS_MENU_SUCCESS } from "../constants/menItemsConstant";
 
 export const SnacksItemsReducer = (state = {loading :true, snacksmenu:[]}, action) => {
     switch(action.type) {
@@ -100,6 +100,22 @@ export const CocktailMenuItemsReducer = (state = {loading :true, cocktailmenu:[]
         case COCKTAIL_MENU_FAIL: 
             return{loading: false, error: action.payload}
         default :
+            return state;
+    }
+}
+
+export const Snacksitemsdetailsreducer = (
+    state ={snackitem:{}, loading: true}, 
+    action
+    ) => {
+    switch (action.type) {
+        case SNACKS_MENU_DETAILS_REQUEST:
+            return {loading : true};
+        case SNACKS_MENU_DETAILS_SUCCESS:
+            return {loading :false, snackitem: action.payload}
+        case SNACKS_MENU_DETAILS_FAIL:
+            return {loading : false, error: action.payload}
+        default:
             return state;
     }
 }

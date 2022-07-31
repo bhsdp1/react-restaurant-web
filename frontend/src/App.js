@@ -15,6 +15,7 @@ import Seafoodmenu from './pages/Seafoodmenu';
 import Cocktailmenu from './pages/Cocktailmenu';
 import Snacksmenu from './pages/Snacksmenu';
 import Footer from './components/Footer';
+import Productdetails from './screens/Productdetails';
 
 export default function App() {
     const [cartItems, setCartitems] = useState([]);
@@ -59,6 +60,7 @@ export default function App() {
                         <Route path='/Cocktailmenu' element={<Cocktailmenu onAdd={onAdd}/>}></Route>
                         <Route path='/Dessertmenu' element={<Dessertmenu onAdd={onAdd}/>}></Route>
                         <Route path='/Burgermenu' element={<Burgermenu onAdd={onAdd}/>}></Route>
+                        <Route path='/Snacksmenu/:id' element={<Productdetails/>}></Route>
                         <Route path='*' element={<Nopage/>}></Route>
                 </Routes>
             <Footer/>
