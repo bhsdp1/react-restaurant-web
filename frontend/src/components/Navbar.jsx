@@ -37,7 +37,7 @@ const Navbar = (props) => {
 
             <div className="brand-logo rounded-circle" title="brand logo">
                 <NavLink to="/">
-                    <img src="./images/common/res-logo.jpg" alt="restaurent logo" className="img-fluid rounded-circle"/>
+                    <img  src="https://sohampurao.github.io/Restaurent-web/images/common/res-logo.jpg" alt="restaurent logo" className="img-fluid rounded-circle"/>
                 </NavLink>
             </div>
 

@@ -31,10 +31,10 @@ return (
                 <section className="col-md-3 footer text-center text-md-start ps-3">
                     <div className="footer-title mb-1">We accept all credit cards</div>
                     <ul className="nav-link d-inline-flex align-items-centee justify-content-center" id="footer-cards-ul">
-                        <li title="Visa Credit Card" className="nav footer-cards-li"><img src="./images/footer/card1.png" alt="credit card" className="footer-cards-img img-fluid" /></li>
-                        <li title="Master Credit Card" className="nav footer-cards-li"><img src="./images/footer/card2.png" alt="credit card " className="footer-cards-img img-fluid" /></li>
-                        <li title="Paypal Credit Card" className="nav footer-cards-li"><img src="./images/footer/card3.png" alt="credit card " className="footer-cards-img img-fluid" /></li>
-                        <li title="Discover Credit Card" className="nav footer-cards-li"><img src="./images/footer/card4.png" alt="credit card " className="footer-cards-img img-fluid" /></li>
+                        <li title="Visa Credit Card" className="nav footer-cards-li"><img src="https://sohampurao.github.io/Restaurent-web/images/footer/card1.png" alt="credit card" className="footer-cards-img img-fluid" /></li>
+                        <li title="Master Credit Card" className="nav footer-cards-li"><img src="https://sohampurao.github.io/Restaurent-web/images/footer/card2.png" alt="credit card " className="footer-cards-img img-fluid" /></li>
+                        <li title="Paypal Credit Card" className="nav footer-cards-li"><img src="https://sohampurao.github.io/Restaurent-web/images/footer/card3.png" alt="credit card " className="footer-cards-img img-fluid" /></li>
+                        <li title="Discover Credit Card" className="nav footer-cards-li"><img src="https://sohampurao.github.io/Restaurent-web/images/footer/card4.png" alt="credit card " className="footer-cards-img img-fluid" /></li>
                     </ul>
                     <hr/>
                 </section>
