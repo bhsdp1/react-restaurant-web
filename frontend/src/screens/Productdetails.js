@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Productdetailsaction } from '../actions/menuItemsActions';
@@ -12,6 +12,7 @@ import Addtocartbtn from '../components/buttons/Addtocartbtn';
 export default function Productdetails() {
     const dispatch = useDispatch();
     const params = useParams();
+    const navigate = useNavigate();
     const {category: productcat,id:productId}  = params;
     const ProductDetails = useSelector( state => state.ProductDetails);
     const {error, loading, product} = ProductDetails;
@@ -21,6 +22,10 @@ export default function Productdetails() {
     }, [dispatch,productcat, productId])
 
     const [gty, setgty] = useState(1)
+
+    const addTOCart = () => {
+        navigate(`/cart/${productId}?qty=${gty}`);
+    }
 return (
     <>
     {loading? <Preloader class='menu-preloader'/>:
@@ -39,7 +44,7 @@ return (
                     <input type="number" id="menu-detail-gty" className='text-center' value={gty} onChange ={e => {setgty(e.target.value)}}/>
                 </div>
                 <div className="d-flex justify-content-center my-2">
-                <Addtocartbtn content='Add to cart'></Addtocartbtn>
+                <Addtocartbtn content='Add to cart' onClick={addTOCart}/>
                 </div>
             </div>
         </div>
