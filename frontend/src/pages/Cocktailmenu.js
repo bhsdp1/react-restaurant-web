@@ -36,8 +36,9 @@ return (
         <Innerpagenav active="Cocktail's" navto='/Cocktailmenu'/>
 
     <div className="row overflow-x-hidden pt-1">
-
-        <Menuitems onAdd={onAdd} menuitem={cocktailmenu}/>
+    
+        {/* category is the link of api request pelease put in small case  */}
+        <Menuitems onAdd={onAdd} menuitem={cocktailmenu} category='cocktailmenu'/>
 
     </div>
 

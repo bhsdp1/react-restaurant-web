@@ -94,15 +94,6 @@ body {
     color: var(--primary-font-clr);
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
 img {width: 100%; height: auto;}
 
 a ,a:hover {text-decoration: none; color: inherit;}

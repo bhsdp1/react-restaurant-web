@@ -16,14 +16,25 @@ app.get('/api/burgermenu', (req, res) => {
     res.send(itemsdata.burgerMenu)
 })
 
+// for product detials page
+app.get('/api/burgermenu/:id', (req, res) => {
+    const item = itemsdata.burgerMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
+})
+
 app.get('/api/snacksmenu', (req, res) => {
     res.send(itemsdata.snacksMenu)
 })
 
+// for product detials page
 app.get('/api/snacksmenu/:id', (req, res) => {
-    const snackitem = itemsdata.snacksMenu.find((x) => x.id === req.params.id);
-    if(snackitem) {
-        res.send(snackitem);
+    const item = itemsdata.snacksMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
     } else {
         res.status(404).send({message: 'Menu Item Not Found'})
     }
@@ -33,24 +44,80 @@ app.get('/api/pizzamenu', (req, res) => {
     res.send(itemsdata.pizzaMenu)
 })
 
+// for product detials page
+app.get('/api/pizzamenu/:id', (req, res) => {
+    const item = itemsdata.pizzaMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
+})
+
 app.get('/api/appetizermenu', (req, res) => {
     res.send(itemsdata.appetizerMenu)
+})
+
+// for product detials page
+app.get('/api/appetizermenu/:id', (req, res) => {
+    const item = itemsdata.appetizerMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
 })
 
 app.get('/api/mainmenu', (req, res) => {
     res.send(itemsdata.mainMenu)
 })
 
+// for product detials page
+app.get('/api/mainmenu/:id', (req, res) => {
+    const item = itemsdata.mainMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
+})
+
 app.get('/api/seafoodmenu', (req, res) => {
     res.send(itemsdata.seafoodMenu)
 })
-
+// for product detials page
+app.get('/api/seafoodmenu/:id', (req, res) => {
+    const item = itemsdata.seafoodMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
+})
 app.get('/api/cocktailmenu', (req, res) => {
     res.send(itemsdata.cocktailMenu)
+})
+// for product detials page
+app.get('/api/cocktailmenu/:id', (req, res) => {
+    const item = itemsdata.cocktailMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
 })
 
 app.get('/api/dessertmenu', (req, res) => {
     res.send(itemsdata.dessertMenu)
+})
+// for product detials page
+app.get('/api/dessertmenu/:id', (req, res) => {
+    const item = itemsdata.dessertMenu.find((x) => x.id === req.params.id);
+    if(item) {
+        res.send(item);
+    } else {
+        res.status(404).send({message: 'Menu Item Not Found'})
+    }
 })
 
 app.get('/', (req, res) => {

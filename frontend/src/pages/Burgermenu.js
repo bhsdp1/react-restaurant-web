@@ -36,7 +36,7 @@ return (
 
         <div className="row overflow-x-hidden pt-1">
 
-            <Menuitems onAdd={onAdd} menuitem={burgermenu}/>
+            <Menuitems onAdd={onAdd} menuitem={burgermenu} category='burgermenu'/>
 
         </div>
 

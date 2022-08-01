@@ -36,7 +36,8 @@ return (
 
       <div className="row overflow-x-hidden pt-1">
 
-        <Menuitems onAdd={onAdd} menuitem={mainmenu}/>
+        {/* category is the link of api request pelease put in small case  */}
+        <Menuitems onAdd={onAdd} menuitem={mainmenu} category='mainmenu'/>
 
       </div>
 

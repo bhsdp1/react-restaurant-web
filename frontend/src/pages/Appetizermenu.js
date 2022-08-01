@@ -38,8 +38,9 @@ export default function Appetizermenu(props) {
       <Innerpagenav active='Appetizer' navto='/Appetizermenu'/>
 
       <div className="row overflow-x-hidden pt-1">
-
-        <Menuitems onAdd={onAdd} menuitem={appetizermenu}/>
+        
+        {/* category is the link of api request pelease put in small case  */}
+        <Menuitems onAdd={onAdd} menuitem={appetizermenu} category='appetizermenu'/>
 
       </div>
 

@@ -60,7 +60,7 @@ export default function App() {
                         <Route path='/Cocktailmenu' element={<Cocktailmenu onAdd={onAdd}/>}></Route>
                         <Route path='/Dessertmenu' element={<Dessertmenu onAdd={onAdd}/>}></Route>
                         <Route path='/Burgermenu' element={<Burgermenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Snacksmenu/:id' element={<Productdetails/>}></Route>
+                        <Route path='/productdetails/:category/:id' element={<Productdetails/>}></Route>
                         <Route path='*' element={<Nopage/>}></Route>
                 </Routes>
             <Footer/>
