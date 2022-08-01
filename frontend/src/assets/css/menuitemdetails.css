@@ -1,0 +1,26 @@
+.menu-detail-container {
+    max-width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menu-detail-title {
+    color: var(--gold);
+}
+.menu-detail-image {
+    max-height: 400px;
+}
+
+.menu-detail-select {
+    width: 40px;
+    -webkit-user-select : none;
+    user-select: none;
+    outline: none;
+}
+
+@media screen and (max-width : 500px) {
+    .menu-detail-container {
+        width: 350px;
+    }
+    .menu-detail-image {
+        max-height: 350px;
+    }
+}
