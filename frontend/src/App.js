@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -19,50 +19,33 @@ import Productdetails from './screens/Productdetails';
 import Cartscreen from './screens/Cartscreen';
 
 export default function App() {
-    const [cartItems, setCartitems] = useState([]);
-    const onAdd = (menuitem) => {
-        const exist = cartItems.find((x) => x.id === menuitem.id);
-        if(exist) {
-            setCartitems(
-                cartItems.map((x) => 
-                x.id === menuitem.id ? {...exist, qty: exist.qty + 1}: x
-                )
-            );
-        }else {
-            setCartitems([...cartItems, {...menuitem, qty :1}])
-        }
-    }
-
-    const onRemove = (menuitem) => {
-        const exist = cartItems.find((x) => x.id === menuitem.id);
-        if(exist.qty === 1) {
-            setCartitems(cartItems.filter((x) => x.id !== menuitem.id));
-        }else {
-            setCartitems(
-                cartItems.map((x) => 
-                x.id === menuitem.id ? {...exist, qty: exist.qty - 1}: x
-                )
-            );
-        }
-    }
     return (
         <BrowserRouter>
-            <Navbar title="Uncle Sammy's Kitchen" link1="Home" link2="Menu" link3="About" link4="Contact" cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+            <Navbar title="Uncle Sammy's Kitchen" link1="Home" link2="Menu" link3="About" link4="Contact"/>
                 <Routes>
+                        {/* navbar links */}
                         <Route index element={<Home/>}></Route>
                         <Route path='/Menu' element={<Menu/>}></Route>
                         <Route path='/About' element={<About/>}></Route>
                         <Route path='/Contact' element={<Contact/>}></Route>
-                        <Route path='/Snacksmenu' element={<Snacksmenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Appetizermenu' element={<Appetizermenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Main-Menu' element={<Mainmenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Seafood' element={<Seafoodmenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Pizzamenu' element={<Pizzamenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Cocktailmenu' element={<Cocktailmenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Dessertmenu' element={<Dessertmenu onAdd={onAdd}/>}></Route>
-                        <Route path='/Burgermenu' element={<Burgermenu onAdd={onAdd}/>}></Route>
+
+                        {/* menu item pages */}
+                        <Route path='/Snacksmenu' element={<Snacksmenu/>}></Route>
+                        <Route path='/Appetizermenu' element={<Appetizermenu/>}></Route>
+                        <Route path='/Main-Menu' element={<Mainmenu/>}></Route>
+                        <Route path='/Seafood' element={<Seafoodmenu/>}></Route>
+                        <Route path='/Pizzamenu' element={<Pizzamenu/>}></Route>
+                        <Route path='/Cocktailmenu' element={<Cocktailmenu/>}></Route>
+                        <Route path='/Dessertmenu' element={<Dessertmenu/>}></Route>
+                        <Route path='/Burgermenu' element={<Burgermenu/>}></Route>
+
                         <Route path='/productdetails/:category/:id' element={<Productdetails/>}></Route>
-                        <Route path="/cart/:id" element={<Cartscreen />}></Route>
+
+                        {/* shopping cart */}
+                        <Route path="/cart" element={<Cartscreen />}></Route>
+                        <Route path="/cart/:category/:id" element={<Cartscreen />}></Route>
+
+                        {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>
                 </Routes>
             <Footer/>

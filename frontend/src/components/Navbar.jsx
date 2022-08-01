@@ -1,23 +1,9 @@
 import React, { useState } from 'react';
 import "../assets/css/navbar.css";
 import '../assets/css/base.css';
-import { Outlet , NavLink } from "react-router-dom";
-import Cartbody from './Cartbody';
+import { Outlet , NavLink, Link } from "react-router-dom";
 
 const Navbar = (props) => {
-    const {cartItems, onAdd, onRemove} = props;
-
-    //function for cart toggle
-    const [cartToggle, setCartToggle] = useState('hide')
-
-    function cartToggler()  {
-        if (cartToggle === 'hide') {
-            setCartToggle('show')
-        } else {
-            setCartToggle('hide')
-        }
-    }
-
     // function for menu toggle
     const [menuToggle, setMenuToggle] = useState('hide')
     let menuToggler =() => {
@@ -31,13 +17,14 @@ const Navbar = (props) => {
     // remove the offcanvas when user click on nav-link
     const navHide = () => {setMenuToggle('hide')}        
     return (
+    
     <>
     <header className="header container-fluid bg-black">
         <nav className="nav-bar d-flex align-items-center justify-content-between">
 
             <div className="brand-logo rounded-circle" title="brand logo">
                 <NavLink to="/">
-                    <img  src="https://sohampurao.github.io/Restaurent-web/images/common/res-logo.jpg" alt="restaurent logo" className="img-fluid rounded-circle"/>
+                    <img  src="/images/common/res-logo.jpg" alt="restaurent logo" className="img-fluid rounded-circle"/>
                 </NavLink>
             </div>
 
@@ -48,12 +35,12 @@ const Navbar = (props) => {
             </div>
 
             <div className="cart-icon text-white me-3" title="Order Cart" id="cart-icon">
-                <i className="fa-solid fa-cart-shopping position-relative" onClick={cartToggler}>
-                    {cartItems.length === 0 ? '' : <span className="cart-bubble position-absolute text-center">{cartItems.length}</span>}
-                </i>
+                <Link to='/cart'>
+                    <i className="fa-solid fa-cart-shopping position-relative">
+                        {/* <span className="cart-bubble position-absolute text-center"></span>} */}
+                    </i>
+                </Link>
             </div>
-
-            <Cartbody classToggle={cartToggle} toggleFunc={cartToggler} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
 
             <div className="nav-toggler text-white me-2 d-inline-flex d-md-none" id="nav-toggler" title="Toggle Menu" onClick={menuToggler}>
                 <i className="fa-solid fa-bars"></i>

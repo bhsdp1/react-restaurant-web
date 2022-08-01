@@ -18,7 +18,6 @@ export default function Cocktailmenu(props) {
         dispatch(CocktailMenuList())
     }, [dispatch]);
 
-    const {onAdd} = props;
 return (
     <>
     {loading? <Preloader class='menu-preloader'/>:
@@ -38,7 +37,7 @@ return (
     <div className="row overflow-x-hidden pt-1">
     
         {/* category is the link of api request pelease put in small case  */}
-        <Menuitems onAdd={onAdd} menuitem={cocktailmenu} category='cocktailmenu'/>
+        <Menuitems menuitem={cocktailmenu} category='cocktailmenu'/>
 
     </div>
 

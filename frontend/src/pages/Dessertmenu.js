@@ -16,8 +16,6 @@ export default function Dessertmenu(props) {
     useEffect(() => {
     dispatch(DessertMenuList())
     }, [dispatch]);
-
-    const {onAdd} = props;
 return (
     <>
     {loading? <Preloader class='menu-preloader'/>:
@@ -36,7 +34,7 @@ return (
 
         <div className="row overflow-x-hidden pt-1">
 
-            <Menuitems onAdd={onAdd} menuitem={dessertmenu} category='dessertmenu'/>
+            <Menuitems menuitem={dessertmenu} category='dessertmenu'/>
 
         </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Productdetailsaction } from '../actions/menuItemsActions';
@@ -24,7 +24,7 @@ export default function Productdetails() {
     const [gty, setgty] = useState(1)
 
     const addTOCart = () => {
-        navigate(`/cart/${productId}?qty=${gty}`);
+        navigate(`/cart/${productcat}/${productId}?qty=${gty}`);
     }
 return (
     <>

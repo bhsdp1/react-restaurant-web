@@ -20,7 +20,6 @@ export default function Appetizermenu(props) {
       dispatch(AppetizerMenuList())
   }, [dispatch]);
 
-  const {onAdd} = props;
   return (
   <>
     {loading? <Preloader class='preloader'/>:
@@ -40,7 +39,7 @@ export default function Appetizermenu(props) {
       <div className="row overflow-x-hidden pt-1">
         
         {/* category is the link of api request pelease put in small case  */}
-        <Menuitems onAdd={onAdd} menuitem={appetizermenu} category='appetizermenu'/>
+        <Menuitems menuitem={appetizermenu} category='appetizermenu'/>
 
       </div>
 

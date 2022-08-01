@@ -17,7 +17,6 @@ export default function Seafoodmenu(props) {
         dispatch(SeafoodMenuList())
     }, [dispatch]);
 
-    const {onAdd} = props;
 return (
     <>
     {loading? <Preloader class='menu-preloader'/>:
@@ -37,7 +36,7 @@ return (
     <div class="row overflow-x-hidden pt-1">
 
         {/* category is the link of api request pelease put in small case  */}
-        <Menuitems onAdd={onAdd} menuitem={seafoodmenu} category='seafoodmenu'/>
+        <Menuitems menuitem={seafoodmenu} category='seafoodmenu'/>
 
     </div>
 

@@ -12,12 +12,11 @@ export default function Pizzamenu(props) {
     const dispatch = useDispatch()
     const pizzaMenuList = useSelector((state) => state.pizzaMenuList);
     var {loading, error, pizzamenu} = pizzaMenuList;
-  
+
     useEffect(() => {
         dispatch(PizzaMenuList())
     }, [dispatch]);
     
-    const {onAdd} = props;
 return (
     <>
     {loading? <Preloader class='menu-preloader'/>:
@@ -37,7 +36,7 @@ return (
     <div className="row overflow-x-hidden pt-1">
 
         {/* category is the link of api request pelease put in small case  */}
-        <Menuitems onAdd={onAdd} menuitem={pizzamenu} category='pizzamenu'/>
+        <Menuitems menuitem={pizzamenu} category='pizzamenu'/>
 
     </div>
 

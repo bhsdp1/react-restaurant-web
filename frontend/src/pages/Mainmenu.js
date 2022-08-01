@@ -16,8 +16,6 @@ export default function Mainmenu(props) {
   useEffect(() => {
       dispatch(MainMenuList())
   }, [dispatch]);
-
-    const {onAdd} = props;
 return (
 <>
 {loading? <Preloader class='menu-preloader'/>:
@@ -37,7 +35,7 @@ return (
       <div className="row overflow-x-hidden pt-1">
 
         {/* category is the link of api request pelease put in small case  */}
-        <Menuitems onAdd={onAdd} menuitem={mainmenu} category='mainmenu'/>
+        <Menuitems menuitem={mainmenu} category='mainmenu'/>
 
       </div>
 

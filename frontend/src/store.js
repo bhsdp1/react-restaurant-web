@@ -3,8 +3,10 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { HomeMenuCardReducer, MenuPageCardReducer } from './reducers/menuCardReducers';
 import { AppetizerItemsReducer, BurgerMenuItemsReducer, CocktailMenuItemsReducer, DessertMenuItemsReducer, MainMenuItemsReducer, PizzaMenuItemsReducer, Productdetailsreducer, SeafoodMenuItemsReducer, SnacksItemsReducer } from './reducers/menuItemsReducers';
+import { cartReducer } from './reducers/Cartreducer';
 
-const initialState = {};
+const initialState = {
+};
 const reducer = combineReducers({
     homeCardList : HomeMenuCardReducer,
     menuCardlist : MenuPageCardReducer,
@@ -17,6 +19,7 @@ const reducer = combineReducers({
     cocktailMenuList : CocktailMenuItemsReducer,
     dessertMenuList : DessertMenuItemsReducer,
     ProductDetails : Productdetailsreducer,
+    Cart : cartReducer,
 })
 
 const store = createStore(

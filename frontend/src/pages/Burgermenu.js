@@ -17,7 +17,6 @@ export default function Burgermenu(props) {
         dispatch(BurgertMenuList())
     }, [dispatch]);
 
-    const {onAdd} = props;
 return (
     <>
     {loading? <Preloader class='menu-preloader'/>:
@@ -36,7 +35,7 @@ return (
 
         <div className="row overflow-x-hidden pt-1">
 
-            <Menuitems onAdd={onAdd} menuitem={burgermenu} category='burgermenu'/>
+            <Menuitems menuitem={burgermenu} category='burgermenu'/>
 
         </div>
 
