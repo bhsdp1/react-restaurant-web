@@ -6,6 +6,11 @@ import { AppetizerItemsReducer, BurgerMenuItemsReducer, CocktailMenuItemsReducer
 import { cartReducer } from './reducers/Cartreducer';
 
 const initialState = {
+    cart: {
+        cartItems: localStorage.getItem('cartItems')
+        ? JSON.parse(localStorage.getItem('cartItems'))
+        : [],
+    }
 };
 const reducer = combineReducers({
     homeCardList : HomeMenuCardReducer,

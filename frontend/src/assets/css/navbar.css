@@ -36,65 +36,6 @@
     border-radius: 20px;
     background-color: red;
 }
-.cart-item-delete {color: rgba(0, 0, 0, 0.55);}
-
-.cart-item-delete:hover {color: rgba(0, 0, 0, 0.75)}
-
-#cart-body {width: 360px; z-index: 99999;}
-
-.cart-hide {
-    left : -100%;
-    visibility: hidden;
-    transition: var(--offcanvas-trasition)
-}
-
-.cart-show {
-    left : 0;
-    visibility: visible;
-    transition: var(--offcanvas-trasition);
-    box-shadow: 0 0 0 1000000px  rgba(0, 0, 0, 0.4);
-}
-
-.cart-header-container {
-    z-index: 100;
-    font-family: 'Raleway', sans-serif;
-    background-color: red;
-    min-height: 50px;
-    box-shadow: 0 0px 10px 2px #878787b8;
-}
-
-.item-count-container {font-family: 'Poppins', sans-serif; column-gap: 1px;}
-
-.cart-offer {top: 100%; left: 0%; width: inherit; font-family: 'Poppins', sans-serif; font-size: var(--small-font-size); text-align: justify; height: 50px; max-height: 50px; z-index: inherit;}
-
-.cart-item-container {margin-top: 50px; overflow-y: scroll;}
-
-.cart-item-container::-webkit-scrollbar { width: 5px;}
-
-.cart-item-container::-webkit-scrollbar-thumb {background: rgba(255, 0, 0, 0.6);border-radius: 0;}
-
-.cart-item-container::-webkit-scrollbar-thumb:hover {background: red}
-
-.cart-item-row {border-bottom: 1px solid black;}
-
-.cart-item-title {font-size: var(--h2-font-size); font-weight: var(--font-medium);}
-
-.cart-item-price {font-size: var(--normal-font-size);}
-
-.cart-item-quantity {column-gap: 15px;}
-
-.quantity-display {width: 20px; border: none; outline-color: #FF4742}
-
-.minus-quantity > i , .plus-quantity > i { width: 20px; height: 20px; cursor: pointer; font-size: var(--small-font-size);}
-
-.cart-total-container {
-    min-height: 25vh;
-    max-height: 25vh;
-    z-index: 100;
-    box-shadow: 0 0px 10px #878787b8;
-}
-
-.shipping-label , .total-label {font-size: 1rem; font-weight: var(--font-medium);}
 
 .nav-list {
     flex-direction:row;
@@ -214,4 +155,4 @@
     }
 }
 
-@media (max-width: 575.98px) { #cart-body,  .nav-menu{width: 90%;}}
+@media (max-width: 575.98px) {.nav-menu{width: 90%;}}

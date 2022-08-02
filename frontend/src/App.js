@@ -39,11 +39,12 @@ export default function App() {
                         <Route path='/Dessertmenu' element={<Dessertmenu/>}></Route>
                         <Route path='/Burgermenu' element={<Burgermenu/>}></Route>
 
+                        {/* product details page */}
                         <Route path='/productdetails/:category/:id' element={<Productdetails/>}></Route>
 
                         {/* shopping cart */}
-                        <Route path="/cart" element={<Cartscreen />}></Route>
-                        <Route path="/cart/:category/:id" element={<Cartscreen />}></Route>
+                        <Route path="/cart/" element={<Cartscreen/>}></Route>
+                        <Route path="/cart/:category/:id" element={<Cartscreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>
