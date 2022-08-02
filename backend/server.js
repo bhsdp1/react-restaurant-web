@@ -1,8 +1,12 @@
 import express from 'express';
 import cardsdata from './Menucardsdata.js';
 import itemsdata from './Menuitemsdata.js';
+import mongoose from 'mongoose';
+import userRouter from './routers/userRouter.js';
 
 const app = express();
+
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/restaurent-web');
 
 app.get('/api/homemenucards', (req, res) => {
     res.send(cardsdata.homeMenuCards)
@@ -119,10 +123,14 @@ app.get('/api/dessertmenu/:id', (req, res) => {
         res.status(404).send({message: 'Menu Item Not Found'})
     }
 })
-
+app.use('/api/users', userRouter);
 app.get('/', (req, res) => {
     res.send('Server is ready')
 });
+
+app.use((err, req, res, next) => {
+    res.status(500).send({message: err.message});
+})
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
