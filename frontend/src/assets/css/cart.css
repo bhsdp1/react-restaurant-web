@@ -1,0 +1,111 @@
+.cart-title {
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+    background-color: red;  
+    border-top-left-radius: var(--br-2-5);
+    border-top-right-radius: var(--br-2-5);
+    box-shadow: 0 0px 10px 2px #6c6c6cb8;
+}
+
+.cartrow-container::-webkit-scrollbar { width: 5px;}
+.cartrow-container::-webkit-scrollbar-thumb {background: rgba(255, 0, 0, 0.6);border-radius: 0;}
+.cartrow-container::-webkit-scrollbar-thumb:hover {background: red}
+
+.cart-body {
+    border-left: 1px solid black ;
+    border-right: 1px solid black ;
+    border-bottom: 1px solid black ;
+}
+
+.cartrow-container {
+    background-color: var(--pure-white);
+    overflow-y: scroll;
+    font-size: var(--h2-font-size);
+    max-height: 550px;
+    line-height: normal;
+}
+
+.cart-row {
+    border-bottom: 1px solid black;
+    height: 120px;
+}
+
+.cart-product-image {
+    max-width: 80px;
+}
+
+.cart-product-title {
+    color : #f76e6e;
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px;
+}
+
+.cart-product-price {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.cart-product-title:hover {
+    opacity: 0.7;
+}
+
+.cart-product-delete > i {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+
+.cart-product-delete > i:hover {
+    opacity: 0.65;
+}
+
+.cart-quantity-input {
+    width: 60px;
+    outline: none;
+    border: none;
+    cursor: not-allowed;
+}
+
+.cart-bill {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-top: 3px solid red;
+}
+
+.shipping > .shipping-title , .total > .total-title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+}
+
+.shipping > .shipping-price , .total > .total-price {
+    font-weight: var(--font-semi-bold);
+}
+
+@media screen and (max-width : 767.98px){
+    .cart-row {
+        border-bottom: 1px solid black;
+        height: 100px;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+    .cart-product-title {
+        width: 230px;
+    }
+
+    .cart-product-image {
+        max-width: 60px;
+    }
+    .cart-product-details {
+        max-width: 210px;
+    }
+
+    .cart-quantity-input {
+        width: 25px;
+    }
+    .cart-product-delete {
+        width: 25px;
+    }
+}
