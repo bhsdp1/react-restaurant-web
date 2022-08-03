@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import "../assets/css/navbar.css";
 import '../assets/css/base.css';
-import { Outlet , NavLink, Link } from "react-router-dom";
+import { Outlet , NavLink} from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const Navbar = (props) => {
+    const cart = useSelector((state) => state.Cart);
+    const {cartItems} = cart;
     // function for menu toggle
     const [menuToggle, setMenuToggle] = useState('hide')
     let menuToggler =() => {
@@ -35,11 +38,12 @@ const Navbar = (props) => {
             </div>
 
             <div className="cart-icon text-white me-3" title="Order Cart" id="cart-icon">
-                <Link to='/cart'>
+                <NavLink to='/cart'>
                     <i className="fa-solid fa-cart-shopping position-relative">
-                        {/* <span className="cart-bubble position-absolute text-center"></span>} */}
+                        {cartItems.length > 0 && (
+                        <span className="cart-bubble position-absolute text-center">{cartItems.length}</span>)}
                     </i>
-                </Link>
+                </NavLink>
             </div>
 
             <div className="nav-toggler text-white me-2 d-inline-flex d-md-none" id="nav-toggler" title="Toggle Menu" onClick={menuToggler}>

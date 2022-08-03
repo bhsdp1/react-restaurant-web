@@ -6,7 +6,7 @@ import { AppetizerItemsReducer, BurgerMenuItemsReducer, CocktailMenuItemsReducer
 import { cartReducer } from './reducers/Cartreducer';
 
 const initialState = {
-    cart: {
+    Cart: {
         cartItems: localStorage.getItem('cartItems')
         ? JSON.parse(localStorage.getItem('cartItems'))
         : [],
