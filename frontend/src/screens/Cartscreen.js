@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { addToCart } from '../actions/Cartaction';
+import { addToCart, removeFromCart } from '../actions/Cartaction';
 import '../assets/css/base.css';
 import '../assets/css/cart.css';
 import Addtocartbtn from '../components/buttons/Addtocartbtn';
@@ -29,7 +29,8 @@ export default function Cartscreen(props) {
     }, [dispatch, productCat, productId, qty])
 
     const removeFromCartHandler = (id) => {
-      //delte action
+      //delete action
+        dispatch(removeFromCart(id));
     };
 
     const checkoutHandler = () => {
@@ -49,7 +50,7 @@ return (
                         <div className="text-white">Your cart</div>
                     </header>
                     {cartItems.length === 0
-                    ? <MessageBox>Looks like your cart is empty!<Link to='/menu'>Go Shopping<i class="fa-solid fa-angles-right"></i></Link></MessageBox>
+                    ?<div className='container my-2 text-capitalize'><MessageBox>its Looks like your cart is empty!<Link to='/menu'> <span className='text-danger'>Go For Shopping <i class="fa-solid fa-angles-right"></i></span></Link></MessageBox></div>
                     :(
                     <main className="cartrow-container">
                     {cartItems.map((item) => (
@@ -83,7 +84,7 @@ return (
                             <div className="shipping-price">50&#8377;</div>
                         </div>
                         <div className="total p-2 d-flex justify-content-between align-items-center">
-                            <div className="total-title text-capitalize">total<span className='fs-6'>({cartItems.reduce((a,c) => a + c.qty, 0)} items)</span>:</div>
+                            <div className="total-title text-capitalize">total{cartItems.length > 0? <span className='fs-6'>({cartItems.reduce((a,c) => a + c.qty, 0)} items)</span> : ' '}:</div>
                             <div className="total-price"> {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}&#8377;</div>
                         </div>
                         <div className="checkout-btn d-flex align-items-center justify-content-center mt-2">

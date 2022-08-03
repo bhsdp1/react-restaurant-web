@@ -80,7 +80,7 @@
 }
 }
 
-html {scroll-behavior: smooth}
+html {scroll-behavior: smooth; height: 100%;}
 
 body {
     font-family: 'Poppins','Roboto',sans-serif;
@@ -89,9 +89,9 @@ body {
     text-rendering: optimizeLegibility;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 100%;
     transition: 0.4s ease-in;
     color: var(--primary-font-clr);
+    height: 100%;
 }
 
 img {width: 100%; height: auto;}

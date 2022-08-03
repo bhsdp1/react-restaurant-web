@@ -4,7 +4,7 @@ import '../assets/css/footer.css'
 const Footer = () => {
     const whatsapp = new URL('https://api.whatsapp.com/send/?phone=%2B919518556937&text&app_absent=0" className="nav-link d-block text-center mx-auto"><i className="fa-brands fa-whatsapp')
 return (
-    <footer className="panel-footer">
+    <footer className="panel-footer mt-auto">
 
         <div className="container-fluid">
 
