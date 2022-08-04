@@ -33,9 +33,8 @@ return (
       <Innerpagenav active='Main-Menu' navto='/Main-Menu'/>
 
       <div className="row overflow-x-hidden pt-1">
-
-        {/* category is the link of api request pelease put in small case  */}
-        <Menuitems menuitem={mainmenu} category='mainmenu'/>
+        
+        <Menuitems menuitem={mainmenu}/>
 
       </div>
 

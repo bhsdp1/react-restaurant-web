@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 function Menuitemdisplay(props) {
-    const {menuitem, category} = props;
+    const {menuitem} = props;
 return (
     <>
     <div className="col-lg-6 col-md-12 ">
@@ -16,8 +16,8 @@ return (
                     <h3 className="menu-item-title mb-0 mt-1 text-capitalize">{menuitem.name}</h3>
                     <div className="menu-item-price">{menuitem.price}&#8377;</div>
                     <h5 className="menu-item-sub mt-1 mt-sm-0 w-100">{menuitem.text}</h5>
-                    <Link to={`/productdetails/${category}/${menuitem.id}`}>
-                    <button className="add-to-cart d-inline-block text-center text-capitalize" >add to cart | <i className="fa-solid fa-cart-plus"></i></button>
+                    <Link to={`/productdetails/${menuitem.category}/${menuitem.id}`}>
+                    <button className="add-to-cart d-inline-block text-center text-capitalize" ><i class="fa-solid fa-bag-shopping"></i></button>
                     </Link>
                 </div>
 
@@ -28,12 +28,12 @@ return (
 )
 }
 export default function Menuitems(props) {
-    const {menuitem, category} = props
+    const {menuitem} = props
 return (
     <>
     {
     menuitem.map((menuitem) => {
-        return  <Menuitemdisplay key={menuitem.id} menuitem={menuitem} category={category}/>
+        return  <Menuitemdisplay key={menuitem.id} menuitem={menuitem}/>
     })
     }
     </>

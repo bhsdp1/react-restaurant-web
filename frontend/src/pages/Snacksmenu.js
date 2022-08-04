@@ -34,8 +34,7 @@ return (
 
     <div className="row overflow-x-hidden pt-1">
 
-        {/* category is the link of api request pelease put in small case  */}
-        <Menuitems menuitem={snacksmenu} category='snacksmenu'/>
+        <Menuitems menuitem={snacksmenu}/>
 
     </div>
 

@@ -13,7 +13,7 @@ export default function Productdetails() {
     const dispatch = useDispatch();
     const params = useParams();
     const navigate = useNavigate();
-    const {category: productcat,id:productId}  = params;
+    const {category: productcat, id:productId}  = params;
     const ProductDetails = useSelector( state => state.ProductDetails);
     const {error, loading, product} = ProductDetails;
 
@@ -54,9 +54,9 @@ return (
                 <div className='menu-detail-quantity d-flex justify-content-around align-items-center my-3'>
                     <div>select quantity :</div>
                     <div className="quantity-input-actions d-flex align-items-center justify-content-around">
-                        <div className="btn-quantity-decrement text-center" onClick={handleDecrement}><i className="fa-solid fa-minus"></i></div>
+                        <button className="btn-quantity-decrement text-center text-light" onClick={handleDecrement}><i className="fa-solid fa-minus"></i></button>
                         <div id="menu-detail-gty" className='text-center bg-light'>{qty}</div>
-                        <div className="btn-quantity-increment text-center" onClick={handleIncrement}><i className="fa-solid fa-plus"></i></div>
+                        <button className="btn-quantity-increment text-center text-light" onClick={handleIncrement}><i className="fa-solid fa-plus"></i></button>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center my-2">

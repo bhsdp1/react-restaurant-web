@@ -2,6 +2,7 @@ const itemsdata = {
     burgerMenu : [
         {
             id : 'burger1',
+            category : 'burger',
             name : 'Crispy Chicken Double Patty',
             price: '238',
             image: '/images/category-items/burger/m1.jpg',
@@ -9,6 +10,7 @@ const itemsdata = {
         },
         {
             id : 'burger2',
+            category : 'burger',
             name : 'Burger Bolgona',
             price: '398',
             image: '/images/category-items/burger/m2.jpg',
@@ -16,6 +18,7 @@ const itemsdata = {
         },
         {
             id : 'burger3',
+            category : 'burger',
             name : 'New York Cheesecake',
             price: '280',
             image: '/images/category-items/burger/m3.jpg',
@@ -23,6 +26,7 @@ const itemsdata = {
         },
         {
             id : 'burger4',
+            category : 'burger',
             name : 'Veg Whopper',
             price: '200',
             image: '/images/category-items/burger/m4.jpg',
@@ -30,6 +34,7 @@ const itemsdata = {
         },
         {
             id : 'burger5',
+            category : 'burger',
             name : 'Crispy Chicken With Cheese Burger',
             price: '195',
             image: '/images/category-items/burger/m5.jpg',
@@ -37,6 +42,7 @@ const itemsdata = {
         },
         {
             id : 'burger6',
+            category : 'burger',
             name : 'Fiery Chicken Burger',
             price: '395',
             image: '/images/category-items/burger/m6.jpg',
@@ -46,6 +52,7 @@ const itemsdata = {
     snacksMenu : [
         {
             id : 'snacks1',
+            category : 'snacks',
             name : 'Apple Nachos',
             price: '238',
             image: '/images/category-items/snacks/m1.jpg',
@@ -53,6 +60,7 @@ const itemsdata = {
         },
         {
             id : 'snacks2',
+            category : 'snacks',
             name : 'Mini Protein Box',
             price: '340',
             image: '/images/category-items/snacks/m2.jpg',
@@ -60,6 +68,7 @@ const itemsdata = {
         },
         {
             id : 'snacks3',
+            category : 'snacks',
             name : 'Popcorn Trail Mix',
             price: '250',
             image: '/images/category-items/snacks/m3.jpg',
@@ -67,6 +76,7 @@ const itemsdata = {
         },
         {
             id : 'snacks4',
+            category : 'snacks',
             name : 'Edamame',
             price: '300',
             image: '/images/category-items/snacks/m4.jpg',
@@ -74,6 +84,7 @@ const itemsdata = {
         },
         {
             id : 'snacks5',
+            category : 'snacks',
             name : 'Guacamole Stuffed Peppers',
             price: '230',
             image: '/images/category-items/snacks/m5.jpg',
@@ -81,6 +92,7 @@ const itemsdata = {
         },
         {
             id : 'snacks6',
+            category : 'snacks',
             name : 'Chocolate Coconut Energy Balls',
             price: '260',
             image: '/images/category-items/snacks/m6.jpg',
@@ -90,50 +102,57 @@ const itemsdata = {
     pizzaMenu : [
         {
             id : 'pizza1',
-            name : 'Cheese Pizza 10 | 13 | 15',
+            category : 'pizza',
+            name : 'Cheese Pizza',
             price: '350',
             image: '/images/category-items/pizzas/m1.jpg',
-            text: 'With any one topping 30 ₹ | 55 ₹ | 65 ₹'
+            text: 'With any one topping.'
         },
         {
             id : 'pizza2',
-            name : 'Special 14 | 18 | 22',
+            category : 'pizza',
+            name : 'Special',
             price: '250',
             image: '/images/category-items/pizzas/m5.jpg',
             text: 'Sausage, Pepperoni, Onion, Green Pepper, Black Olives and Mushrooms.'
         },
         {
             id : 'pizza3',
-            name : 'Pizza Alla Vodka With Shrimp 20 | 22 | 24',
+            category : 'pizza',
+            name : 'Pizza Alla Vodka With Shrimp',
             price: '280',
             image: '/images/category-items/pizzas/m3.jpg',
-            text: 'Creamy Vodka Sauce Topped with Fresh Shrimp. each additional topping 30 ₹ | $45 ₹ | 65 ₹'
+            text: 'Creamy Vodka Sauce Topped with Fresh Shrimp. each additional topping'
         },
         {
             id : 'pizza4',
-            name : 'Bianco 14 | 16 | 18',
+            category : 'pizza',
+            name : 'Bianco',
             price: '200',
             image: '/images/category-items/pizzas/m4.jpg',
             text: "Traditional White Pizza - Brushed Olive Oil, Fresh Ricotta and Mozzarella."
         },
         {
             id : 'pizza5',
-            name : 'Mediterranean 14 | 16 | 18',
+            category : 'pizza',
+            name : 'Mediterranean',
             price: '150',
             image: '/images/category-items/pizzas/m2.jpg',
             text: "Spinach, Feta Cheese, Kalamata Olives and Artichokes."
         },
         {
             id : 'pizza6',
-            name : 'Margarita 14 | 16 | 18',
+            category : 'pizza',
+            name : 'Margarita',
             price: '195',
             image: '/images/category-items/pizzas/m6.jpg',
-            text: "Fresh Tomato, Basil and Mozzarella. each additional topping 30 ₹ | $45 ₹ | 65 ₹"
+            text: "Fresh Tomato, Basil and Mozzarella. each additional topping."
         }
     ],
     appetizerMenu :[
         {
             id : 'appetizer1',
+            category : 'appetizer',
             name : 'Chicken Marsala',
             price: '350',
             image: '/images/category-items/appetizers/m1.jpg',
@@ -141,6 +160,7 @@ const itemsdata = {
         },
         {
             id : 'appetizer2',
+            category : 'appetizer',
             name : 'Spring Roll',
             price: '250',
             image: '/images/category-items/appetizers/m2.jpg',
@@ -148,6 +168,7 @@ const itemsdata = {
         },
         {
             id : 'appetizer3',
+            category : 'appetizer',
             name : 'Chicken Piccata',
             price: '280',
             image: '/images/category-items/appetizers/m4.jpg',
@@ -155,6 +176,7 @@ const itemsdata = {
         },
         {
             id : 'appetizer4',
+            category : 'appetizer',
             name : 'Fried Chicken Wings',
             price: '200',
             image: '/images/category-items/appetizers/m3.jpg',
@@ -162,6 +184,7 @@ const itemsdata = {
         },
         {
             id : 'appetizer5',
+            category : 'appetizer',
             name : 'Scallion Pancake',
             price: '150',
             image: '/images/category-items/appetizers/m5.jpg',
@@ -169,6 +192,7 @@ const itemsdata = {
         },
         {
             id : 'appetizer6',
+            category : 'appetizer',
             name : 'Steamed Chicken Dumplings',
             price: '195',
             image: '/images/category-items/appetizers/m6.jpg',
@@ -178,6 +202,7 @@ const itemsdata = {
     mainMenu : [
         {
             id : 'mainmenu1',
+            category : 'mainmenu',
             name : 'Slow-Cooked Italian Meatballs',
             price: '350',
             image: '/images/category-items/main-menu/m1.jpg',
@@ -185,6 +210,7 @@ const itemsdata = {
         },
         {
             id : 'mainmenu2',
+            category : 'mainmenu',
             name : 'Balsamic Green Bean Salad',
             price: '250',
             image: '/images/category-items/main-menu/m2.jpg',
@@ -192,6 +218,7 @@ const itemsdata = {
         },
         {
             id : 'mainmenu3',
+            category : 'mainmenu',
             name : 'Pesto Pull-Apart Bread',
             price: '280',
             image: '/images/category-items/main-menu/m4.jpg',
@@ -199,6 +226,7 @@ const itemsdata = {
         },
         {
             id : 'mainmenu4',
+            category : 'mainmenu',
             name : 'Slow-Cooker Pizza Dip',
             price: '200',
             image: '/images/category-items/main-menu/m3.jpg',
@@ -206,6 +234,7 @@ const itemsdata = {
         },
         {
             id : 'mainmenu5',
+            category : 'mainmenu',
             name : 'Tomato Fritters',
             price: '150',
             image: '/images/category-items/main-menu/m5.jpg',
@@ -213,6 +242,7 @@ const itemsdata = {
         },
         {
             id : 'mainmenu6',
+            category : 'mainmenu',
             name : 'Italian Cheese Loaf',
             price: '195',
             image: '/images/category-items/main-menu/m6.jpg',
@@ -222,6 +252,7 @@ const itemsdata = {
     seafoodMenu: [
     {
         id : 'seafood1',
+        category : 'seafood',
         name : 'Perfect Ten Baked Cod',
         price: '150',
         image: '/images/category-items/seafood/m1.jpg',
@@ -229,6 +260,7 @@ const itemsdata = {
     },
     {
         id : 'seafood2',
+        category : 'seafood',
         name : 'Pan-Seared Tilapia',
         price: '200',
         image: '/images/category-items/seafood/m4.jpg',
@@ -236,6 +268,7 @@ const itemsdata = {
     },
     {
         id : 'seafood3',
+        category : 'seafood',
         name : 'Easy Tuna Patties',
         price: '280',
         image: '/images/category-items/seafood/m3.jpg',
@@ -243,6 +276,7 @@ const itemsdata = {
     },
     {
         id : 'seafood4',
+        category : 'seafood',
         name : 'Southern Fried Catfish',
         price: '130',
         image: '/images/category-items/seafood/m5.jpg',
@@ -250,6 +284,7 @@ const itemsdata = {
     },
     {
         id : 'seafood5',
+        category : 'seafood',
         name : 'Maple Salmon',
         price: '195',
         image: '/images/category-items/seafood/m6.jpg',
@@ -257,6 +292,7 @@ const itemsdata = {
     },
     {
         id : 'seafood6',
+        category : 'seafood',
         name : 'Spicy Grilled Shrimp',
         price: '195',
         image: '/images/category-items/seafood/m2.jpg',
@@ -266,6 +302,7 @@ const itemsdata = {
 cocktailMenu: [
     {
         id : 'cocktail1',
+        category : 'cocktail',
         name : 'Hurricane cocktail',
         price: '150',
         image: '/images/category-items/cocktails/m1.jpg',
@@ -273,6 +310,7 @@ cocktailMenu: [
     },
     {
         id : 'cocktail2',
+        category : 'cocktail',
         name : 'the beach cocktail',
         price: '200',
         image: '/images/category-items/cocktails/m2.jpg',
@@ -280,6 +318,7 @@ cocktailMenu: [
     },
     {
         id : 'cocktail3',
+        category : 'cocktail',
         name : 'White lady',
         price: '280',
         image: '/images/category-items/cocktails/m3.jpg',
@@ -287,6 +326,7 @@ cocktailMenu: [
     },
     {
         id : 'cocktail4',
+        category : 'cocktail',
         name : "Valentine's Day cocktail",
         price: '130',
         image: '/images/category-items/cocktails/m4.jpg',
@@ -294,6 +334,7 @@ cocktailMenu: [
     },
     {
         id : 'cocktail5',
+        category : 'cocktail',
         name : 'Rhubarb & custard cocktail',
         price: '195',
         image: '/images/category-items/cocktails/m5.jpg',
@@ -301,6 +342,7 @@ cocktailMenu: [
     },
     {
         id : 'cocktail6',
+        category : 'cocktail',
         name : 'Passion fruit martini',
         price: '195',
         image: '/images/category-items/cocktails/m6.jpg',
@@ -310,6 +352,7 @@ cocktailMenu: [
     dessertMenu: [
         {
             id : 'dessert1',
+            category : 'dessert',
             name : 'Cannoli',
             price: '150',
             image: '/images/category-items/desserts/m1.jpg',
@@ -317,6 +360,7 @@ cocktailMenu: [
         },
         {
             id : 'dessert2',
+            category : 'dessert',
             name : 'Chocolate (Mousse) Cake',
             price: '200',
             image: '/images/category-items/desserts/m4.jpg',
@@ -324,6 +368,7 @@ cocktailMenu: [
         },
         {
             id : 'dessert3',
+            category : 'dessert',
             name : 'New York Cheesecake',
             price: '280',
             image: '/images/category-items/desserts/m3.jpg',
@@ -331,6 +376,7 @@ cocktailMenu: [
         },
         {
             id : 'dessert4',
+            category : 'dessert',
             name : 'Hot Fudge Brownie',
             price: '130',
             image: '/images/category-items/desserts/m5.jpg',
@@ -338,6 +384,7 @@ cocktailMenu: [
         },
         {
             id : 'dessert5',
+            category : 'dessert',
             name : 'Warm Apple Crisp',
             price: '195',
             image: '/images/category-items/desserts/m6.jpg',
@@ -345,6 +392,7 @@ cocktailMenu: [
         },
         {
             id : 'dessert6',
+            category : 'dessert',
             name : 'Key Lime Pie',
             price: '195',
             image: '/images/category-items/desserts/m2.jpg',

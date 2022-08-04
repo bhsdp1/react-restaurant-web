@@ -22,7 +22,7 @@ export default function Appetizermenu(props) {
 
   return (
   <>
-    {loading? <Preloader class='preloader'/>:
+    {loading? <Preloader class='menu-preloader'/>:
             error? (
                 <MessageBox variant='danger'>{error}</MessageBox>
             ):
@@ -39,7 +39,7 @@ export default function Appetizermenu(props) {
       <div className="row overflow-x-hidden pt-1">
         
         {/* category is the link of api request pelease put in small case  */}
-        <Menuitems menuitem={appetizermenu} category='appetizermenu'/>
+        <Menuitems menuitem={appetizermenu}/>
 
       </div>
 

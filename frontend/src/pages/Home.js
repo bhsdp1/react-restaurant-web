@@ -13,6 +13,7 @@ import Preloader from '../components/Preloader';
 import MessageBox from '../components/MessageBox';
 import {useDispatch, useSelector} from 'react-redux'
 import { HomeMenuCardList } from '../actions/menuCardAction';
+import { LightSpeed } from 'react-reveal';
 
 
 export default function Home() {
@@ -103,9 +104,9 @@ return (
             </div>
         </div>
 
-        <Zoom  right cascade timeout={1150} delay={600}>
+        <LightSpeed left timeout={1150} delay={600}>
             <h1 className="d-block menu-heading text-uppercase text-center fst-italic mb-4 mt-5 overflow-hidden">also famous for</h1>
-        </Zoom>
+        </LightSpeed>
 
         <div className="row">
                 <Specialitems src="./images/home-page/special-item/special-burger.png" name="Burger Bologona" price="350" link="/Burgermenu"/>

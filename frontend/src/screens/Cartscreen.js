@@ -59,12 +59,14 @@ return (
                     {cartItems.map((item) => (
                     <article key={item.product} className="cart-row d-flex align-items-center justify-content-around py-2">
                             <div className="cart-product-image overflow-hidden rounded-3">
-                                <img src={item.image} alt={item.name} className="image-fluid rounded-3"/>
+                                <Link to={`/productdetails/${item.category}/${item.product}`}>
+                                    <img src={item.image} alt={item.name} className="image-fluid rounded-3"/>
+                                </Link>
                             </div>
                             <div className="cart-product-details">
-                            <Link to={`/productdetails/${productCat}/${item.product}`}>
-                                <div className="cart-product-title">{item.name}</div>
-                            </Link>
+                                <Link to={`/productdetails/${item.category}/${item.product}`}>
+                                    <div className="cart-product-title">{item.name}</div>
+                                </Link>
                                 <div className="cart-product-price">{item.price}&#8377;</div>
                             </div>
                             <div className="cart-prosduct-quantity">

@@ -1,12 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Zoom from 'react-reveal/Zoom';
-
+import { Fade } from 'react-reveal';
 
 const Specialitems = (props) => {
 return (
     <>
-    <Zoom distance="60px" top timeout={1300} delay={2000}>
+    <Fade top timeout={1300} delay={1000} distance='60px'>
         <div className="col-md-4 col-sm-12 pt-2">
             <Link  to={props.link}>
                 <div className="special-item-container mx-auto position-relative my-3">
@@ -17,7 +16,7 @@ return (
                 </div>
             </Link>
         </div>
-    </Zoom>
+    </Fade>
     </>
 )
 }

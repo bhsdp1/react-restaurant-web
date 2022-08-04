@@ -6,7 +6,7 @@ export const SnacksMenuList = () => async(dispatch) => {
         type: SNACKS_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/snacksmenu');
+        const { data } = await Axios.get('/api/snacks');
         dispatch({type: SNACKS_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: SNACKS_MENU_FAIL, payload: error.message})
@@ -18,7 +18,7 @@ export const AppetizerMenuList = () => async(dispatch) => {
         type: APPETIZER_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/appetizermenu');
+        const { data } = await Axios.get('/api/appetizer');
         dispatch({type: APPETIZER_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: APPETIZER_MENU_FAIL, payload: error.message})
@@ -42,7 +42,7 @@ export const PizzaMenuList = () => async(dispatch) => {
         type: PIZZA_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/pizzamenu');
+        const { data } = await Axios.get('/api/pizza');
         dispatch({type: PIZZA_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: PIZZA_MENU_FAIL, payload: error.message})
@@ -54,7 +54,7 @@ export const DessertMenuList = () => async(dispatch) => {
         type: DESSERT_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/dessertmenu');
+        const { data } = await Axios.get('/api/dessert');
         dispatch({type: DESSERT_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: DESSERT_MENU_FAIL, payload: error.message})
@@ -66,7 +66,7 @@ export const BurgertMenuList = () => async(dispatch) => {
         type: BURGER_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/burgermenu');
+        const { data } = await Axios.get('/api/burger');
         dispatch({type: BURGER_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: BURGER_MENU_FAIL, payload: error.message})
@@ -78,7 +78,7 @@ export const SeafoodMenuList = () => async(dispatch) => {
         type: SEAFOOD_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/seafoodmenu');
+        const { data } = await Axios.get('/api/seafood');
         dispatch({type: SEAFOOD_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: SEAFOOD_MENU_FAIL, payload: error.message})
@@ -90,17 +90,17 @@ export const CocktailMenuList = () => async(dispatch) => {
         type: COCKTAIL_MENU_REQUEST
     })
     try {
-        const { data } = await Axios.get('/api/cocktailmenu');
+        const { data } = await Axios.get('/api/cocktail');
         dispatch({type: COCKTAIL_MENU_SUCCESS, payload: data});
     }catch(error){
         dispatch({type: COCKTAIL_MENU_FAIL, payload: error.message})
     }
 }
 
-export const Productdetailsaction = (category,snackitemId) => async(dispatch) => {
-    dispatch({type: PRODUCT_DETAILS_REQUEST, payload: snackitemId});
+export const Productdetailsaction = (category, productId) => async(dispatch) => {
+    dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId});
     try{
-        const {data} = await Axios.get(`/api/${category}/${snackitemId}`);
+        const {data} = await Axios.get(`/api/${category}/${productId}`);
         dispatch({type : PRODUCT_DETAILS_SUCCESS, payload: data});
     } catch(error) {
         dispatch({

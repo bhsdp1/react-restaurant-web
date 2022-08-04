@@ -35,8 +35,7 @@ return (
 
     <div class="row overflow-x-hidden pt-1">
 
-        {/* category is the link of api request pelease put in small case  */}
-        <Menuitems menuitem={seafoodmenu} category='seafoodmenu'/>
+        <Menuitems menuitem={seafoodmenu}/>
 
     </div>
 

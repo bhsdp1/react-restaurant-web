@@ -16,11 +16,11 @@ app.get('/api/menupagecards', (req, res) => {
     res.send(cardsdata.MenuPageCards)
 })
 
-app.get('/api/burgermenu', (req, res) => {
+app.get('/api/burger', (req, res) => {
     res.send(itemsdata.burgerMenu)
 })
 // for product details page
-app.get('/api/burgermenu/:id', (req, res) => {
+app.get('/api/burger/:id', (req, res) => {
     const item = itemsdata.burgerMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);
@@ -29,11 +29,11 @@ app.get('/api/burgermenu/:id', (req, res) => {
     }
 })
 
-app.get('/api/snacksmenu', (req, res) => {
+app.get('/api/snacks', (req, res) => {
     res.send(itemsdata.snacksMenu)
 })
 // for product details page
-app.get('/api/snacksmenu/:id', (req, res) => {
+app.get('/api/snacks/:id', (req, res) => {
     const item = itemsdata.snacksMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);
@@ -42,11 +42,11 @@ app.get('/api/snacksmenu/:id', (req, res) => {
     }
 })
 
-app.get('/api/pizzamenu', (req, res) => {
+app.get('/api/pizza', (req, res) => {
     res.send(itemsdata.pizzaMenu)
 })
 // for product details page
-app.get('/api/pizzamenu/:id', (req, res) => {
+app.get('/api/pizza/:id', (req, res) => {
     const item = itemsdata.pizzaMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);
@@ -55,11 +55,11 @@ app.get('/api/pizzamenu/:id', (req, res) => {
     }
 })
 
-app.get('/api/appetizermenu', (req, res) => {
+app.get('/api/appetizer', (req, res) => {
     res.send(itemsdata.appetizerMenu)
 })
 // for product details page
-app.get('/api/appetizermenu/:id', (req, res) => {
+app.get('/api/appetizer/:id', (req, res) => {
     const item = itemsdata.appetizerMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);
@@ -81,11 +81,11 @@ app.get('/api/mainmenu/:id', (req, res) => {
     }
 })
 
-app.get('/api/seafoodmenu', (req, res) => {
+app.get('/api/seafood', (req, res) => {
     res.send(itemsdata.seafoodMenu)
 })
 // for product details page
-app.get('/api/seafoodmenu/:id', (req, res) => {
+app.get('/api/seafood/:id', (req, res) => {
     const item = itemsdata.seafoodMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);
@@ -94,11 +94,11 @@ app.get('/api/seafoodmenu/:id', (req, res) => {
     }
 })
 
-app.get('/api/cocktailmenu', (req, res) => {
+app.get('/api/cocktail', (req, res) => {
     res.send(itemsdata.cocktailMenu)
 })
 // for product details page
-app.get('/api/cocktailmenu/:id', (req, res) => {
+app.get('/api/cocktail/:id', (req, res) => {
     const item = itemsdata.cocktailMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);
@@ -107,11 +107,11 @@ app.get('/api/cocktailmenu/:id', (req, res) => {
     }
 })
 
-app.get('/api/dessertmenu', (req, res) => {
+app.get('/api/dessert', (req, res) => {
     res.send(itemsdata.dessertMenu)
 })
 // for product details page
-app.get('/api/dessertmenu/:id', (req, res) => {
+app.get('/api/dessert/:id', (req, res) => {
     const item = itemsdata.dessertMenu.find((x) => x.id === req.params.id);
     if(item) {
         res.send(item);

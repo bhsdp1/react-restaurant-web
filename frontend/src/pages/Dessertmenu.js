@@ -34,7 +34,7 @@ return (
 
         <div className="row overflow-x-hidden pt-1">
 
-            <Menuitems menuitem={dessertmenu} category='dessertmenu'/>
+            <Menuitems menuitem={dessertmenu}/>
 
         </div>
 
