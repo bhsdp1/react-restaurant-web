@@ -21,10 +21,22 @@ export default function Productdetails() {
         dispatch(Productdetailsaction(productcat, productId))
     }, [dispatch,productcat, productId])
 
-    const [gty, setgty] = useState(1)
+    const [qty, setQty] = useState(1)
+
+    const handleDecrement = () => {
+        if(qty > 1) {
+        setQty(prevcount => prevcount - 1 );
+        }
+    }
+
+    const handleIncrement = () => {
+        if(qty < 7) {
+        setQty(prevcount => prevcount + 1 );
+        }
+    }
 
     const addTOCart = () => {
-        navigate(`/cart/${productcat}/${productId}?qty=${gty}`);
+        navigate(`/cart/${productcat}/${productId}?qty=${qty}`);
     }
 return (
     <>
@@ -39,9 +51,13 @@ return (
                 <h5 className="card-title text-white">{product.price}&#8377;</h5>
                 <h5 className="card-title menu-detail-title">{product.name}</h5>
                 <p className="card-text">{product.text}</p>
-                <div className='menu-detial-select d-flex justify-content-around align-items-center my-3'>
-                    <div>Please select quantity :</div>
-                    <input type="number" id="menu-detail-gty" className='text-center' value={gty} onChange ={e => {setgty(e.target.value)}}/>
+                <div className='menu-detail-quantity d-flex justify-content-around align-items-center my-3'>
+                    <div>select quantity :</div>
+                    <div className="quantity-input-actions d-flex align-items-center justify-content-around">
+                        <div className="btn-quantity-decrement text-center" onClick={handleDecrement}><i className="fa-solid fa-minus"></i></div>
+                        <div id="menu-detail-gty" className='text-center bg-light'>{qty}</div>
+                        <div className="btn-quantity-increment text-center" onClick={handleIncrement}><i className="fa-solid fa-plus"></i></div>
+                    </div>
                 </div>
                 <div className="d-flex justify-content-center my-2">
                 <Addtocartbtn content='Add to cart' onClick={addTOCart}/>

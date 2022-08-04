@@ -15,7 +15,7 @@ export default function Cartscreen(props) {
     const dispatch = useDispatch();
     const {category: productCat, id: productId } = params;
     const { search } = useLocation();
-    
+
     const cart = useSelector((state) => state.Cart);
     const { cartItems } = cart;
     
@@ -36,6 +36,9 @@ export default function Cartscreen(props) {
     const checkoutHandler = () => {
     navigate('/signin?redirect=/shipping');
     }
+
+    const shippingPrice = 50;
+    const total = cartItems.reduce((a, c) => a + c.price * c.qty, 0)
 return (
     <>
     <main className="container-fluid mb-sm-0 mt-2 mb-3">
@@ -47,7 +50,7 @@ return (
                 <main className="cart-body">
 
                     <header className="cart-title p-3">
-                        <div className="text-white">Your cart</div>
+                        <div className="text-white">Your cart {cartItems.length > 0 ? <span className='fs-6'>({cartItems.length} items)</span> : ''}</div>
                     </header>
                     {cartItems.length === 0
                     ?<div className='container my-2 text-capitalize'><MessageBox>its Looks like your cart is empty!<Link to='/menu'> <span className='text-danger'>Go For Shopping <i class="fa-solid fa-angles-right"></i></span></Link></MessageBox></div>
@@ -65,7 +68,7 @@ return (
                                 <div className="cart-product-price">{item.price}&#8377;</div>
                             </div>
                             <div className="cart-prosduct-quantity">
-                                <input title="quantity" type="number" name="" id="" value={item.qty} className="cart-quantity-input text-center" readonly/>
+                                <input title="quantity" type="number" name="" id="" value={item.qty} className="cart-quantity-input text-center" readOnly/>
                             </div>
                             <div className="cart-product-delete">
                                 <i className="fa-solid fa-trash-can" title="remove" onClick={() => removeFromCartHandler(item.product)}></i>
@@ -81,11 +84,11 @@ return (
                     <div className="cart-bill container py-3">
                         <div className="shipping p-2 d-flex justify-content-between align-items-center">
                             <div className="shipping-title text-capitalize">shipping :</div>
-                            <div className="shipping-price">50&#8377;</div>
+                            <div className="shipping-price">{shippingPrice}&#8377;</div>
                         </div>
                         <div className="total p-2 d-flex justify-content-between align-items-center">
-                            <div className="total-title text-capitalize">total{cartItems.length > 0? <span className='fs-6'>({cartItems.reduce((a,c) => a + c.qty, 0)} items)</span> : ' '}:</div>
-                            <div className="total-price"> {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}&#8377;</div>
+                            <div className="total-title text-capitalize">total{cartItems.length > 0? <span className='fs-6'>({cartItems.reduce((a,c) => a + c.qty, 0)} dishes)</span> : ' '}:</div>
+                            <div className="total-price">{total > 3000? total : total > 0 ? total + shippingPrice :0}&#8377;</div>
                         </div>
                         <div className="checkout-btn d-flex align-items-center justify-content-center mt-2">
                             <Addtocartbtn content='proceed to checkout' onClick={checkoutHandler} disabled={cartItems.length === 0}/>
