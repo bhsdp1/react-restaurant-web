@@ -45,6 +45,16 @@
 .cart-product-price {
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
+    cursor: context-menu;
+}
+
+.cart-product-category {
+    font-size: var(--smaller-font-size);
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 100vmax;
+    cursor: pointer;
+    font-weight: var(--font-semi-bold);
 }
 
 .cart-product-title:hover {
@@ -72,6 +82,7 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-top: 3px solid red;
     border-radius: var(--br-2-5);
+    cursor: context-menu;
 }
 
 .shipping > .shipping-title , .total > .total-title {

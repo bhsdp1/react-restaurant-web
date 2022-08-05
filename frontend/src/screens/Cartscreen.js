@@ -60,14 +60,19 @@ return (
                     <article key={item.product} className="cart-row d-flex align-items-center justify-content-around py-2">
                             <div className="cart-product-image overflow-hidden rounded-3">
                                 <Link to={`/productdetails/${item.category}/${item.product}`}>
-                                    <img src={item.image} alt={item.name} className="image-fluid rounded-3"/>
+                                    <img src={item.image} alt={item.name} className="image-fluid rounded-3" title={item.name}/>
                                 </Link>
                             </div>
                             <div className="cart-product-details">
                                 <Link to={`/productdetails/${item.category}/${item.product}`}>
                                     <div className="cart-product-title">{item.name}</div>
                                 </Link>
-                                <div className="cart-product-price">{item.price}&#8377;</div>
+                                <div className="d-flex align-items-center justify-content-start gap-3 mt-1">
+                                    <div className="cart-product-price" title='price'>{item.price}&#8377;</div>
+                                    <Link to={`/${item.category}`}>
+                                        <div className="cart-product-category px-2" title='category'>{item.category}</div>
+                                    </Link>
+                                </div>
                             </div>
                             <div className="cart-prosduct-quantity">
                                 <input title="quantity" type="number" name="" id="" value={item.qty} className="cart-quantity-input text-center" readOnly/>

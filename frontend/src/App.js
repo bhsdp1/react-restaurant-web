@@ -30,14 +30,14 @@ export default function App() {
                         <Route path='/Contact' element={<Contact/>}></Route>
 
                         {/* menu item pages */}
-                        <Route path='/Snacksmenu' element={<Snacksmenu/>}></Route>
-                        <Route path='/Appetizermenu' element={<Appetizermenu/>}></Route>
-                        <Route path='/Main-Menu' element={<Mainmenu/>}></Route>
-                        <Route path='/Seafood' element={<Seafoodmenu/>}></Route>
-                        <Route path='/Pizzamenu' element={<Pizzamenu/>}></Route>
-                        <Route path='/Cocktailmenu' element={<Cocktailmenu/>}></Route>
-                        <Route path='/Dessertmenu' element={<Dessertmenu/>}></Route>
-                        <Route path='/Burgermenu' element={<Burgermenu/>}></Route>
+                        <Route path='/snacks' element={<Snacksmenu/>}></Route>
+                        <Route path='/appetizer' element={<Appetizermenu/>}></Route>
+                        <Route path='/mainmenu' element={<Mainmenu/>}></Route>
+                        <Route path='/seafood' element={<Seafoodmenu/>}></Route>
+                        <Route path='/pizza' element={<Pizzamenu/>}></Route>
+                        <Route path='/cocktail' element={<Cocktailmenu/>}></Route>
+                        <Route path='/dessert' element={<Dessertmenu/>}></Route>
+                        <Route path='/burger' element={<Burgermenu/>}></Route>
 
                         {/* product details page */}
                         <Route path='/productdetails/:category/:id' element={<Productdetails/>}></Route>

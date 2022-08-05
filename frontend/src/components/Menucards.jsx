@@ -9,7 +9,7 @@ const Card = (props) => {
         <div className={menucards.utilities}>
                 <article className={`menu-card ${menucards.class} mx-auto`}>
                     <div className="place-holder">Visaully Hidden</div>
-                    <NavLink to={menucards.link} className="card-link">
+                    <NavLink to={`/${menucards.link}`} className="card-link">
                         <div className="card-img-hover"></div>
                         <span className="visually-hidden">PlaceHolder</span>
                     </NavLink>

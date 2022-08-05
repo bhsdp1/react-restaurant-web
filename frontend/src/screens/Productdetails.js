@@ -17,22 +17,30 @@ export default function Productdetails() {
     const ProductDetails = useSelector( state => state.ProductDetails);
     const {error, loading, product} = ProductDetails;
 
+    const [qtyStyle, setQtyStyle] = useState({
+        color: '#303030',
+    })
+
     useEffect(() => {
         dispatch(Productdetailsaction(productcat, productId))
     }, [dispatch,productcat, productId])
 
     const [qty, setQty] = useState(1)
-
     const handleDecrement = () => {
         if(qty > 1) {
         setQty(prevcount => prevcount - 1 );
+        }if(qty <= 7) {
+            setQtyStyle({color: '#303030'})
         }
     }
-
     const handleIncrement = () => {
         if(qty < 7) {
         setQty(prevcount => prevcount + 1 );
-        }
+        }if (qty >= 6) {
+            setQtyStyle({
+                color: 'red'
+            })
+        } 
     }
 
     const addTOCart = () => {
@@ -55,7 +63,7 @@ return (
                     <div>select quantity :</div>
                     <div className="quantity-input-actions d-flex align-items-center justify-content-around">
                         <button className="btn-quantity-decrement text-center text-light" onClick={handleDecrement}><i className="fa-solid fa-minus"></i></button>
-                        <div id="menu-detail-gty" className='text-center bg-light'>{qty}</div>
+                        <div id="menu-detail-gty" className='text-center bg-light' style={qtyStyle}>{qty}</div>
                         <button className="btn-quantity-increment text-center text-light" onClick={handleIncrement}><i className="fa-solid fa-plus"></i></button>
                     </div>
                 </div>

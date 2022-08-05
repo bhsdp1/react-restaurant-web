@@ -109,8 +109,8 @@ return (
         </LightSpeed>
 
         <div className="row">
-                <Specialitems src="./images/home-page/special-item/special-burger.png" name="Burger Bologona" price="350" link="/Burgermenu"/>
-                <Specialitems src="./images/home-page/special-item/special-pizza.png" name="Peproni pizza" price="350" link="/Pizzamenu"/>
+                <Specialitems src="./images/home-page/special-item/special-burger.png" name="Burger Bologona" price="350" link="/burger"/>
+                <Specialitems src="./images/home-page/special-item/special-pizza.png" name="Peproni pizza" price="350" link="/pizza"/>
                 <Specialitems src="./images/home-page/special-item/special-wine.png" name="Red Wine" price="1850" link="/"/>
         </div>
 

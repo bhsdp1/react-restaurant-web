@@ -16,10 +16,20 @@
     outline: none;
 }
 
+.btn-quantity-increment {
+    border-top-right-radius: var(--br-2-5);
+    border-bottom-right-radius: var(--br-2-5);
+}
+
+.btn-quantity-decrement {
+    border-top-left-radius: var(--br-2-5);
+    border-bottom-left-radius: var(--br-2-5);
+}
+
 .btn-quantity-increment, .btn-quantity-decrement {
     width: 40px;
     background-color: #ff4742;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.4s ease;
     outline: none;
     border: none;
@@ -29,8 +39,7 @@
     opacity: 0.8;
 }
 #menu-detail-gty {
-    width: 100px;
-    color: var(--title-text-clr);
+    width: 60px;
 }
 
 @media screen and (max-width : 500px) {

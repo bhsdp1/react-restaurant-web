@@ -42,7 +42,7 @@ return (
                             </div>
 
                             <div className="card-content">
-                                <h2 className="name">Jay Warale</h2>
+                                <h2 className="name">Thomas Pearson</h2>
                                 <p className="description">Great food, big servings. Good wine pour, attentive servers. this place is a little gem. The Chicken Marsala appetizer is awesome!!</p>
                             </div>
                         </SwiperSlide>
@@ -57,7 +57,7 @@ return (
                             </div>
 
                             <div className="card-content">
-                                <h2 className="name">Piyush Deshmukh</h2>
+                                <h2 className="name">Ruben Chavez</h2>
                                 <p className="description">The prices are as good as the menu! Each time I spend money, than anywhere else and get a fresh, tasty, homemade dinner!</p>
                             </div>
                         </SwiperSlide>
@@ -72,7 +72,7 @@ return (
                             </div>
 
                             <div className="card-content">
-                                <h2 className="name">Rahul Talekar</h2>
+                                <h2 className="name">Charles Morgan</h2>
                                 <p className="description">I have never had a bad meal at Uncle Sammy's Restaurant. This is the type of Italian place that has you unbuttoning your pants at the end of your meal AND taking left overs home! Great wine.</p>
                             </div>
                         </SwiperSlide>
@@ -87,7 +87,7 @@ return (
                             </div>
 
                             <div className="card-content">
-                                <h2 className="name">Vedas Joshi</h2>
+                                <h2 className="name">Francisco Brown</h2>
                                 <p className="description">Easily one the BEST Italian restaurants in Arizona… I use to live in central Scottsdale and would eat there 3 to 4 times a month… My current residence is 40 minutes NNE; and we drive by 100’s of restaurants to eat at Uncle Sammy's Restaurant.</p>
                             </div>
                         </SwiperSlide>
@@ -102,7 +102,7 @@ return (
                             </div>
 
                             <div className="card-content">
-                                <h2 className="name">Jay More</h2>
+                                <h2 className="name">Lisa Flores</h2>
                                 <p className="description">I have never had a bad meal at Uncle Sammy's Restaurant. This is the type of Italian place that has you unbuttoning your pants at the end of your meal AND taking left overs home! Great wine.</p>
                             </div>
                         </SwiperSlide>
@@ -117,7 +117,7 @@ return (
                             </div>
 
                             <div className="card-content">
-                                <h2 className="name">Himanshu Phalke</h2>
+                                <h2 className="name">Joshua Walker</h2>
                                 <p className="description">Easily one the BEST Italian restaurants in Arizona… I use to live in central Scottsdale and would eat there 3 to 4 times a month… My current residence is 40 minutes NNE; and we drive by 100’s of restaurants to eat at Uncle Sammy's Restaurant.</p>
                             </div>
                         </SwiperSlide>
