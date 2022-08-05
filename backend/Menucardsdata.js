@@ -17,22 +17,19 @@ const data = {
 // Note : class name is returned to display background images
 homeMenuCards: [
     {
-        id: '1',
         name : 'Menu',
         link : 'Menu',
         class : 'home-card-1',
         utilities: "col-xxl-4 col-md-6 col-sm-12 mt-lg-3 my-4"
     },
     {
-        id: "2",
         name : 'Burger',
         link : 'burger',
         class: 'home-card-2',
         utilities: "col-xxl-4 col-md-6 col-sm-12 mt-lg-3 my-4"
     },
     {
-        id: "3",
-        name : 'snacks',
+        name : 'Snacks',
         link: 'snacks',
         class: 'home-card-3',
         utilities: "col-xxl-4 col-sm-12 mt-lg-3 my-4 col-12"

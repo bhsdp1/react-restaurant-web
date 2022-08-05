@@ -3,14 +3,11 @@ import cardsdata from './Menucardsdata.js';
 import itemsdata from './Menuitemsdata.js';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
+import homeMenuCardRouter from './routers/homeMenuCardRouter.js';
 
 const app = express();
 //add our data to local mongo database
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/restaurent-web');
-
-app.get('/api/homemenucards', (req, res) => {
-    res.send(cardsdata.homeMenuCards)
-})
 
 app.get('/api/menupagecards', (req, res) => {
     res.send(cardsdata.MenuPageCards)
@@ -122,6 +119,8 @@ app.get('/api/dessert/:id', (req, res) => {
 
 
 app.use('/api/users', userRouter);
+
+app.use('/api/homemenucards', homeMenuCardRouter)
 
 app.get('/', (req, res) => {
     res.send('Server is ready')
