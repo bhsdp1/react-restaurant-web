@@ -1,106 +1,20 @@
 import express from 'express';
-import cardsdata from './Menucardsdata.js';
-import itemsdata from './Menuitemsdata.js';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import homeMenuCardRouter from './routers/homeMenuCardRouter.js';
 import menuPageCardRouter from './routers/menuPageCardRouter.js';
 import burgerRouter from './routers/menuRouters/burgerRouter.js';
+import snackRouter from './routers/menuRouters/snackRouter.js';
+import appetizerRouter from './routers/menuRouters/appetizerRouter.js';
+import mainmenuRouter from './routers/menuRouters/mainmenuRouter.js';
+import seafoodRouter from './routers/menuRouters/seafoodRouter.js';
+import pizzaRouter from './routers/menuRouters/pizzaRouter.js';
+import cocktailRouter from './routers/menuRouters/cocktailRouter.js';
+import dessertRouter from './routers/menuRouters/dessertRouter.js';
 
 const app = express();
 //add our data to local mongo database
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/restaurent-web');
-
-app.get('/api/snacks', (req, res) => {
-    res.send(itemsdata.snacksMenu)
-})
-// for product details page
-app.get('/api/snacks/:id', (req, res) => {
-    const item = itemsdata.snacksMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
-
-app.get('/api/pizza', (req, res) => {
-    res.send(itemsdata.pizzaMenu)
-})
-// for product details page
-app.get('/api/pizza/:id', (req, res) => {
-    const item = itemsdata.pizzaMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
-
-app.get('/api/appetizer', (req, res) => {
-    res.send(itemsdata.appetizerMenu)
-})
-// for product details page
-app.get('/api/appetizer/:id', (req, res) => {
-    const item = itemsdata.appetizerMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
-
-app.get('/api/mainmenu', (req, res) => {
-    res.send(itemsdata.mainMenu)
-})
-// for product details page
-app.get('/api/mainmenu/:id', (req, res) => {
-    const item = itemsdata.mainMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
-
-app.get('/api/seafood', (req, res) => {
-    res.send(itemsdata.seafoodMenu)
-})
-// for product details page
-app.get('/api/seafood/:id', (req, res) => {
-    const item = itemsdata.seafoodMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
-
-app.get('/api/cocktail', (req, res) => {
-    res.send(itemsdata.cocktailMenu)
-})
-// for product details page
-app.get('/api/cocktail/:id', (req, res) => {
-    const item = itemsdata.cocktailMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
-
-app.get('/api/dessert', (req, res) => {
-    res.send(itemsdata.dessertMenu)
-})
-// for product details page
-app.get('/api/dessert/:id', (req, res) => {
-    const item = itemsdata.dessertMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
 
 // for menu cards
 app.use('/api/users', userRouter);
@@ -111,6 +25,20 @@ app.use('/api/menupagecards', menuPageCardRouter);
 
 // for menu items 
 app.use('/api/burger', burgerRouter);
+
+app.use('/api/snacks', snackRouter);
+
+app.use('/api/appetizer', appetizerRouter);
+
+app.use('/api/mainmenu', mainmenuRouter);
+
+app.use('/api/seafood', seafoodRouter);
+
+app.use('/api/pizza', pizzaRouter);
+
+app.use('/api/cocktail', cocktailRouter);
+
+app.use('/api/dessert', dessertRouter);
 
 app.get('/', (req, res) => {
     res.send('Server is ready')
