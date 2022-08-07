@@ -5,24 +5,11 @@ import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import homeMenuCardRouter from './routers/homeMenuCardRouter.js';
 import menuPageCardRouter from './routers/menuPageCardRouter.js';
+import burgerRouter from './routers/menuRouters/burgerRouter.js';
 
 const app = express();
 //add our data to local mongo database
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/restaurent-web');
-
-
-app.get('/api/burger', (req, res) => {
-    res.send(itemsdata.burgerMenu)
-})
-// for product details page
-app.get('/api/burger/:id', (req, res) => {
-    const item = itemsdata.burgerMenu.find((x) => x.id === req.params.id);
-    if(item) {
-        res.send(item);
-    } else {
-        res.status(404).send({message: 'Menu Item Not Found'})
-    }
-})
 
 app.get('/api/snacks', (req, res) => {
     res.send(itemsdata.snacksMenu)
@@ -115,12 +102,15 @@ app.get('/api/dessert/:id', (req, res) => {
     }
 })
 
-
+// for menu cards
 app.use('/api/users', userRouter);
 
-app.use('/api/homemenucards', homeMenuCardRouter)
+app.use('/api/homemenucards', homeMenuCardRouter);
 
-app.use('/api/menupagecards', menuPageCardRouter)
+app.use('/api/menupagecards', menuPageCardRouter);
+
+// for menu items 
+app.use('/api/burger', burgerRouter);
 
 app.get('/', (req, res) => {
     res.send('Server is ready')

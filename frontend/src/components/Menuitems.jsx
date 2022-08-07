@@ -16,7 +16,7 @@ return (
                     <h3 className="menu-item-title mb-0 mt-1 text-capitalize">{menuitem.name}</h3>
                     <div className="menu-item-price">{menuitem.price}&#8377;</div>
                     <h5 className="menu-item-sub mt-1 mt-sm-0 w-100">{menuitem.text}</h5>
-                    <Link to={`/productdetails/${menuitem.category}/${menuitem.id}`}>
+                    <Link to={`/productdetails/${menuitem.category}/${menuitem._id}`}>
                     <button className="add-to-cart d-inline-block text-center text-capitalize" ><i class="fa-solid fa-bag-shopping"></i></button>
                     </Link>
                 </div>

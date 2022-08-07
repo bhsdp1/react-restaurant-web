@@ -1,50 +1,44 @@
 const itemsdata = {
     burgerMenu : [
         {
-            id : 'burger1',
             category : 'burger',
             name : 'Crispy Chicken Double Patty',
-            price: '238',
+            price: 238,
             image: '/images/category-items/burger/m1.jpg',
             text: 'Crispy Chicken Double Patty.'
         },
         {
-            id : 'burger2',
             category : 'burger',
             name : 'Burger Bolgona',
-            price: '398',
+            price: 398,
             image: '/images/category-items/burger/m2.jpg',
             text: 'Burger Bolgona.'
         },
         {
-            id : 'burger3',
             category : 'burger',
             name : 'New York Cheesecake',
-            price: '280',
+            price: 280,
             image: '/images/category-items/burger/m3.jpg',
             text: 'Our original New York cheesecake is made with rich cream cheese swirled with real French raspberry puree.'
         },
         {
-            id : 'burger4',
             category : 'burger',
             name : 'Veg Whopper',
-            price: '200',
+            price: 200,
             image: '/images/category-items/burger/m4.jpg',
             text: "veg whopper."
         },
         {
-            id : 'burger5',
             category : 'burger',
             name : 'Crispy Chicken With Cheese Burger',
-            price: '195',
+            price: 195,
             image: '/images/category-items/burger/m5.jpg',
-            text: "Crispy Chicken With Cheese Burger"
+            text: "Crispy Chicken With Cheese Burgers"
         },
         {
-            id : 'burger6',
             category : 'burger',
             name : 'Fiery Chicken Burger',
-            price: '395',
+            price: 395,
             image: '/images/category-items/burger/m6.jpg',
             text: "Fiery Chicken Burger."
         }
