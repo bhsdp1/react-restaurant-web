@@ -52,7 +52,7 @@ export default function Contact() {
 
             {/* <!-- ============= MAP START =============  --> */}
             <div className="col-md-6 col-sm-12 p-0" id="contact-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483100.0318648437!2d72.27287526562499!3d18.921698199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1655023236159!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title='map location'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483100.0318648437!2d72.27287526562499!3d18.921698199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1655023236159!5m2!1sen!2sin" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title='map location'></iframe>
             </div>
             
         </div>

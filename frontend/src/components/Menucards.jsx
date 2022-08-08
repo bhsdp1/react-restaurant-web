@@ -28,7 +28,7 @@ const Card = (props) => {
     return (
         <>
         {cards.map((menucards) => {
-            return <Card key={menucards.id} menucards={menucards}/>
+            return <Card key={menucards._id} menucards={menucards}/>
         })}
         </>
 )

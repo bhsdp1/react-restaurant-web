@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+
 function Menuitemdisplay(props) {
     const {menuitem} = props;
 return (
@@ -17,7 +18,7 @@ return (
                     <div className="menu-item-price">{menuitem.price}&#8377;</div>
                     <h5 className="menu-item-sub mt-1 mt-sm-0 w-100">{menuitem.text}</h5>
                     <Link to={`/productdetails/${menuitem.category}/${menuitem._id}`}>
-                    <button className="add-to-cart d-inline-block text-center text-capitalize" ><i class="fa-solid fa-bag-shopping"></i></button>
+                    <button className="add-to-cart d-inline-block text-center text-capitalize" ><i className="fa-solid fa-bag-shopping"></i></button>
                     </Link>
                 </div>
 
@@ -33,7 +34,7 @@ return (
     <>
     {
     menuitem.map((menuitem) => {
-        return  <Menuitemdisplay key={menuitem.id} menuitem={menuitem}/>
+        return  <Menuitemdisplay key={menuitem._id} menuitem={menuitem}/>
     })
     }
     </>

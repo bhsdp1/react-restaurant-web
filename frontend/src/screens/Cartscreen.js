@@ -53,7 +53,7 @@ return (
                         <div className="text-white">Your cart {cartItems.length > 0 ? <span className='fs-6'>({cartItems.length} items)</span> : ''}</div>
                     </header>
                     {cartItems.length === 0
-                    ?<div className='container my-2 text-capitalize'><MessageBox>its Looks like your cart is empty!<Link to='/menu'> <span className='text-danger'>Go For Shopping <i class="fa-solid fa-angles-right"></i></span></Link></MessageBox></div>
+                    ?<div className='container my-2 text-capitalize'><MessageBox>its Looks like your cart is empty!<Link to='/menu'> <span className='text-danger'>Go For Shopping <i className="fa-solid fa-angles-right"></i></span></Link></MessageBox></div>
                     :(
                     <main className="cartrow-container">
                     {cartItems.map((item) => (
@@ -75,7 +75,7 @@ return (
                                 </div>
                             </div>
                             <div className="cart-prosduct-quantity">
-                                <input title="quantity" type="number" name="" id="" value={item.qty} className="cart-quantity-input text-center" readOnly/>
+                                <input title="quantity" type="number" value={item.qty} className="cart-quantity-input text-center" readOnly/>
                             </div>
                             <div className="cart-product-delete">
                                 <i className="fa-solid fa-trash-can" title="remove" onClick={() => removeFromCartHandler(item.product)}></i>
