@@ -54,8 +54,8 @@ const Navbar = (props) => {
                 <ul className="nav-list text-capitalize d-flex me-md-2" id="nav-list">
                     <li className="nav-item position-relative"><NavLink to="/" className="nav-link" onClick={navHide}>{props.link1}</NavLink></li>
                     <li className="nav-item position-relative"><NavLink to="/Menu" className="nav-link" onClick={navHide}>{props.link2}</NavLink></li>
-                    <li className="nav-item position-relative"><NavLink to="/About" className="nav-link" onClick={navHide}>{props.link3}</NavLink></li>
-                    <li className="nav-item position-relative"><NavLink to="/Contact" className="nav-link" onClick={navHide}>{props.link4}</NavLink></li>
+                    <li className="nav-item position-relative"><NavLink to="/Contact" className="nav-link" onClick={navHide}>{props.link3}</NavLink></li>
+                    <li className="nav-item position-relative"><NavLink to="/signin" className="nav-link" onClick={navHide}>{props.link4}</NavLink></li>
                 </ul>
 
                 <div className="nav-close d-inline-flex d-md-none position-absolute text-white" id="nav-close" onClick={menuToggler}>

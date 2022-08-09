@@ -17,11 +17,12 @@ import Snacksmenu from './pages/Snacksmenu';
 import Footer from './components/Footer';
 import Productdetails from './screens/Productdetails';
 import Cartscreen from './screens/Cartscreen';
+import SigninScreen from './screens/SigninScreen';
 
 export default function App() {
     return (
         <BrowserRouter>
-            <Navbar title="Uncle Sammy's Kitchen" link1="Home" link2="Menu" link3="About" link4="Contact"/>
+            <Navbar title="Uncle Sammy's Kitchen" link1="Home" link2="Menu" link3="Contact" link4="signin"/>
                 <Routes>
                         {/* navbar links */}
                         <Route index element={<Home/>}></Route>
@@ -43,8 +44,11 @@ export default function App() {
                         <Route path='/productdetails/:category/:id' element={<Productdetails/>}></Route>
 
                         {/* shopping cart */}
-                        <Route path="/cart/" element={<Cartscreen/>}></Route>
+                        <Route path="/cart" element={<Cartscreen/>}></Route>
                         <Route path="/cart/:category/:id" element={<Cartscreen/>}></Route>
+
+                        {/* shipping screen */}
+                        <Route path="/signin" element={<SigninScreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

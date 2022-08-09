@@ -1,0 +1,39 @@
+.signin-container {
+    height: 500px;
+    width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: var(--br-20);
+    background-image: url('../images/signin/login-form-banner-desk.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: 15px 100%;
+}
+.signin-header {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-text-clr);
+}
+
+.signin-email-title, .signin-password-title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+}
+
+.signin-submit {
+    width: 150px;
+    border-radius: 100vmax;
+    font-size: var(--h2-font-size);
+}
+
+.new-costumer {
+    font-size: var(--smaller-font-size);
+}
+
+.new-account {
+    cursor: pointer;
+    color: rgb(50, 50, 255);
+    transition: all 0.4s ease;
+}
+.new-account:hover {
+    opacity: 0.7;
+}
