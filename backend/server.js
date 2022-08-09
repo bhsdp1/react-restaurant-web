@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import userRouter from './routers/userRouter.js';
 import homeMenuCardRouter from './routers/homeMenuCardRouter.js';
 import menuPageCardRouter from './routers/menuPageCardRouter.js';
@@ -12,7 +13,12 @@ import pizzaRouter from './routers/menuRouters/pizzaRouter.js';
 import cocktailRouter from './routers/menuRouters/cocktailRouter.js';
 import dessertRouter from './routers/menuRouters/dessertRouter.js';
 
+dotenv.config();
+
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 //add our data to local mongo database
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/restaurent-web');
 
