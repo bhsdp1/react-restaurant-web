@@ -17,7 +17,7 @@ return (
     <main className="container-fluid">
         <div className="main-content mx-auto my-3 signin-container px-2 pt-2">
             <form className='form' onSubmit={submitHandler}>
-                <div className="signin-header text-capitalize p-2">Sign in</div>
+                <div className="signin-header text-capitalize p-2">Sign-in</div>
 
                 <section className="signin-email-container my-sm-2 my-1 p-2">
                     <label htmlFor="email" className="form-label signin-email-title mb-2 text-capitalize">Email address</label>
@@ -32,11 +32,11 @@ return (
                 </section>
 
                 <footer className="d-flex justify-content-center align-items-center mt-sm-4 mt-3 flex-column">
-                    <button type="submit" className="btn btn-primary signin-submit">sign in</button>
+                    <button type="submit" className="btn btn-primary signin-submit text-capitalize">sign-in</button>
                     <div className="new-costumer mt-2 text-capitalize">
                         new costumer? 
                         <Link to="/register">
-                            <span className="new-account">create new account.</span>
+                            <span className="new-account"> create new account.</span>
                         </Link>
                     </div>
                 </footer>

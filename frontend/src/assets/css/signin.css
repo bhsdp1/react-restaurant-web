@@ -17,6 +17,7 @@
 .signin-email-title, .signin-password-title {
     font-size: var(--h2-font-size);
     font-weight: var(--font-medium);
+    color: var(--normal-text-clr);
 }
 
 .signin-submit {
@@ -27,6 +28,7 @@
 
 .new-costumer {
     font-size: var(--smaller-font-size);
+    color: var(--normal-text-clr);
 }
 
 .new-account {
