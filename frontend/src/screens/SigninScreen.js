@@ -1,34 +1,55 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../assets/css/signin.css';
 import '../assets/css/base.css';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { signin } from '../actions/userActions';
+import Preloader from '../components/Preloader';
 
 
 export default function SigninScreen() {
-    const [email, setEmail] = useState('')
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const [password, setPassword] = useState('')
+    const { search } = useLocation();
+    const redirectInUrl = new URLSearchParams(search).get('redirect');
+    const redirect = redirectInUrl ? redirectInUrl : '/';
 
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo, loading, error } = userSignin;
+
+    const dispatch = useDispatch();
     const submitHandler = (e) => {
         e.preventDefault();
-        //TODO: signin action
+        dispatch(signin(email, password))
     };
+
+    useEffect(() => {
+        if (userInfo) {
+            navigate(redirect);
+        }
+    }, [navigate, redirect, userInfo]);
+
 return (
     <main className="container-fluid">
         <div className="main-content mx-auto my-3 signin-container px-2 pt-2">
             <form className='form' onSubmit={submitHandler}>
                 <div className="signin-header text-capitalize p-2">Sign-in</div>
-
+                {loading && <Preloader class="menu-preloader"/>}
                 <section className="signin-email-container my-sm-2 my-1 p-2">
                     <label htmlFor="email" className="form-label signin-email-title mb-2 text-capitalize">Email address</label>
-                    <input type="email" id="email" className="form-control signin-email-input" placeholder="name@example.com" required
+                    <input type="email" id="email" className={`form-control signin-email-input ${error && 'is-invalid'}`} placeholder="name@example.com" required
                     onChange={(e) => setEmail(e.target.value)}/>
                 </section>
 
                 <section className="sigin-password-container my-sm-2 my-1 p-2">
                     <label htmlFor="password" className="form-label signin-password-title mb-2 text-capitalize">password</label>
-                    <input type="password" className="form-control signin-password-input" id="password" placeholder="Enter your password" required
+                    <input type="password" className={`form-control signin-password-input ${error && 'is-invalid'}`} id="password" placeholder="Enter your password" required
                     onChange={(e) => setPassword(e.target.value)}/>
+                    <div id="validationServerUsernameFeedback" className="invalid-feedback">
+                        {error}
+                    </div>
                 </section>
 
                 <footer className="d-flex justify-content-center align-items-center mt-sm-4 mt-3 flex-column">

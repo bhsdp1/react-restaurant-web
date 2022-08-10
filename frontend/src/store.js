@@ -4,8 +4,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { HomeMenuCardReducer, MenuPageCardReducer } from './reducers/menuCardReducers';
 import { AppetizerItemsReducer, BurgerMenuItemsReducer, CocktailMenuItemsReducer, DessertMenuItemsReducer, MainMenuItemsReducer, PizzaMenuItemsReducer, Productdetailsreducer, SeafoodMenuItemsReducer, SnacksItemsReducer } from './reducers/menuItemsReducers';
 import { cartReducer } from './reducers/Cartreducer';
+import { userSigninReducer } from './reducers/userReducers';
 
 const initialState = {
+    userSignin: {
+        userInfo: localStorage.getItem('userInfo')
+        ? JSON.parse(localStorage.getItem('userInfo'))
+        : null,
+    },
     Cart: {
         cartItems: localStorage.getItem('cartItems')
         ? JSON.parse(localStorage.getItem('cartItems'))
@@ -25,6 +31,7 @@ const reducer = combineReducers({
     dessertMenuList : DessertMenuItemsReducer,
     ProductDetails : Productdetailsreducer,
     Cart : cartReducer,
+    userSignin: userSigninReducer,
 })
 
 const store = createStore(

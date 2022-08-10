@@ -22,7 +22,7 @@ import SigninScreen from './screens/SigninScreen';
 export default function App() {
     return (
         <BrowserRouter>
-            <Navbar title="Uncle Sammy's Kitchen" link1="Home" link2="Menu" link3="Contact" link4="sign-in"/>
+            <Navbar title="Uncle Sammy's Kitchen"/>
                 <Routes>
                         {/* navbar links */}
                         <Route index element={<Home/>}></Route>

@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import "../assets/css/navbar.css";
 import '../assets/css/base.css';
-import { Outlet , NavLink} from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { Outlet , NavLink, Link} from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { signout } from '../actions/userActions';
 
 const Navbar = (props) => {
+    const dispatch = useDispatch();
     const cart = useSelector((state) => state.Cart);
     const {cartItems} = cart;
+
+    const userSignin = useSelector((state) => state.userSignin)
+    const { userInfo } = userSignin;
+
     // function for menu toggle
     const [menuToggle, setMenuToggle] = useState('hide')
     let menuToggler =() => {
@@ -18,7 +24,11 @@ const Navbar = (props) => {
     }
 
     // remove the offcanvas when user click on nav-link
-    const navHide = () => {setMenuToggle('hide')}        
+    const navHide = () => {setMenuToggle('hide')}   
+    
+    const signoutHandler = () => {
+        dispatch(signout());
+    }
     return (
     
     <>
@@ -52,10 +62,24 @@ const Navbar = (props) => {
 
             <div className={`nav-menu bg-black text-center d-flex menu-${menuToggle}`} id="nav-menu" tabIndex='0' onBlur= {() => setMenuToggle('hide')}>
                 <ul className="nav-list text-capitalize d-flex me-md-2" id="nav-list">
-                    <li className="nav-item position-relative"><NavLink to="/" className="nav-link" onClick={navHide}>{props.link1}</NavLink></li>
-                    <li className="nav-item position-relative"><NavLink to="/Menu" className="nav-link" onClick={navHide}>{props.link2}</NavLink></li>
-                    <li className="nav-item position-relative"><NavLink to="/Contact" className="nav-link" onClick={navHide}>{props.link3}</NavLink></li>
-                    <li className="nav-item position-relative"><NavLink to="/signin" className="nav-link" onClick={navHide}>{props.link4}</NavLink></li>
+                    <li className="nav-item position-relative"><NavLink to="/" className="nav-link" onClick={navHide}>Home</NavLink></li>
+                    <li className="nav-item position-relative"><NavLink to="/Menu" className="nav-link" onClick={navHide}>Menu</NavLink></li>
+                    <li className="nav-item position-relative"><NavLink to="/Contact" className="nav-link" onClick={navHide}>Contact</NavLink></li>
+                    <li className="nav-item">
+                        <ul className="navbar-nav">
+                            <li className="nav-item dropdown">
+                            {userInfo 
+                                ? <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{userInfo.name}</NavLink>
+                                : <NavLink to="/signin" onClick={navHide}>sign-In</NavLink>}
+                            {userInfo ?
+                            <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
+                                <li><Link className="dropdown-item" to="#signout" onClick={signoutHandler}>Sign-Out</Link></li>
+                            </ul>
+                            : ''
+                            }
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <div className="nav-close d-inline-flex d-md-none position-absolute text-white" id="nav-close" onClick={menuToggler}>
