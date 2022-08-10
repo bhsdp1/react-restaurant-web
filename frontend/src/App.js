@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import Productdetails from './screens/Productdetails';
 import Cartscreen from './screens/Cartscreen';
 import SigninScreen from './screens/SigninScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 export default function App() {
     return (
@@ -47,8 +48,11 @@ export default function App() {
                         <Route path="/cart" element={<Cartscreen/>}></Route>
                         <Route path="/cart/:category/:id" element={<Cartscreen/>}></Route>
 
-                        {/* shipping screen */}
+                        {/* sigin screen */}
                         <Route path="/signin" element={<SigninScreen/>}></Route>
+
+                        {/* register screen */}
+                        <Route path="/register" element={<RegisterScreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

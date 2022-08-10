@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { HomeMenuCardReducer, MenuPageCardReducer } from './reducers/menuCardReducers';
 import { AppetizerItemsReducer, BurgerMenuItemsReducer, CocktailMenuItemsReducer, DessertMenuItemsReducer, MainMenuItemsReducer, PizzaMenuItemsReducer, Productdetailsreducer, SeafoodMenuItemsReducer, SnacksItemsReducer } from './reducers/menuItemsReducers';
 import { cartReducer } from './reducers/Cartreducer';
-import { userSigninReducer } from './reducers/userReducers';
+import { userRegisterReducer, userSigninReducer } from './reducers/userReducers';
 
 const initialState = {
     userSignin: {
@@ -32,6 +32,7 @@ const reducer = combineReducers({
     ProductDetails : Productdetailsreducer,
     Cart : cartReducer,
     userSignin: userSigninReducer,
+    userRegister: userRegisterReducer,
 })
 
 const store = createStore(

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../assets/css/signin.css';
+import '../assets/css/register&signin.css';
 import '../assets/css/base.css';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -56,7 +56,7 @@ return (
                     <button type="submit" className="btn btn-primary signin-submit text-capitalize">sign-in</button>
                     <div className="new-costumer mt-2 text-capitalize">
                         new costumer? 
-                        <Link to="/register">
+                        <Link to={`/register?redirect=${redirect}`}>
                             <span className="new-account"> create new account.</span>
                         </Link>
                     </div>

@@ -1,34 +1,38 @@
+.register-container ,.signin-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: var(--br-20);
+}
+.register-container{
+    width: 500px;
+}
 .signin-container {
     height: 500px;
     width: 500px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: var(--br-20);
     background-image: url('../images/signin/login-form-banner-desk.png');
     background-repeat: no-repeat;
     background-size: 150px;
     background-position: 15px 100%;
 }
-.signin-header {
+
+.register-header, .signin-header {
     font-size: var(--h1-font-size);
     font-weight: var(--font-semi-bold);
     color: var(--title-text-clr);
 }
 
-.signin-email-title, .signin-password-title {
+.register-text-title , .register-email-title, .register-password-title, .register-confirm-password-title, .signin-email-title, .signin-password-title {
     font-size: var(--h2-font-size);
     font-weight: var(--font-medium);
-    color: var(--normal-text-clr);
 }
 
-.signin-submit {
+.register-submit, .signin-submit {
     width: 150px;
     border-radius: 100vmax;
     font-size: var(--h2-font-size);
 }
 
-.new-costumer {
+.old-costumer, .new-costumer {
     font-size: var(--smaller-font-size);
-    color: var(--normal-text-clr);
 }
 
 .new-account {
