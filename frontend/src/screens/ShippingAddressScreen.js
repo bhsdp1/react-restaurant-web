@@ -40,22 +40,22 @@ export default function ShippingAddressScreen() {
                 <div class="fs-5 fw-semibold text-capitalize p-2">Shipping Details</div>
 
                 <section class="my-sm-2 p-2">
-                    <label for="full-name" class="form-label shipping-fullname-title mb-2 text-capitalize">Full Name</label>
+                    <label for="full-name" class="form-label form-input-label mb-2 text-capitalize">Full Name</label>
                     <input type="text" class="form-control" id="full-name" value={fullname} onChange={(e) => {setFullName(e.target.value)}} placeholder="Enter full name" required/>
                 </section>
 
                 <address class="my-sm-2 p-2">
-                    <label for="address" class="form-label shipping-address-title mb-2 text-capitalize">address</label>
+                    <label for="address" class="form-label form-input-label mb-2 text-capitalize">address</label>
                     <input type="text" class="form-control" id="address" value={address} onChange={(e) => {setAddress(e.target.value)}} placeholder="Enter address" required/>
                 </address>
 
                 <section class="my-sm-2 p-2">
-                    <label for="land-mark" class="form-label shipping-landmark-title mb-2 text-capitalize">land mark</label>
+                    <label for="land-mark" class="form-label form-input-label mb-2 text-capitalize">land mark</label>
                     <input type="text" class="form-control" id="land-mark" value={landMark} onChange={(e) => {setLandMark(e.target.value)}} placeholder="Enter Land Mark" required/>
                 </section>
 
                 <section class="my-sm-2 p-2">
-                    <label for="postalcode" class="form-label shipping-postalcode-title mb-2 text-capitalize">postal code</label>
+                    <label for="postalcode" class="form-label form-input-label mb-2 text-capitalize">postal code</label>
                     <input type="text" class="form-control" id="postalcode" value={postalCode} onChange={(e) => {setPostalCode(e.target.value)}} placeholder="Enter postal code" required/>
                 </section>
 

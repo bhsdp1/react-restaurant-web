@@ -44,19 +44,19 @@ return (
                 {loading && <Preloader class='menu-preloader'></Preloader>}
                 {error && <MessageBox>{error}</MessageBox>}
                 <section className="my-sm-2 p-2">
-                    <label for="name" className="form-label register-text-title mb-2 text-capitalize">name</label>
+                    <label for="name" className="form-label form-input-label mb-2 text-capitalize">name</label>
                     <input type="text" className="form-control register-text-input" id="name" onChange={(e) => {setName(e.target.value)}} placeholder="Enter name" required/>
                 </section>
                 <section className="my-2 p-2">
-                    <label for="email" className="form-label register-email-title mb-2 text-capitalize">Email address</label>
+                    <label for="email" className="form-label form-input-label mb-2 text-capitalize">Email address</label>
                     <input type="email" className="form-control register-email-input" id="email" onChange={(e) => {setEmail(e.target.value)}} placeholder="name@example.com" required/>
                 </section>
                 <section className="my-2 p-2">
-                    <label for="password" className="form-label register-password-title mb-2 text-capitalize">password</label>
+                    <label for="password" className="form-label form-input-label mb-2 text-capitalize">password</label>
                     <input type="password" className="form-control register-password-input" id="password" onChange={(e) => {setPassword(e.target.value)}} placeholder="Enter password" required/>
                 </section>
                 <section className="my-2 p-2">
-                    <label for="confirm-password" className="form-label register-confirm-password-title mb-2 text-capitalize">confirm password</label>
+                    <label for="confirm-password" className="form-label form-input-label mb-2 text-capitalize">confirm password</label>
                     <input type="password" className="form-control register-confirm-password-input" id="confirm-password" onChange={(e) => {setConfirmPassword(e.target.value)}} placeholder="Enter confirm password" required/>
                 </section>
                 <footer className="d-flex justify-content-center align-items-center mt-4 flex-column">

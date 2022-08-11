@@ -1,10 +1,16 @@
-.register-container ,.signin-container, .shipping-container {
+.register-container,
+.signin-container, 
+.shipping-container, 
+.payment-container {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: var(--br-20);
 }
-.register-container, .shipping-container{
+.register-container,
+.shipping-container,
+.payment-container{
     width: 500px;
 }
+
 .signin-container {
     height: 500px;
     width: 500px;
@@ -14,23 +20,12 @@
     background-repeat: no-repeat;
 }
 
-.register-text-title,
-.register-email-title, 
-.register-password-title, 
-.register-confirm-password-title,
-
-.signin-email-title, 
-.signin-password-title,
-
-.shipping-fullname-title,
-.shipping-address-title,
-.shipping-landmark-title,
-.shipping-postalcode-title {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-medium);
+.form-input-label {
+    font-size: var(--h2-font-size) ;
+    font-weight: var(--font-medium) ;
 }
 
-.register-submit, .signin-submit , .shipping-submit {
+.register-submit, .signin-submit , .shipping-submit, .form-submit-btn {
     width: 150px;
     border-radius: 100vmax;
     font-size: var(--h2-font-size);
