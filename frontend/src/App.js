@@ -19,6 +19,7 @@ import Productdetails from './screens/Productdetails';
 import Cartscreen from './screens/Cartscreen';
 import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 
 export default function App() {
     return (
@@ -53,6 +54,9 @@ export default function App() {
 
                         {/* register screen */}
                         <Route path="/register" element={<RegisterScreen/>}></Route>
+
+                        {/* shipping screen */}
+                        <Route path="/shipping" element={<ShippingAddressScreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

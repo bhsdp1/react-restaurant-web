@@ -168,6 +168,20 @@ ul {list-style: none; margin: 0%; padding: 0%;}
 
 .scroll-up:hover {opacity: 1;}
 
+.checkout-steps > div {
+    border-top: 0.3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+}
+
+.checkout-steps > div.active {
+    border-top-color: #f08000;
+    color: #f08000 !important;
+    text-align: center;
+    font-weight: var(--font-semi-bold);
+}
+
 @media (max-width: 991.98px) {
     .main-content {max-width: calc(100% - 40px)}
 }

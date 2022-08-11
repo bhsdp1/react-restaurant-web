@@ -1,31 +1,36 @@
-.register-container ,.signin-container {
+.register-container ,.signin-container, .shipping-container {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: var(--br-20);
 }
-.register-container{
+.register-container, .shipping-container{
     width: 500px;
 }
 .signin-container {
     height: 500px;
     width: 500px;
     background-image: url('../images/signin/login-form-banner-desk.png');
-    background-repeat: no-repeat;
     background-size: 150px;
     background-position: 15px 100%;
+    background-repeat: no-repeat;
 }
 
-.register-header, .signin-header {
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-semi-bold);
-    color: var(--title-text-clr);
-}
+.register-text-title,
+.register-email-title, 
+.register-password-title, 
+.register-confirm-password-title,
 
-.register-text-title , .register-email-title, .register-password-title, .register-confirm-password-title, .signin-email-title, .signin-password-title {
+.signin-email-title, 
+.signin-password-title,
+
+.shipping-fullname-title,
+.shipping-address-title,
+.shipping-landmark-title,
+.shipping-postalcode-title {
     font-size: var(--h2-font-size);
     font-weight: var(--font-medium);
 }
 
-.register-submit, .signin-submit {
+.register-submit, .signin-submit , .shipping-submit {
     width: 150px;
     border-radius: 100vmax;
     font-size: var(--h2-font-size);

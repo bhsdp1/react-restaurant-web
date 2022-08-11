@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../assets/css/register&signin.css';
+import '../assets/css/forms.css';
 import '../assets/css/base.css';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,15 +35,17 @@ return (
     <main className="container-fluid">
         <div className="main-content mx-auto my-3 signin-container px-2 pt-2">
             <form className='form' onSubmit={submitHandler}>
-                <div className="signin-header text-capitalize p-2">Sign-in</div>
+                <div className="fs-5 fw-semibold text-capitalize p-2">Sign-in</div>
+
                 {loading && <Preloader class="menu-preloader"/>}
-                <section className="signin-email-container my-sm-2 my-1 p-2">
+
+                <section className="my-sm-2 my-1 p-2">
                     <label htmlFor="email" className="form-label signin-email-title mb-2 text-capitalize">Email address</label>
                     <input type="email" id="email" className={`form-control signin-email-input ${error && 'is-invalid'}`} placeholder="name@example.com" required
                     onChange={(e) => setEmail(e.target.value)}/>
                 </section>
 
-                <section className="sigin-password-container my-sm-2 my-1 p-2">
+                <section className="my-sm-2 my-1 p-2">
                     <label htmlFor="password" className="form-label signin-password-title mb-2 text-capitalize">password</label>
                     <input type="password" className={`form-control signin-password-input ${error && 'is-invalid'}`} id="password" placeholder="Enter your password" required
                     onChange={(e) => setPassword(e.target.value)}/>
