@@ -178,7 +178,6 @@ ul {list-style: none; margin: 0%; padding: 0%;}
 .checkout-steps > div.active {
     border-top-color: #f08000;
     color: #f08000 !important;
-    text-align: center;
     font-weight: var(--font-semi-bold);
 }
 

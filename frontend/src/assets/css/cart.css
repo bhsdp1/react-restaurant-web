@@ -1,28 +1,31 @@
-.cart-title {
+.shipping-details-title, .cart-title {
     font-size: var(--h2-font-size);
     font-weight: 500;
     background-color: red;  
     border-top-left-radius: var(--br-2-5);
     border-top-right-radius: var(--br-2-5);
-    box-shadow: 0 0px 10px 2px #6c6c6cb8;
 }
 
-.cartrow-container::-webkit-scrollbar { width: 5px;}
-.cartrow-container::-webkit-scrollbar-thumb {background: rgba(255, 0, 0, 0.6);border-radius: 0;}
-.cartrow-container::-webkit-scrollbar-thumb:hover {background: red}
+.cartrow-container::-webkit-scrollbar ,.order-items-container::-webkit-scrollbar { width: 5px;}
+.cartrow-container::-webkit-scrollbar-thumb, .order-items-container::-webkit-scrollbar-thumb {background: rgba(255, 0, 0, 0.6);border-radius: 0;}
+.cartrow-container::-webkit-scrollbar-thumb:hover, .order-items-container::-webkit-scrollbar-thumb:hover {background: red}
 
-.cart-body {
+.shipping-details, .cart-body {
     border-left: 1px solid black ;
     border-right: 1px solid black ;
     border-bottom: 1px solid black ;
 }
 
-.cartrow-container {
+.cartrow-container, .order-items-container {
     background-color: var(--pure-white);
     overflow-y: scroll;
     font-size: var(--h2-font-size);
     max-height: 550px;
     line-height: normal;
+}
+
+.order-items-container{
+    max-height: 350px;
 }
 
 .cart-row {
@@ -83,6 +86,11 @@
     border-top: 3px solid red;
     border-radius: var(--br-2-5);
     cursor: context-menu;
+}
+
+.order-summary-title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
 }
 
 .shipping > .shipping-title , .total > .total-title {

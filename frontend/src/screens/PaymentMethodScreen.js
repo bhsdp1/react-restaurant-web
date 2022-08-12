@@ -9,17 +9,16 @@ import { useEffect } from 'react';
 
 export default function PaymentMethodScreen() {
     const navigate = useNavigate();
-
     const cart = useSelector((state)=> state.Cart);
     const { shippingAddress } = cart;
-    const [paymentMethod, setPaymentMethod] = useState('PayPal')
-    const dispatch = useDispatch();
-
     useEffect(() => {
         if(!shippingAddress.address) {
             navigate('/shipping')
         }
     })
+    
+    const [paymentMethod, setPaymentMethod] = useState('PayPal')
+    const dispatch = useDispatch();
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -42,7 +41,8 @@ return (
                     value="PayPal" 
                     name="paymentMethod" 
                     id="paypal"  
-                    checked onChange={(e) => {setPaymentMethod(e.target.value)}}
+                    checked 
+                    onChange={(e) => {setPaymentMethod(e.target.value)}}
                 />
                     <label className="form-check-label form-input-label text-capitalize" htmlFor="paypal">PayPal</label>
                 </div>

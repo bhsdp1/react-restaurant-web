@@ -21,6 +21,7 @@ import SigninScreen from './screens/SigninScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 export default function App() {
     return (
@@ -61,6 +62,9 @@ export default function App() {
 
                         {/* payment screen */}
                         <Route path="/payment" element={<PaymentMethodScreen/>}></Route>
+
+                        {/* placeorder details screen */}
+                        <Route path="/placeorder" element={<PlaceOrderScreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

@@ -15,7 +15,7 @@ export default function ShippingAddressScreen() {
     const { shippingAddress } = cart;
 
     const { userInfo } = userSignin;
-    const [fullname, setFullName] = useState(shippingAddress.fullname);
+    const [fullName, setFullName] = useState(shippingAddress.fullname);
     const [address, setAddress] = useState(shippingAddress.address);
     const [landMark, setLandMark] = useState(shippingAddress.landMark);
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
@@ -27,7 +27,7 @@ export default function ShippingAddressScreen() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(saveShippingAddress({fullname, address, landMark, postalCode}));
+        dispatch(saveShippingAddress({fullName, address, landMark, postalCode}));
         navigate('/payment')
     }
     return (
@@ -41,7 +41,7 @@ export default function ShippingAddressScreen() {
 
                 <section class="my-sm-2 p-2">
                     <label for="full-name" class="form-label form-input-label mb-2 text-capitalize">Full Name</label>
-                    <input type="text" class="form-control" id="full-name" value={fullname} onChange={(e) => {setFullName(e.target.value)}} placeholder="Enter full name" required/>
+                    <input type="text" class="form-control" id="full-name" value={fullName} onChange={(e) => {setFullName(e.target.value)}} placeholder="Enter full name" required/>
                 </section>
 
                 <address class="my-sm-2 p-2">
@@ -56,7 +56,7 @@ export default function ShippingAddressScreen() {
 
                 <section class="my-sm-2 p-2">
                     <label for="postalcode" class="form-label form-input-label mb-2 text-capitalize">postal code</label>
-                    <input type="text" class="form-control" id="postalcode" value={postalCode} onChange={(e) => {setPostalCode(e.target.value)}} placeholder="Enter postal code" required/>
+                    <input type="text" class="form-control" id="postalcode" value={postalCode} pattern="[0-9]{6}" maxLength="6" onChange={(e) => {setPostalCode(e.target.value)}} placeholder="Enter postal code" title='Please Enter 6 digit code' required/>
                 </section>
 
                 <footer class="d-flex justify-content-center align-items-center mt-4 flex-column">
