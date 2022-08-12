@@ -12,6 +12,7 @@ import seafoodRouter from './routers/menuRouters/seafoodRouter.js';
 import pizzaRouter from './routers/menuRouters/pizzaRouter.js';
 import cocktailRouter from './routers/menuRouters/cocktailRouter.js';
 import dessertRouter from './routers/menuRouters/dessertRouter.js';
+import orderRouter from './routers/OrderRouter.js';
 
 dotenv.config();
 
@@ -45,6 +46,8 @@ app.use('/api/pizza', pizzaRouter);
 app.use('/api/cocktail', cocktailRouter);
 
 app.use('/api/dessert', dessertRouter);
+
+app.use('/api/orders', orderRouter);
 
 app.get('/', (req, res) => {
     res.send('Server is ready')

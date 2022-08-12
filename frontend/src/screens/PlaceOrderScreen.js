@@ -2,11 +2,14 @@ import React from 'react';
 import CheckoutSteps from '../components/CheckoutSteps';
 import '../assets/css/cart.css';
 import '../assets/css/base.css';
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import MessageBox from '../components/MessageBox';
 import Addtocartbtn from '../components/buttons/Addtocartbtn';
+import { createOrder } from '../actions/orderActions';
+import { ORDER_CREATE_RESET } from '../constants/orderConstants';
+import Preloader from '../components/Preloader';
 
 
 export default function PlaceOrderScreen() {
@@ -17,16 +20,26 @@ export default function PlaceOrderScreen() {
             navigate("/payment")
         }
     });
+    const orderCreate = useSelector((state) => state.orderCreate);
+    const {loading, success, error, order} = orderCreate;
 
-    cart.itemPrice = cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+    cart.itemsPrice = cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 
-    cart.shippingPrice = cart.itemPrice  > 3000 ? 0 : 50;
+    cart.shippingPrice = cart.itemsPrice  > 3000 ? 0 : 50;
 
-    cart.totalPrice = cart.itemPrice + cart.shippingPrice;
+    cart.totalPrice = cart.itemsPrice + cart.shippingPrice;
+    const dispatch = useDispatch();
 
     const placeOrderHandler = () => {
+        dispatch(createOrder({...cart, orderItems: cart.cartItems}));
 
     }
+    useEffect(() => {
+        if(success) {
+            navigate(`/order/${order._id}`);
+            dispatch({type: ORDER_CREATE_RESET});
+        }
+    }, [dispatch, order, navigate, success])
 return (
     <>
     <CheckoutSteps step1 step2 step3 step4/>
@@ -93,7 +106,7 @@ return (
                         
                         <div className="shipping p-2 d-flex justify-content-between align-items-center">
                             <div className="shipping-title text-capitalize">Items:</div>
-                            <div className="shipping-price">{cart.itemPrice}&#8377;</div>
+                            <div className="shipping-price">{cart.itemsPrice}&#8377;</div>
                         </div>
 
                         <div className="shipping p-2 d-flex justify-content-between align-items-center">
@@ -108,7 +121,8 @@ return (
                             <Addtocartbtn disabled={cart.cartItems.length === 0} onClick={placeOrderHandler} content='Place Order' class="px-3"/>
                         </div>
                     </div>
-                    
+                    {loading && <Preloader></Preloader>}
+                    {error && <MessageBox variant="danger">{error}</MessageBox>}
                 </footer>
 
             </div>
