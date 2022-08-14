@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/css/cart.css';
 import '../assets/css/base.css';
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,21 +7,50 @@ import { useEffect } from 'react';
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
 import { detailsOrder } from '../actions/orderActions';
+import Axios from 'axios';
+import {PayPalButton}  from 'react-paypal-button-v2';
+
 
 
 export default function OrderScreen() {
     const dispatch = useDispatch();
     const { id:orderId } = useParams();
+    const [sdkReady, setSdkReady] = useState(false);
 
     const orderDetails = useSelector((state) => state.orderDetails);
     const {order, loading, error} = orderDetails;
 
     useEffect(() => {
-        dispatch(detailsOrder(orderId))
-    }, [dispatch, orderId])
+        const addPayPalScript = async () => {
+            const {data} = await Axios.get('/api/config/paypal');
+            const script = document.createElement('script');
+            script.type ="text/javascript";
+            script.src =`https://www.paypal.com/sdk/js?client-id=${data}`;
+            script.async = true;
+            script.onload = () => {
+                setSdkReady(true);
+            };
+            document.body.appendChild(script);
+        }
+        if(!order) {
+            dispatch(detailsOrder(orderId));
+        } else {
+            if(!order.isPaid) {
+                if (!window.paypal) {
+                    addPayPalScript();
+                } else {
+                    setSdkReady(true);
+                }
+            }
+        }
+    }, [dispatch, orderId, order, setSdkReady])
+
+    const successPaymentHandler = () => {
+
+    }
     
 return loading? (
-    <Preloader className='menu-preloader'/>
+    <Preloader class='menu-preloader'/>
     ):error? (
     <MessageBox variant='danger'>{error}</MessageBox>
     ):(
@@ -89,6 +118,7 @@ return loading? (
                                 </div>
                                 <div >
                                     <div className="text-center cart-product-price">{item.qty} x {item.price} = {item.qty * item.price}&#8377;</div>
+                                    {console.log(item.qty)}
                                 </div>
                             </article>))}
                         </main>)}
@@ -114,6 +144,20 @@ return loading? (
                                 <div className="total-title text-capitalize">total:</div>
                                 <div className="total-price">{order.totalPrice}&#8377;</div>
                             </div>
+                            {
+                                !order.isPaid && (
+                                    <div className='w-75 mx-auto mt-1'>
+                                        {!sdkReady ? (
+                                        <Preloader class='menu-preloader'></Preloader>
+                                        ) : (
+                                            <PayPalButton
+                                            amount={order.totalPrice}
+                                            onSuccess={successPaymentHandler}>
+                                            </PayPalButton>
+                                        )}
+                                    </div>
+                                )
+                            }
                         </div>
                     </footer>
 

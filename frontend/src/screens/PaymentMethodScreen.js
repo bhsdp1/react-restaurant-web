@@ -58,19 +58,7 @@ return (
                 />
                     <label className="form-check-label form-input-label text-capitalize" htmlFor="stripe">Stripe</label>
                 </div>
-
-                <div className="form-check my-sm-2 p-2 ms-4">
-                    <input 
-                    className="form-check-input" 
-                    type="radio" 
-                    value="CashOnDelivery" 
-                    name="paymentMethod" 
-                    id="cashondelivery"
-                    onChange={(e) => {setPaymentMethod(e.target.value)}}
-                />
-                    <label className="form-check-label form-input-label text-capitalize" htmlFor="cashondelivery">Cash on delivery</label>
-                </div>
-
+                
                 <footer className="d-flex justify-content-center align-items-center mt-4 flex-column">
                     <button type="submit" className="btn btn-warning form-submit-btn fw-semibold text-light">Continue</button>
                 </footer>
