@@ -15,7 +15,7 @@ export default function ShippingAddressScreen() {
     const { shippingAddress } = cart;
 
     const { userInfo } = userSignin;
-    const [fullName, setFullName] = useState(shippingAddress.fullname);
+    const [fullName, setFullName] = useState(shippingAddress.fullName);
     const [address, setAddress] = useState(shippingAddress.address);
     const [landMark, setLandMark] = useState(shippingAddress.landMark);
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
