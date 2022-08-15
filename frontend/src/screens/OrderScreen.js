@@ -6,9 +6,10 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
-import { detailsOrder } from '../actions/orderActions';
+import { detailsOrder, payOrder } from '../actions/orderActions';
 import Axios from 'axios';
 import {PayPalButton}  from 'react-paypal-button-v2';
+import { ORDER_PAY_RESET } from '../constants/orderConstants';
 
 
 
@@ -19,6 +20,9 @@ export default function OrderScreen() {
 
     const orderDetails = useSelector((state) => state.orderDetails);
     const {order, loading, error} = orderDetails;
+
+    const orderPay = useSelector((state) => state.orderPay);
+    const { error: errorPay, success: successPay, loading: loadingPay } = orderPay;
 
     useEffect(() => {
         const addPayPalScript = async () => {
@@ -32,7 +36,8 @@ export default function OrderScreen() {
             };
             document.body.appendChild(script);
         }
-        if(!order) {
+        if(!order || successPay || (order && order._id !== orderId)) {
+            dispatch({type: ORDER_PAY_RESET});
             dispatch(detailsOrder(orderId));
         } else {
             if(!order.isPaid) {
@@ -43,10 +48,10 @@ export default function OrderScreen() {
                 }
             }
         }
-    }, [dispatch, orderId, order, setSdkReady])
+    }, [dispatch, orderId, order, setSdkReady, successPay])
 
-    const successPaymentHandler = () => {
-
+    const successPaymentHandler = (paymentResult) => {
+        dispatch(payOrder(order, paymentResult))
     }
     
 return loading? (
@@ -71,9 +76,9 @@ return loading? (
                                 <span className="fw-semibold">Payment Method: </span>{order.paymentMethod} 
                                 <span className='fw-semibold ms-2'>
                                     Status: {order.isPaid? 
-                                        (<span className='text-success fw-medium'>Paid at {order.paidAt}</span>)
+                                        (<span className='bg-success fw-medium d-inline-block px-2 py-1 text-white rounded-2'>Paid At: {order.paidAt}</span>)
                                         : 
-                                        (<span className='text-danger fw-medium'>Not paid</span>)}
+                                        (<span className='bg-danger fw-medium d-inline-block px-2 py-1 text-white rounded-2'>Not Paid</span>)}
                                 </span>
                             </div>
                             <address className="fs-normal py-1"><span className="fw-semibold">Address: </span>{order.shippingAddress.address}, {order.shippingAddress.landMark}, {order.shippingAddress.postalCode}</address>
@@ -150,10 +155,18 @@ return loading? (
                                         {!sdkReady ? (
                                         <Preloader class='menu-preloader'></Preloader>
                                         ) : (
+                                            <>
+                                            {errorPay && (
+                                            <MessageBox variant='danger'>{errorPay}</MessageBox>
+                                            )}
+                                            {loadingPay && (
+                                                <Preloader class='menu-preloader'/>
+                                            )}
                                             <PayPalButton
                                             amount={order.totalPrice}
                                             onSuccess={successPaymentHandler}>
                                             </PayPalButton>
+                                            </>
                                         )}
                                     </div>
                                 )
