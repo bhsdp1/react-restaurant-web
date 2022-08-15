@@ -69,14 +69,16 @@ const Navbar = (props) => {
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                             {userInfo 
-                                ? <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{userInfo.name}</NavLink>
+                                ? (
+                                <>
+                                <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{userInfo.name}</NavLink>
+                                <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
+                                    <li><Link className="dropdown-item" to="/orderhistory">Order History</Link></li>
+                                    <li><Link className="dropdown-item" to="#signout" onClick={signoutHandler}>Sign-Out</Link></li>
+                                </ul>
+                                </>
+                                )
                                 : <NavLink to="/signin" onClick={navHide}>sign-In</NavLink>}
-                            {userInfo ?
-                            <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
-                                <li><Link className="dropdown-item" to="#signout" onClick={signoutHandler}>Sign-Out</Link></li>
-                            </ul>
-                            : ''
-                            }
                             </li>
                         </ul>
                     </li>

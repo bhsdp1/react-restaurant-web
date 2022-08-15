@@ -84,7 +84,7 @@ const itemsdata = {
             id : 'snacks6',
             category : 'snacks',
             name : 'Chocolate Coconut Energy Balls',
-            price: 260,
+            price: 1,
             image: '/images/category-items/snacks/m6.jpg',
             text: 'These little energy balls are delicious, easy to make, and portable for on-the-go snacking.'
         },

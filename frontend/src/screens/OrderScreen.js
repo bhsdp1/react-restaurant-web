@@ -76,7 +76,7 @@ return loading? (
                                 <span className="fw-semibold">Payment Method: </span>{order.paymentMethod} 
                                 <span className='fw-semibold ms-2'>
                                     Status: {order.isPaid? 
-                                        (<span className='bg-success fw-medium d-inline-block px-2 py-1 text-white rounded-2'>Paid At: {order.paidAt}</span>)
+                                        (<span className='bg-success fw-medium d-inline-block px-2 py-1 text-white rounded-2'>Paid At: {' '+ order.paidAt.substring(0, 10)}</span>)
                                         : 
                                         (<span className='bg-danger fw-medium d-inline-block px-2 py-1 text-white rounded-2'>Not Paid</span>)}
                                 </span>
@@ -123,7 +123,6 @@ return loading? (
                                 </div>
                                 <div >
                                     <div className="text-center cart-product-price">{item.qty} x {item.price} = {item.qty * item.price}&#8377;</div>
-                                    {console.log(item.qty)}
                                 </div>
                             </article>))}
                         </main>)}

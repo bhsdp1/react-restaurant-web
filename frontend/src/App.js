@@ -23,6 +23,7 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
 
 export default function App() {
     return (
@@ -67,8 +68,11 @@ export default function App() {
                         {/* placeorder details screen */}
                         <Route path="/placeorder" element={<PlaceOrderScreen/>}></Route>
 
-                        {/* orderdetails details screen */}
+                        {/* orderdetails screen */}
                         <Route path="/order/:id" element={<OrderScreen/>}></Route>
+
+                        {/* orderhistory screen */}
+                        <Route path="/orderhistory" element={<OrderHistoryScreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>
