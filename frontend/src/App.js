@@ -24,6 +24,7 @@ import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 export default function App() {
     return (
@@ -73,6 +74,9 @@ export default function App() {
 
                         {/* orderhistory screen */}
                         <Route path="/orderhistory" element={<OrderHistoryScreen/>}></Route>
+
+                        {/* profile screen */}
+                        <Route path="/profile" element={<ProfileScreen/>}></Route>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

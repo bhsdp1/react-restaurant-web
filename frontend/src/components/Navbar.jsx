@@ -73,6 +73,7 @@ const Navbar = (props) => {
                                 <>
                                 <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{userInfo.name}</NavLink>
                                 <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
+                                    <li><Link className="dropdown-item" to="/profile">User Profile</Link></li>
                                     <li><Link className="dropdown-item" to="/orderhistory">Order History</Link></li>
                                     <li><Link className="dropdown-item" to="#signout" onClick={signoutHandler}>Sign-Out</Link></li>
                                 </ul>

@@ -5,6 +5,7 @@ import MessageBox from '../components/MessageBox';
 import {useNavigate} from 'react-router-dom';
 import { useEffect } from 'react';
 import { listOrderMine } from '../actions/orderActions';
+import '../assets/css/base.css'
 
 
 
@@ -18,7 +19,7 @@ export default function OrderHistoryScreen() {
     }, [dispatch])
 return (
     <>
-    <div className="container-fluid">
+    <div className="container-fluid  overflow-scroll order-history">
         <div className='fs-4 fw-semibold text-capitalized py-3 px-1'>Order History</div>
         {loading
             ?<Preloader class='menu-preloader'/>
