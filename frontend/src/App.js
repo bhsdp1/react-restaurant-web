@@ -25,6 +25,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import PrivateRoute from './components/PrivateRoute';
 
 export default function App() {
     return (
@@ -76,7 +77,7 @@ export default function App() {
                         <Route path="/orderhistory" element={<OrderHistoryScreen/>}></Route>
 
                         {/* profile screen */}
-                        <Route path="/profile" element={<ProfileScreen/>}></Route>
+                        <Route path="/profile" element={<PrivateRoute><ProfileScreen /></PrivateRoute>}/>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>
