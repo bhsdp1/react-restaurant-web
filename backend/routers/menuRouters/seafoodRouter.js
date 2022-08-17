@@ -2,6 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import itemsdata from "../../Menuitemsdata.js";
 import Seafood from "../../models/menuModels/seafoodModel.js";
+import {isAdmin, isAuth} from '../../utils.js';
 
 const seafoodRouter = express.Router();
 
@@ -28,4 +29,22 @@ seafoodRouter.get(
         }
     })
 );
+
+seafoodRouter.post(
+    '/',
+    isAuth,
+    isAdmin,
+    expressAsyncHandler(async (req, res) => {
+        const menuItem = new Seafood({
+            name: 'sample name' + Date.now(),
+            image: '/images/category-items/snacks/m2.jpg',
+            price: 0,
+            category: 'appetizer',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'
+        });
+        const createdMenu = await menuItem.save();
+        res.send({message: 'Menu Item Created', menuItem: createdMenu});
+    })
+);
+
 export default seafoodRouter;

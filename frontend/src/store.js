@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { HomeMenuCardReducer, MenuPageCardReducer } from './reducers/menuCardReducers';
-import { AppetizerItemsReducer, BurgerMenuItemsReducer, CocktailMenuItemsReducer, DessertMenuItemsReducer, MainMenuItemsReducer, PizzaMenuItemsReducer, Productdetailsreducer, SeafoodMenuItemsReducer, SnacksItemsReducer } from './reducers/menuItemsReducers';
+import { appetizerCreateReducer, AppetizerItemsReducer, burgerCreateReducer, BurgerMenuItemsReducer, cocktailCreateReducer, CocktailMenuItemsReducer, dessertCreateReducer, DessertMenuItemsReducer, mainMenuCreateReducer, MainMenuItemsReducer, pizzaCreateReducer, PizzaMenuItemsReducer, Productdetailsreducer, seafoodCreateReducer, SeafoodMenuItemsReducer, snackCreateReducer, SnacksItemsReducer } from './reducers/menuItemsReducers';
 import { cartReducer } from './reducers/Cartreducer';
 import { userDetailsReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer } from './reducers/userReducers';
 import { orderCreateReducer, orderDetailsReducer, orderMineListReducer, orderPayReducer } from './reducers/orderReducers';
@@ -44,6 +44,14 @@ const reducer = combineReducers({
     orderMineList: orderMineListReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile : userUpdateProfileReducer,
+    appetizerCreate: appetizerCreateReducer,
+    burgerCreate: burgerCreateReducer,
+    cocktailCreate: cocktailCreateReducer,
+    dessertCreate: dessertCreateReducer,
+    mainMenuCreate: mainMenuCreateReducer,
+    pizzaCreate: pizzaCreateReducer,
+    seafoodCreate: seafoodCreateReducer,
+    snackCreate: snackCreateReducer,
 })
 
 const store = createStore(

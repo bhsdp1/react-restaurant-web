@@ -2,6 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import itemsdata from "../../Menuitemsdata.js";
 import Burger from "../../models/menuModels/burgerModel.js";
+import {isAdmin, isAuth} from '../../utils.js';
 
 const burgerRouter = express.Router();
 
@@ -28,4 +29,22 @@ burgerRouter.get(
       }
   })
 );
+
+burgerRouter.post(
+  '/',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+      const menuItem = new Burger({
+          name: 'sample name' + Date.now(),
+          image: '/images/category-items/snacks/m2.jpg',
+          price: 0,
+          category: 'burger',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'
+      });
+      const createdMenu = await menuItem.save();
+      res.send({message: 'Menu Item Created', menuItem: createdMenu});
+  })
+);
+
 export default burgerRouter;

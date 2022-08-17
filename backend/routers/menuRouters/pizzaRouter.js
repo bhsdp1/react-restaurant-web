@@ -2,6 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import itemsdata from "../../Menuitemsdata.js";
 import Pizza from "../../models/menuModels/pizzaModel.js";
+import {isAdmin, isAuth} from '../../utils.js';
 
 const pizzaRouter = express.Router();
 
@@ -28,4 +29,22 @@ pizzaRouter.get(
         }
     })
 );
+
+pizzaRouter.post(
+    '/',
+    isAuth,
+    isAdmin,
+    expressAsyncHandler(async (req, res) => {
+        const menuItem = new Pizza({
+            name: 'sample name' + Date.now(),
+            image: '/images/category-items/snacks/m2.jpg',
+            price: 0,
+            category: 'Pizza',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'
+        });
+        const createdMenu = await menuItem.save();
+        res.send({message: 'Menu Item Created', menuItem: createdMenu});
+    })
+);
+
 export default pizzaRouter;

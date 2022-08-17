@@ -121,7 +121,7 @@ return (
                             <Addtocartbtn disabled={cart.cartItems.length === 0} onClick={placeOrderHandler} content='Place Order' class="px-3"/>
                         </div>
                     </div>
-                    {loading && <Preloader></Preloader>}
+                    {loading && <Preloader class='menu-preloader'/>}
                     {error && <MessageBox variant="danger">{error}</MessageBox>}
                 </footer>
 

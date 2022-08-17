@@ -2,6 +2,8 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import itemsdata from "../../Menuitemsdata.js";
 import Dessert from "../../models/menuModels/dessertModel.js";
+import {isAdmin, isAuth} from '../../utils.js';
+
 
 const dessertRouter = express.Router();
 
@@ -28,4 +30,22 @@ dessertRouter.get(
         }
     })
 );
+
+dessertRouter.post(
+    '/',
+    isAuth,
+    isAdmin,
+    expressAsyncHandler(async (req, res) => {
+        const menuItem = new Dessert({
+            name: 'sample name' + Date.now(),
+            image: '/images/category-items/burger/m5.jpg',
+            price: 0,
+            category: 'dessert',
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'
+        });
+        const createdMenu = await menuItem.save();
+        res.send({message: 'Menu Item Created', menuItem: createdMenu});
+    })
+);
+
 export default dessertRouter;

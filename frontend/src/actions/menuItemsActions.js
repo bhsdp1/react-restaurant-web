@@ -1,5 +1,5 @@
 import Axios  from "axios";
-import { APPETIZER_MENU_FAIL, APPETIZER_MENU_REQUEST, APPETIZER_MENU_SUCCESS, BURGER_MENU_FAIL, BURGER_MENU_REQUEST, BURGER_MENU_SUCCESS, COCKTAIL_MENU_FAIL, COCKTAIL_MENU_REQUEST, COCKTAIL_MENU_SUCCESS, DESSERT_MENU_FAIL, DESSERT_MENU_REQUEST, DESSERT_MENU_SUCCESS, MAINMENU_MENU_FAIL, MAINMENU_MENU_REQUEST, MAINMENU_MENU_SUCCESS, PIZZA_MENU_FAIL, PIZZA_MENU_REQUEST, PIZZA_MENU_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, SEAFOOD_MENU_FAIL, SEAFOOD_MENU_REQUEST, SEAFOOD_MENU_SUCCESS, SNACKS_MENU_FAIL, SNACKS_MENU_REQUEST, SNACKS_MENU_SUCCESS } from "../constants/menItemsConstant";
+import { APPETIZER_CREATE_FAIL, APPETIZER_CREATE_REQUEST, APPETIZER_CREATE_SUCCESS, APPETIZER_MENU_FAIL, APPETIZER_MENU_REQUEST, APPETIZER_MENU_SUCCESS, BURGER_CREATE_FAIL, BURGER_CREATE_REQUEST, BURGER_CREATE_SUCCESS, BURGER_MENU_FAIL, BURGER_MENU_REQUEST, BURGER_MENU_SUCCESS, COCKTAIL_CREATE_FAIL, COCKTAIL_CREATE_REQUEST, COCKTAIL_CREATE_SUCCESS, COCKTAIL_MENU_FAIL, COCKTAIL_MENU_REQUEST, COCKTAIL_MENU_SUCCESS, DESSERT_CREATE_FAIL, DESSERT_CREATE_REQUEST, DESSERT_CREATE_SUCCESS, DESSERT_MENU_FAIL, DESSERT_MENU_REQUEST, DESSERT_MENU_SUCCESS, MAINMENU_CREATE_FAIL, MAINMENU_CREATE_REQUEST, MAINMENU_CREATE_SUCCESS, MAINMENU_MENU_FAIL, MAINMENU_MENU_REQUEST, MAINMENU_MENU_SUCCESS, PIZZA_CREATE_FAIL, PIZZA_CREATE_REQUEST, PIZZA_CREATE_SUCCESS, PIZZA_MENU_FAIL, PIZZA_MENU_REQUEST, PIZZA_MENU_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, SEAFOOD_CREATE_FAIL, SEAFOOD_CREATE_REQUEST, SEAFOOD_CREATE_SUCCESS, SEAFOOD_MENU_FAIL, SEAFOOD_MENU_REQUEST, SEAFOOD_MENU_SUCCESS, SNACKS_MENU_FAIL, SNACKS_MENU_REQUEST, SNACKS_MENU_SUCCESS, SNACK_CREATE_FAIL, SNACK_CREATE_REQUEST, SNACK_CREATE_SUCCESS } from "../constants/menItemsConstant";
 
 export const SnacksMenuList = () => async(dispatch) => {
     dispatch({
@@ -97,6 +97,8 @@ export const CocktailMenuList = () => async(dispatch) => {
     }
 }
 
+// for displaying products in prosduct details screen
+
 export const Productdetailsaction = (category, productId) => async(dispatch) => {
     dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId});
     try{
@@ -110,5 +112,214 @@ export const Productdetailsaction = (category, productId) => async(dispatch) => 
             ? error.response.data.message
             : error.message,
         })
+    }
+}
+
+// for creating a new product in frontend
+export const createAppetizer = () => async (dispatch, getState) => {
+    dispatch({type: APPETIZER_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/appetizer',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : APPETIZER_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: APPETIZER_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createBurger = () => async (dispatch, getState) => {
+    dispatch({type: BURGER_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/burger',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : BURGER_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: BURGER_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createCocktail = () => async (dispatch, getState) => {
+    dispatch({type: COCKTAIL_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/cocktail',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : COCKTAIL_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: COCKTAIL_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createDessert = () => async (dispatch, getState) => {
+    dispatch({type: DESSERT_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/dessert',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : DESSERT_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: DESSERT_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createMainMenu = () => async (dispatch, getState) => {
+    dispatch({type: MAINMENU_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/mainmenu',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : MAINMENU_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: MAINMENU_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createPizza = () => async (dispatch, getState) => {
+    dispatch({type: PIZZA_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/pizza',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : PIZZA_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: PIZZA_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createSeafood = () => async (dispatch, getState) => {
+    dispatch({type: SEAFOOD_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/seafood',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : SEAFOOD_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: SEAFOOD_CREATE_FAIL, payload: message});
+    }
+}
+
+export const createSnack = () => async (dispatch, getState) => {
+    dispatch({type: SNACK_CREATE_REQUEST});
+    const {
+    userSignin: { userInfo },
+    } = getState();
+    try {
+        const {data} = await Axios.post(
+            '/api/snacks',
+            {},
+            {
+                headers : {Authorization : `Bearer ${userInfo.token}`},
+            }
+        );
+        dispatch({
+            type : SNACK_CREATE_SUCCESS,
+            payload: data.menuItem,
+        })
+    } catch (error) {
+        const message = 
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+        dispatch({type: SNACK_CREATE_FAIL, payload: message});
     }
 }
