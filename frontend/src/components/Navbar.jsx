@@ -83,12 +83,30 @@ const Navbar = (props) => {
                             </li>
                         </ul>
                     </li>
-                </ul>
+                    {userInfo && userInfo.isAdmin 
+                    && (
+                    <>
+                    <li className="nav-item">
+                        <ul className="navbar-nav">
+                            <li className="nav-item dropdown">
+                                <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</NavLink>
+                                <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
+                                    <li><Link className="dropdown-item" to="/dashboard">Dashboard</Link></li>
+                                    <li><Link className="dropdown-item" to="/products">Products</Link></li>
+                                    <li><Link className="dropdown-item" to="/orders">Orders</Link></li>
+                                    <li><Link className="dropdown-item" to="/userlist">Users</Link></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </>
+                )
+                }
 
                 <div className="nav-close d-inline-flex d-md-none position-absolute text-white" id="nav-close" onClick={menuToggler}>
                     <i className="fa-solid fa-xmark"></i>
                 </div>
-
+                </ul>
             </div>
         </nav>
     </header>
