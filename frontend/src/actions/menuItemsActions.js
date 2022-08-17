@@ -61,7 +61,7 @@ export const DessertMenuList = () => async(dispatch) => {
     }
 }
 
-export const BurgertMenuList = () => async(dispatch) => {
+export const BurgerMenuList = () => async(dispatch) => {
     dispatch({
         type: BURGER_MENU_REQUEST
     })

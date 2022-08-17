@@ -6,7 +6,7 @@ import Thumbnail from '../components/Thumbnail';
 import {useDispatch, useSelector} from 'react-redux'
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
-import { BurgertMenuList } from '../actions/menuItemsActions';
+import { BurgerMenuList } from '../actions/menuItemsActions';
 
 export default function Burgermenu(props) {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ export default function Burgermenu(props) {
     var {loading, error, burgermenu} = burgerMenuList;
 
     useEffect(() => {
-        dispatch(BurgertMenuList())
+        dispatch(BurgerMenuList())
     }, [dispatch]);
 
 return (

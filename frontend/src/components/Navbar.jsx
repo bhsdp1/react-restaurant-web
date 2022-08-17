@@ -91,10 +91,17 @@ const Navbar = (props) => {
                             <li className="nav-item dropdown">
                                 <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</NavLink>
                                 <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
-                                    <li><Link className="dropdown-item" to="/dashboard">Dashboard</Link></li>
-                                    <li><Link className="dropdown-item" to="/products">Products</Link></li>
                                     <li><Link className="dropdown-item" to="/orders">Orders</Link></li>
                                     <li><Link className="dropdown-item" to="/userlist">Users</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard">Dashboard</Link></li>
+                                    <li><Link className="dropdown-item" to="/burgerlist">Burger Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/snackslist">Snacks Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/appetizerlist">Appetizer Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/mainmenulist">Main-Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/seafoodlist">Seafood Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/pizzalist">Pizaa Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/cocktaillist">Cocktail's Menu</Link></li>
+                                    <li><Link className="dropdown-item" to="/dessertlist">Dessert Menu</Link></li>
                                 </ul>
                             </li>
                         </ul>

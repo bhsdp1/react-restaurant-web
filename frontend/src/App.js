@@ -26,6 +26,15 @@ import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import PrivateRoute from './components/PrivateRoute';
+import AdminRoute from './components/AdminRoute';
+import AppetizerListScreen from './screens/menuitemscreen/AppetizerListScreen';
+import BurgerListScreen from './screens/menuitemscreen/BurgerListScreen';
+import SnacksListScreen from './screens/menuitemscreen/SnacksListScreen';
+import MainMenuListScreen from './screens/menuitemscreen/MainMenuListScreen';
+import SeafoodListScreen from './screens/menuitemscreen/SeafoodListScreen';
+import PizzaListScreen from './screens/menuitemscreen/PizzaListScreen';
+import CocktailListScreen from './screens/menuitemscreen/CocktailListScreen';
+import DessertListScreen from './screens/menuitemscreen/DessertListScreen';
 
 export default function App() {
     return (
@@ -78,6 +87,16 @@ export default function App() {
 
                         {/* profile screen */}
                         <Route path="/profile" element={<PrivateRoute><ProfileScreen /></PrivateRoute>}/>
+
+                        {/* admin menu items list screens */}
+                        <Route path="/appetizerlist" element={<AdminRoute><AppetizerListScreen /></AdminRoute>}/>
+                        <Route path="/burgerlist" element={<AdminRoute><BurgerListScreen /></AdminRoute>}/>
+                        <Route path="/snackslist" element={<AdminRoute><SnacksListScreen /></AdminRoute>}/>
+                        <Route path="/mainmenulist" element={<AdminRoute><MainMenuListScreen /></AdminRoute>}/>
+                        <Route path="/seafoodlist" element={<AdminRoute><SeafoodListScreen /></AdminRoute>}/>
+                        <Route path="/pizzalist" element={<AdminRoute><PizzaListScreen /></AdminRoute>}/>
+                        <Route path="/cocktaillist" element={<AdminRoute><CocktailListScreen /></AdminRoute>}/>
+                        <Route path="/dessertlist" element={<AdminRoute><DessertListScreen /></AdminRoute>}/>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

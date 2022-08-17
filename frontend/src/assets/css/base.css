@@ -187,6 +187,7 @@ ul {list-style: none; margin: 0%; padding: 0%;}
 .order-history{
     min-height: 500px;
 }
+.menulist-table-text {max-width: 250px;}
 @media (max-width: 991.98px) {
     .main-content {max-width: calc(100% - 40px)}
 }
