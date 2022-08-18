@@ -25,7 +25,7 @@ export default function DessertListScreen() {
     useEffect(() => {
         if(successCreate) {
             dispatch({type: DESSERT_CREATE_RESET});
-            navigate(`/product/${createdMenuItem._id}/edit`);
+            navigate(`/dessert/${createdMenuItem._id}/edit`);
         }
         dispatch(DessertMenuList())
     }, [dispatch, successCreate, navigate, createdMenuItem])
@@ -74,7 +74,7 @@ return (
                             <button 
                                 className='btn btn-warning mx-1' 
                                 type='button'
-                                onClick={() => {navigate(`/menu/${menuitem._id}/edit`)}}
+                                onClick={() => {navigate(`/${menuitem.category}/${menuitem._id}/edit`)}}
                                 title='edit'
                             >Edit
                             </button>

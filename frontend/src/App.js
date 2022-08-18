@@ -35,6 +35,7 @@ import SeafoodListScreen from './screens/menuitemscreen/SeafoodListScreen';
 import PizzaListScreen from './screens/menuitemscreen/PizzaListScreen';
 import CocktailListScreen from './screens/menuitemscreen/CocktailListScreen';
 import DessertListScreen from './screens/menuitemscreen/DessertListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 export default function App() {
     return (
@@ -59,6 +60,7 @@ export default function App() {
 
                         {/* product details page */}
                         <Route path='/productdetails/:category/:id' element={<Productdetails/>}></Route>
+                        <Route path='/:category/:id/edit' element={<ProductEditScreen/>}></Route>
 
                         {/* shopping cart */}
                         <Route path="/cart" element={<Cartscreen/>}></Route>

@@ -105,7 +105,7 @@ export const CocktailMenuItemsReducer = (state = {loading :true, cocktailmenu:[]
 }
 
 export const Productdetailsreducer = (
-    state ={product:{}, loading: true}, 
+    state ={loading: true}, 
     action
     ) => {
     switch (action.type) {

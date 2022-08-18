@@ -25,7 +25,7 @@ export default function SeafoodListScreen() {
     useEffect(() => {
         if(successCreate) {
             dispatch({type: SEAFOOD_CREATE_RESET});
-            navigate(`/product/${createdMenuItem._id}/edit`);
+            navigate(`/seafood/${createdMenuItem._id}/edit`);
         }
         dispatch(SeafoodMenuList())
     }, [dispatch, successCreate, navigate, createdMenuItem])
@@ -74,7 +74,7 @@ return (
                             <button 
                                 className='btn btn-warning mx-1' 
                                 type='button'
-                                onClick={() => {navigate(`/menu/${menuitem._id}/edit`)}}
+                                onClick={() => {navigate(`/seafood/${menuitem._id}/edit`)}}
                                 title='edit'
                             >Edit
                             </button>

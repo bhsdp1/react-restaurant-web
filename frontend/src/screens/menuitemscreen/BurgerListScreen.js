@@ -25,7 +25,7 @@ export default function BurgerListScreen() {
     useEffect(() => {
         if(successCreate) {
             dispatch({type: BURGER_CREATE_RESET});
-            navigate(`/product/${createdMenuItem._id}/edit`);
+            navigate(`/burger/${createdMenuItem._id}/edit`);
         }
         dispatch(BurgerMenuList())
     }, [dispatch, successCreate, navigate, createdMenuItem])
@@ -74,7 +74,7 @@ return (
                             <button 
                                 className='btn btn-warning mx-1' 
                                 type='button'
-                                onClick={() => {navigate(`/menu/${menuitem._id}/edit`)}}
+                                onClick={() => {navigate(`/${menuitem.category}/${menuitem._id}/edit`)}}
                                 title='edit'
                             >Edit
                             </button>
