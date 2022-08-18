@@ -47,4 +47,25 @@ burgerRouter.post(
   })
 );
 
+burgerRouter.put(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+      const menuItemId = req.params.id;
+      const menuItem = await Burger.findById(menuItemId);
+      if(menuItem) {
+          menuItem.name = req.body.name;
+          menuItem.price = req.body.price;
+          menuItem.text = req.body.text;
+          menuItem.category = 'burger';
+          menuItem.image = req.body.image;
+          const updatedmenu = await menuItem.save();
+          res.send({message: 'Menu Item Updated', menuItem: updatedmenu});
+      } else {
+          res.status(404).send({message: 'Menu Item Not Found'});
+      }
+  })
+)
+
 export default burgerRouter;
