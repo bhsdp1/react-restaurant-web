@@ -73,18 +73,18 @@ return (
                         <td className='menulist-table-text'>{menuitem.text}</td>
                         <td>
                             <button 
-                                className='btn btn-warning mx-1' 
+                                className='btn btn-warning mx-1 text-white fw-semibold' 
                                 type='button'
                                 onClick={() => {navigate(`/${menuitem.category}/${menuitem._id}/edit`)}}
                                 title='edit'
-                            >Edit
+                            ><i class="fa-solid fa-pen-to-square"></i>
                             </button>
                             <button 
                                 className='btn btn-danger mx-1' 
                                 type='button' 
                                 title='delete'
                                 onClick={() => deleteHandler(menuitem)}
-                            >Delete
+                            ><i class="fa-solid fa-trash-can"></i>
                             </button>
                         </td>
                     </tr>

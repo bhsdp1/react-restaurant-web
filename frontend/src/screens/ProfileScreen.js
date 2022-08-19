@@ -42,7 +42,7 @@ export default function ProfileScreen() {
     } 
 return (
     <main className="container-fluid">
-        <div className="main-content mx-auto my-3 register-container px-2 pt-2 pb-4">
+        <div className="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
                 <div className="fs-5 fw-semibold text-capitalize p-2">User Profile</div>
                 {
@@ -71,7 +71,7 @@ return (
                         <input type="password" className="form-control" id="confirm-password" onChange={(e) => {setConfirmPassword(e.target.value)}} placeholder="Enter confirm password"/>
                     </section>
                     <footer className="d-flex justify-content-center align-items-center mt-4 flex-column">
-                        <button type="submit" className="btn btn-primary register-submit text-capitalize">update</button>
+                        <button type="submit" className="btn btn-primary form-submit-btn text-capitalize">update</button>
                     </footer>
                 </>
                 }

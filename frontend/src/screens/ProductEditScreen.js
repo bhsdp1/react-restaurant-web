@@ -7,7 +7,8 @@ import { Productdetailsaction, updateProduct } from '../actions/menuItemsActions
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
 import { PRODUCT_UPDATE_RESET} from '../constants/menItemsConstant';
-
+import '../assets/css/forms.css';
+import '../assets/css/base.css';
 
 export default function ProductEditScreen() {
 const navigate = useNavigate();
@@ -56,10 +57,10 @@ const submitHandler = (e) => {
 return (
 <>
 <main className="container-fluid">
-        <div className="main-content mx-auto my-3 shipping-container px-2 pt-2 pb-4">
+        <div className="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
 
-                <div className="fs-5 fw-semibold text-capitalize p-2">Edit Item: {productId}</div>
+                <div className="fs-5 fw-semibold text-capitalize p-2">Edit Item: <span className='fs-6 text-decoration-underline'>{productId}</span></div>
                 {loadingUpdate && <Preloader class='menu-preloader'></Preloader>}
                 {errorUpdate && <MessageBox variant='danger'>{errorUpdate}</MessageBox>}
                 {
@@ -95,7 +96,7 @@ return (
                     </section>
 
                     <footer className="d-flex justify-content-center align-items-center mt-4 flex-column">
-                        <button type="submit" className="btn btn-warning shipping-submit fw-semibold text-light">Update</button>
+                        <button type="submit" className="btn btn-warning form-submit-btn fw-semibold text-light">Update</button>
                     </footer>
                 </>
                 )

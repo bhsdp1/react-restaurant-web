@@ -34,14 +34,14 @@ export default function ShippingAddressScreen() {
     <>
     <CheckoutSteps step1 step2/>
     <main class="container-fluid">
-        <div class="main-content mx-auto my-3 shipping-container px-2 pt-2 pb-4">
+        <div class="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
 
                 <div class="fs-5 fw-semibold text-capitalize p-2">Shipping Details</div>
 
                 <section class="my-sm-2 p-2">
-                    <label for="full-name" class="form-label form-input-label mb-2 text-capitalize">Full Name</label>
-                    <input type="text" class="form-control" id="full-name" value={fullName} onChange={(e) => {setFullName(e.target.value)}} placeholder="Enter full name" required/>
+                    <label for="fullName" class="form-label form-input-label mb-2 text-capitalize">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" value={fullName} onChange={(e) => {setFullName(e.target.value)}} placeholder="Enter full name" required/>
                 </section>
 
                 <address class="my-sm-2 p-2">
@@ -60,7 +60,7 @@ export default function ShippingAddressScreen() {
                 </section>
 
                 <footer class="d-flex justify-content-center align-items-center mt-4 flex-column">
-                    <button type="submit" class="btn btn-warning shipping-submit fw-semibold text-light">Continue</button>
+                    <button type="submit" class="btn btn-warning form-submit-btn fw-semibold text-light">Continue</button>
                 </footer>
                 
             </form>

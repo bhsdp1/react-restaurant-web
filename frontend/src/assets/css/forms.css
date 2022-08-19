@@ -1,19 +1,11 @@
-.register-container,
-.signin-container, 
-.shipping-container, 
-.payment-container {
+.form-container {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: var(--br-20);
-}
-.register-container,
-.shipping-container,
-.payment-container{
     width: 500px;
 }
 
 .signin-container {
     height: 500px;
-    width: 500px;
     background-image: url('../images/signin/login-form-banner-desk.png');
     background-size: 150px;
     background-position: 15px 100%;
@@ -25,7 +17,7 @@
     font-weight: var(--font-medium) ;
 }
 
-.register-submit, .signin-submit , .shipping-submit, .form-submit-btn {
+.form-submit-btn {
     width: 150px;
     border-radius: 100vmax;
     font-size: var(--h2-font-size);
