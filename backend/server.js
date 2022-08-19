@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import path from 'path';
 import userRouter from './routers/userRouter.js';
 import homeMenuCardRouter from './routers/homeMenuCardRouter.js';
 import menuPageCardRouter from './routers/menuPageCardRouter.js';
@@ -13,6 +14,7 @@ import pizzaRouter from './routers/menuRouters/pizzaRouter.js';
 import cocktailRouter from './routers/menuRouters/cocktailRouter.js';
 import dessertRouter from './routers/menuRouters/dessertRouter.js';
 import orderRouter from './routers/OrderRouter.js';
+import uploadRouter from './routers/uploadRouter.js';
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ app.use(express.urlencoded({extended: true}));
 
 //add our data to local mongo database
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/restaurent-web');
+
+app.use('/api/uploads', uploadRouter)
 
 // for menu cards
 app.use('/api/users', userRouter);
@@ -52,6 +56,9 @@ app.use('/api/orders', orderRouter);
 app.get('/api/config/paypal', (req, res) =>{
     res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 })
+
+const __dirname = path.resolve();
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 app.get('/', (req, res) => {
     res.send('Server is ready')

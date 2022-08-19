@@ -9,6 +9,7 @@ import Preloader from '../components/Preloader';
 import { PRODUCT_UPDATE_RESET} from '../constants/menItemsConstant';
 import '../assets/css/forms.css';
 import '../assets/css/base.css';
+import  Axios from 'axios';
 
 export default function ProductEditScreen() {
 const navigate = useNavigate();
@@ -54,6 +55,30 @@ const submitHandler = (e) => {
         })
     )
 }
+const [loadingUpload, setLoadingUpload] = useState(false);
+const [errorUpload, setErrorUpload] = useState('')
+
+const userSignin = useSelector(state => state.userSignin);
+const {userInfo} = userSignin;
+const uploadFileHandler =async (e) => {
+    const file = e.target.files[0];
+    const bodyFormData = new FormData();
+    bodyFormData.append('image', file);
+    setLoadingUpload(true);
+    try {
+        const {data} = await Axios.post('/api/uploads', bodyFormData, {
+        headers: {
+        'Content-type': 'multipart/form-data',
+        Authorization: `Bearer ${userInfo.token}`,
+        },
+    });
+    setImage(data);
+    setLoadingUpload(false);
+    } catch (error) {
+        setErrorUpload(error.message);
+        setLoadingUpload(false);
+    }
+};
 return (
 <>
 <main className="container-fluid">
@@ -89,6 +114,13 @@ return (
                         onChange={(e) => setImage(e.target.value)} required/>
                     </section>
 
+                    <section className="my-sm-2 p-2">
+                        <label for="imageFile" className="form-label form-input-label mb-2 text-capitalize">Image File</label>
+                        <input type="file" className="form-control" id="imageFile"  placeholder="Choose Image"
+                        onChange={uploadFileHandler}/>
+                    </section>
+                    {loadingUpload && <Preloader class='menu-preloader'/>}
+                    {errorUpload && <MessageBox variant='danger'>{errorUpload}</MessageBox>}
                     <section className="my-sm-2 p-2">
                         <label for="text" className="form-label form-input-label mb-2 text-capitalize">text</label>
                         <textarea type="text" rows='3' className="form-control" id="text"  placeholder="Enter Text" value={text}
