@@ -2,11 +2,11 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AppetizerMenuList, createAppetizer } from '../../actions/menuItemsActions';
+import { AppetizerMenuList, createAppetizer, deleteMenuItem } from '../../actions/menuItemsActions';
 import MessageBox from '../../components/MessageBox';
 import Preloader from '../../components/Preloader';
 import '../../assets/css/base.css'
-import { APPETIZER_CREATE_RESET } from '../../constants/menItemsConstant';
+import { APPETIZER_CREATE_RESET, MENUITEM_DELETE_RESET } from '../../constants/menItemsConstant';
 
 export default function AppetizerListScreen() {
     const navigate = useNavigate()
@@ -22,17 +22,29 @@ export default function AppetizerListScreen() {
         menuItem: createdMenuItem
     } = appetizerCreate;
 
+    const menuItemDelete = useSelector((state) => state.menuItemDelete);
+    const {
+        loading: loadingDelete, 
+        success: successDelete, 
+        error: errorDelete
+    } = menuItemDelete;
+
     const dispatch = useDispatch();
     useEffect(() => {
         if(successCreate) {
             dispatch({type: APPETIZER_CREATE_RESET});
             navigate(`/appetizer/${createdMenuItem._id}/edit`);
         }
+        if (successDelete) {
+            dispatch({type: MENUITEM_DELETE_RESET})
+        }
         dispatch(AppetizerMenuList())
-    }, [dispatch, successCreate, navigate, createdMenuItem])
+    }, [dispatch, successCreate, navigate, createdMenuItem, successDelete])
 
-    const deleteHandler = () => {
-
+    const deleteHandler = (menuitem) => {
+        if(window.confirm(`Are you sure to delete "${menuitem.name}" ?`)) {
+            dispatch(deleteMenuItem(menuitem.category,menuitem._id))
+        }
     }
 
     const createHandler = () => {
@@ -47,6 +59,8 @@ return (
                 Create
             </button>
         </div>
+        {loadingDelete && <Preloader class='menu-preloader'></Preloader>}
+        {errorDelete && <MessageBox>{errorDelete}</MessageBox>}
         {loadingCreate && <Preloader class='menu-preloader'></Preloader>}
         {errorCreate && <MessageBox>{errorCreate}</MessageBox>}
         {loading 

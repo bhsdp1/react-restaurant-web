@@ -68,4 +68,19 @@ burgerRouter.put(
   })
 )
 
+burgerRouter.delete(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+      const menuItem = await Burger.findById(req.params.id);
+      if(menuItem) {
+          const deleteMenu = await menuItem.remove();
+          res.send({message: 'Menu Item Deleted Successfully', menuItem: deleteMenu});
+      } else {
+          res.status(404).send({message: 'Menu Item Not Found'});
+      }
+  })
+);
+
 export default burgerRouter;
