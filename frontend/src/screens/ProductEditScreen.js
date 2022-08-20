@@ -85,7 +85,7 @@ return (
         <div className="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
 
-                <div className="fs-5 fw-semibold text-capitalize p-2">Edit Item: <span className='fs-6 text-decoration-underline'>{productId}</span></div>
+                <div className="fs-5 fw-semibold text-capitalize p-2">Edit Item: <span className='fs-6 bg-dark text-white p-1 px-2 rounded-2'>{productId}</span></div>
                 {loadingUpdate && <Preloader class='menu-preloader'></Preloader>}
                 {errorUpdate && <MessageBox variant='danger'>{errorUpdate}</MessageBox>}
                 {
@@ -96,6 +96,9 @@ return (
                 ? <MessageBox variant='danger'>{error}</MessageBox>
                 : (
                 <>
+                    <section className='my-1' >
+                        <img src={image} alt={name} className="img-fluid productedit-image mx-auto d-block rounded-4"/>
+                    </section>
                     <section className="my-sm-2 p-2">
                         <label for="name" className="form-label form-input-label mb-2 text-capitalize">Name</label>
                         <input type="text" className="form-control" id="name" placeholder="Enter Name" value={name} 
@@ -104,14 +107,14 @@ return (
 
                     <section className="my-sm-2 p-2">
                         <label for="price" className="form-label form-input-label mb-2 text-capitalize">Price</label>
-                        <input type="text" className="form-control" id="price" title='Enter price in numberic format'  placeholder="Enter Price" value={price} 
+                        <input type="text" className="form-control" id="price" title='Enter price in numberic format maximum "5 units"' maxLength='5' placeholder="Enter Price" value={price} 
                         onChange={(e) => setPrice(e.target.value)} required/>
                     </section>
 
                     <section className="my-sm-2 p-2">
-                        <label for="image" className="form-label form-input-label mb-2 text-capitalize">Image</label>
+                        <label for="image" className="form-label form-input-label mb-2 text-capitalize">Image Path</label>
                         <input type="text" className="form-control" id="image"  placeholder="Enter Image" value={image}
-                        onChange={(e) => setImage(e.target.value)} required/>
+                        onChange={(e) => setImage(e.target.value)} readOnly disabled/>
                     </section>
 
                     <section className="my-sm-2 p-2">

@@ -36,8 +36,8 @@ mainmenuRouter.post(
     isAdmin,
     expressAsyncHandler(async (req, res) => {
         const menuItem = new Mainmenu({
-            name: 'sample name' + Date.now(),
-            image: '/images/category-items/burger/m5.jpg',
+            name: 'sample name ' + Date.now(),
+            image: 'https://via.placeholder.com/360x326.jpg',
             price: 0,
             category: 'mainmenu',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'

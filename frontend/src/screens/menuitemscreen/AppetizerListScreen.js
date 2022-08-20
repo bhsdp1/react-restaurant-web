@@ -40,7 +40,7 @@ export default function AppetizerListScreen() {
     }
 return (
     <>
-    <div className="container-fluid">
+    <div className="container-fluid listitems-container overflow-scroll">
         <div className="d-flex align-items-center">
             <div className='fs-4 fw-semibold text-capitalized py-3 px-1 me-auto'>Appetizer's Menu</div>
             <button type='button' className='btn btn-primary ms-auto text-capitalize' onClick={createHandler}>
@@ -73,14 +73,14 @@ return (
                         <td className='menulist-table-text'>{menuitem.text}</td>
                         <td>
                             <button 
-                                className='btn btn-warning mx-1 text-white fw-semibold' 
+                                className='btn btn-warning mx-1 text-white fw-semibold edit-btn' 
                                 type='button'
                                 onClick={() => {navigate(`/${menuitem.category}/${menuitem._id}/edit`)}}
                                 title='edit'
                             ><i class="fa-solid fa-pen-to-square"></i>
                             </button>
                             <button 
-                                className='btn btn-danger mx-1' 
+                                className='btn btn-danger mx-1 delete-btn' 
                                 type='button' 
                                 title='delete'
                                 onClick={() => deleteHandler(menuitem)}

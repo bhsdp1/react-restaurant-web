@@ -29,7 +29,7 @@ return (
     <>
     <CheckoutSteps step1 step2 step3/>
     <main className="container-fluid">
-        <div className="main-content mx-auto my-3 payment-container px-2 pt-2 pb-4">
+        <div className="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
 
                 <div className="fs-5 fw-semibold text-capitalize p-2">Payment Method</div>
@@ -51,12 +51,12 @@ return (
                     <input 
                     className="form-check-input" 
                     type="radio" 
-                    value="Srtipe" 
+                    value="Card" 
                     name="paymentMethod" 
-                    id="stripe"
+                    id="card"
                     onChange={(e) => {setPaymentMethod(e.target.value)}}
                 />
-                    <label className="form-check-label form-input-label text-capitalize" htmlFor="stripe">Stripe</label>
+                    <label className="form-check-label form-input-label text-capitalize" htmlFor="card">Card</label>
                 </div>
                 
                 <footer className="d-flex justify-content-center align-items-center mt-4 flex-column">

@@ -36,8 +36,8 @@ pizzaRouter.post(
     isAdmin,
     expressAsyncHandler(async (req, res) => {
         const menuItem = new Pizza({
-            name: 'sample name' + Date.now(),
-            image: '/images/category-items/snacks/m2.jpg',
+            name: 'sample name ' + Date.now(),
+            image: 'https://via.placeholder.com/360x326.jpg',
             price: 0,
             category: 'Pizza',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'

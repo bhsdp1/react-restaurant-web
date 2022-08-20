@@ -36,8 +36,8 @@ snackRouter.post(
     isAdmin,
     expressAsyncHandler(async (req, res) => {
         const menuItem = new Snack({
-            name: 'sample name' + Date.now(),
-            image: '/images/category-items/snacks/m2.jpg',
+            name: 'sample name ' + Date.now(),
+            image: 'https://via.placeholder.com/360x326.jpg',
             price: 0,
             category: 'snacks',
             text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'
