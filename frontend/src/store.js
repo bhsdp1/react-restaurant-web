@@ -5,7 +5,7 @@ import { HomeMenuCardReducer, MenuPageCardReducer } from './reducers/menuCardRed
 import { appetizerCreateReducer, AppetizerItemsReducer, burgerCreateReducer, BurgerMenuItemsReducer, cocktailCreateReducer, CocktailMenuItemsReducer, dessertCreateReducer, DessertMenuItemsReducer, mainMenuCreateReducer, MainMenuItemsReducer, pizzaCreateReducer, PizzaMenuItemsReducer, Productdetailsreducer, productUpdateReducer, seafoodCreateReducer, SeafoodMenuItemsReducer, snackCreateReducer, SnacksItemsReducer } from './reducers/menuItemsReducers';
 import { cartReducer } from './reducers/Cartreducer';
 import { userDetailsReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer } from './reducers/userReducers';
-import { orderCreateReducer, orderDetailsReducer, orderMineListReducer, orderPayReducer } from './reducers/orderReducers';
+import { orderCreateReducer, orderDetailsReducer, orderListReducer, orderMineListReducer, orderPayReducer } from './reducers/orderReducers';
 
 const initialState = {
     userSignin: {
@@ -53,6 +53,7 @@ const reducer = combineReducers({
     seafoodCreate: seafoodCreateReducer,
     snackCreate: snackCreateReducer,
     productUpdate: productUpdateReducer,
+    orderList: orderListReducer,
 })
 
 const store = createStore(

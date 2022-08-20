@@ -36,6 +36,7 @@ import PizzaListScreen from './screens/menuitemscreen/PizzaListScreen';
 import CocktailListScreen from './screens/menuitemscreen/CocktailListScreen';
 import DessertListScreen from './screens/menuitemscreen/DessertListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
+import OrderListScreen from './screens/OrderListScreen';
 
 export default function App() {
     return (
@@ -99,6 +100,8 @@ export default function App() {
                         <Route path="/pizzalist" element={<AdminRoute><PizzaListScreen /></AdminRoute>}/>
                         <Route path="/cocktaillist" element={<AdminRoute><CocktailListScreen /></AdminRoute>}/>
                         <Route path="/dessertlist" element={<AdminRoute><DessertListScreen /></AdminRoute>}/>
+
+                        <Route path="/orderlist" element={<AdminRoute><OrderListScreen/></AdminRoute>}/>
 
                         {/* error page */}
                         <Route path='*' element={<Nopage/>}></Route>

@@ -91,7 +91,7 @@ const Navbar = (props) => {
                             <li className="nav-item dropdown">
                                 <NavLink className="dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</NavLink>
                                 <ul className="dropdown-menu dropdown-menu-dark mt-lg-4 text-center">
-                                    <li><Link className="dropdown-item" to="/orders">Orders</Link></li>
+                                    <li><Link className="dropdown-item" to="/orderlist">Orders</Link></li>
                                     <li><Link className="dropdown-item" to="/burgerlist">Burger Menu</Link></li>
                                     <li><Link className="dropdown-item" to="/snackslist">Snacks Menu</Link></li>
                                     <li><Link className="dropdown-item" to="/appetizerlist">Appetizer Menu</Link></li>
