@@ -73,7 +73,6 @@ const itemsdata = {
             text: '1 cup of steamed and lightly salted edamame is the perfect snack, as it contains fiber, protein, and healthy fats! To make this snack, just steam or boil frozen shelled edamame for about five minutes.'
         },
         {
-            id : 'snacks5',
             category : 'snacks',
             name : 'Guacamole Stuffed Peppers',
             price: 230,
@@ -81,7 +80,6 @@ const itemsdata = {
             text: 'A refreshing snack to much on in warmer months. To make quick guacamole, mash up a ripe avocado with a squeeze of lime juice + a dash of both salt and garlic powder.'
         },
         {
-            id : 'snacks6',
             category : 'snacks',
             name : 'Chocolate Coconut Energy Balls',
             price: 1,
