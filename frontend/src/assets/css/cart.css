@@ -112,20 +112,20 @@
 
 @media (max-width: 575.98px) {
     .cart-product-title {
-        width: 230px;
+        width: 210px;
+        font-size: var(--normal-font-size);
     }
 
     .cart-product-image {
-        max-width: 60px;
+        max-width: 70px;
+        margin: auto 3px;
     }
     .cart-product-details {
         max-width: 210px;
+        padding-left: 0.3rem;
     }
 
-    .cart-quantity-input {
-        width: 25px;
-    }
-    .cart-product-delete {
-        width: 25px;
+    .cart-quantity-input,.cart-product-delete {
+        width: 30px;
     }
 }

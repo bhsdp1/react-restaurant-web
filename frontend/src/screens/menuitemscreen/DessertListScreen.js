@@ -51,7 +51,7 @@ export default function DessertListScreen() {
     }
 return (
     <>
-    <div className="container-fluid listitems-container overflow-scroll">
+    <div className="container-fluid table-container overflow-scroll">
         <div className="d-flex align-items-center">
             <div className='fs-4 fw-semibold text-capitalized py-3 px-1 me-auto'>Dessert Menu</div>
             <button type='button' className='btn btn-primary ms-auto text-capitalize' onClick={createHandler}>
@@ -81,10 +81,10 @@ return (
                 {dessertmenu.map((menuitem) =>
                     <tr key={menuitem._id}>
                         <th scope="row">{menuitem._id}</th>
-                        <td>{menuitem.name}</td>
+                        <td  className='table-menuname-col'>{menuitem.name}</td>
                         <td>{menuitem.price}</td>
                         <td className='menulist-table-text'>{menuitem.text}</td>
-                        <td>
+                        <td  className='table-action-col'>
                             <button 
                                 className='btn btn-warning mx-1 text-white fw-semibold edit-btn' 
                                 type='button'

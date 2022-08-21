@@ -32,8 +32,8 @@ export default function ShippingAddressScreen() {
     }
     return (
     <>
-    <CheckoutSteps step1 step2/>
     <main class="container-fluid">
+        <CheckoutSteps step1 step2/>
         <div class="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
 

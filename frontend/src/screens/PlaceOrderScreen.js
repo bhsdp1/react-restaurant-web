@@ -42,8 +42,8 @@ export default function PlaceOrderScreen() {
     }, [dispatch, order, navigate, success])
 return (
     <>
-    <CheckoutSteps step1 step2 step3 step4/>
     <main className="container-fluid mb-sm-0 pb-3">
+    <CheckoutSteps step1 step2 step3 step4/>
         <div className="cart-container">
             <div className="row">
 
@@ -90,8 +90,8 @@ return (
                                     </Link>
                                 </div>
                             </div>
-                            <div >
-                                <div className="text-center cart-product-price">{item.qty} x {item.price} = {item.qty * item.price}&#8377;</div>
+                            <div className='placeorder-cart-calc'>
+                                <div className="text-center cart-product-price">{item.qty} x {item.price} <br className='d-block d-sm-none'/> = {item.qty * item.price}&#8377;</div>
                             </div>
                         </article>))}
                     </main>)}

@@ -27,9 +27,9 @@ export default function PaymentMethodScreen() {
     }
 return (
     <>
-    <CheckoutSteps step1 step2 step3/>
     <main className="container-fluid">
-        <div className="main-content mx-auto my-3 form-container px-2 pt-2 pb-4">
+        <CheckoutSteps step1 step2 step3/>
+        <div className="main-content mx-auto my-5 form-container px-2 pt-2 pb-4">
             <form className='form' onSubmit={submitHandler}>
 
                 <div className="fs-5 fw-semibold text-capitalize p-2">Payment Method</div>

@@ -140,7 +140,7 @@ return loading? (
 
                 </div>
 
-                    <footer className="col-sm-12 col-md-5">
+                    <footer className="col-sm-12 col-md-5 mt-2">
 
                         <div className="cart-bill container py-3">
                             <div className="order-summary-title text-capitalize mb-1 p-2">Order Summary</div>

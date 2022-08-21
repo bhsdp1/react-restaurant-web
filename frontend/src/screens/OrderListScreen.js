@@ -29,7 +29,7 @@ export default function OrderListScreen() {
     };
 return (
     <>
-        <div className="container-fluid  overflow-scroll order-history">
+        <div className="container-fluid  overflow-scroll table-container">
             <div className='fs-4 fw-semibold text-capitalized py-3 px-1'>Orders</div>
             {loadingDelete && <Preloader class='menu-preloader'></Preloader>}
             {errorDelete && <MessageBox variant='danger'>{errorDelete}</MessageBox>}
@@ -55,12 +55,12 @@ return (
                             {orders.map((order) =>
                             <tr key={order._id}>
                                 <th scope="row">{order._id}</th>
-                                <th >{order.user.name}</th>
-                                <td>{order.createdAt.substring(0, 10)}</td>
+                                <th>{order.user.name}</th>
+                                <td className='table-date-col'>{order.createdAt.substring(0, 10)}</td>
                                 <td>{order.totalPrice}</td>
-                                <td>{order.isPaid? order.paidAt.substring(0, 10): 'Not Paid'}</td>
+                                <td className='table-paid-col'>{order.isPaid? order.paidAt.substring(0, 10): 'Not Paid'}</td>
                                 <td>{order.isDelivered? order.deliveredAt.substring(0, 10): 'Not Delivered'}</td>
-                                <td>
+                                <td className='table-action-col'>
                                     <button 
                                     className='btn btn-primary' 
                                     type='button' 

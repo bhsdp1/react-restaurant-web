@@ -111,7 +111,7 @@ return (
         <div className="row">
                 <Specialitems src="./images/home-page/special-item/special-burger.png" name="Burger Bologona" price="350" link="/burger"/>
                 <Specialitems src="./images/home-page/special-item/special-pizza.png" name="Peproni pizza" price="350" link="/pizza"/>
-                <Specialitems src="./images/home-page/special-item/special-wine.png" name="Red Wine" price="1850" link="/"/>
+                <Specialitems src="./images/home-page/special-item/special-cocktail.png" name="Huracaine Cocktail" price="250" link="/cocktail"/>
         </div>
 
         <Fade top cascade delay={1400} distance='60px'>

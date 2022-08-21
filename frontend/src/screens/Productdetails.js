@@ -53,7 +53,7 @@ return (
                 <MessageBox variant='danger'>{error}</MessageBox>
             ):
     <div className="container-fluid 100-vh" >
-        <div className="card mb-3 menu-detail-container mx-auto my-5 overflow-hidden">
+        <div className="card menu-detail-container mx-auto my-5 overflow-hidden">
             <img className="card-img-top menu-detail-image" src={product.image} alt={product.name}/>
             <div className="card-body bg-dark text-light ">
                 <h5 className="card-title text-white">{product.price}&#8377;</h5>

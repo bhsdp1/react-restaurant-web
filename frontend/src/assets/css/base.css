@@ -181,11 +181,17 @@ ul {list-style: none; margin: 0%; padding: 0%;}
     font-weight: var(--font-semi-bold);
 }
 
-.order-history, .listitems-container::-webkit-scrollbar {
+/* tables  */
+.table-container::-webkit-scrollbar {
     height: 5px;
 }
-.order-history, .listitems-container{
+
+.table-container{
     min-height: 500px;
+}
+
+.table-date-col, .table-paid-col , .table-action-col, .table-menuname-col, .menulist-table-text {
+    min-width: 200px;
 }
 
 .productedit-image {
@@ -216,6 +222,12 @@ ul {list-style: none; margin: 0%; padding: 0%;}
     .menu-thumbnail {font-size: 1.8rem}
 
     .thumbnail {height: 180px}
+
+    .checkout-steps {font-size: var(--normal-font-size);}
+
+    .checkout-steps > div {
+        padding: 0.5rem;
+    }
 }
 
 @media (max-width: 333.98px) {
