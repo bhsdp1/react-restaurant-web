@@ -2,27 +2,37 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { listOrders } from '../actions/orderActions';
+import { deleteOrder, listOrders } from '../actions/orderActions';
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
+import { ORDER_DELETE_RESET } from '../constants/orderConstants';
 
 export default function OrderListScreen() {
     const navigate = useNavigate()
+
     const orderList = useSelector((state) => state.orderList);
     const { loading, error, orders } = orderList;
-    const dispatch = useDispatch();
 
+    const orderDelete = useSelector(state => state.orderDelete);
+    const {loading: loadingDelete, error: errorDelete, success: successDelete} = orderDelete;
+
+    const dispatch = useDispatch();
     useEffect(() => {
+    dispatch({type: ORDER_DELETE_RESET})
     dispatch(listOrders());
-    }, [dispatch]);
+    }, [dispatch, successDelete]);
 
     const deleteHandler = (order) => {
-
+        if(window.confirm(`Are you sure to delete ${order.createdAt.substring(0, 10)} ${order.user.name}:${' '}${order._id}?`)) {
+            dispatch(deleteOrder(order._id));
+        }
     };
 return (
     <>
         <div className="container-fluid  overflow-scroll order-history">
             <div className='fs-4 fw-semibold text-capitalized py-3 px-1'>Orders</div>
+            {loadingDelete && <Preloader class='menu-preloader'></Preloader>}
+            {errorDelete && <MessageBox variant='danger'>{errorDelete}</MessageBox>}
             {loading
                 ?<Preloader class='menu-preloader'/>
                 : error
