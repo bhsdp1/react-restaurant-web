@@ -6,10 +6,10 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import MessageBox from '../components/MessageBox';
 import Preloader from '../components/Preloader';
-import { detailsOrder, payOrder } from '../actions/orderActions';
+import { deliverOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import Axios from 'axios';
 import {PayPalButton}  from 'react-paypal-button-v2';
-import { ORDER_PAY_RESET } from '../constants/orderConstants';
+import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../constants/orderConstants';
 
 
 
@@ -21,8 +21,14 @@ export default function OrderScreen() {
     const orderDetails = useSelector((state) => state.orderDetails);
     const {order, loading, error} = orderDetails;
 
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignin;
+
     const orderPay = useSelector((state) => state.orderPay);
     const { error: errorPay, success: successPay, loading: loadingPay } = orderPay;
+
+    const orderDeliver = useSelector((state) => state.orderDeliver);
+    const { error: errorDeliver, success: successDeliver, loading: loadingDeliver } = orderDeliver;
 
     useEffect(() => {
         const addPayPalScript = async () => {
@@ -36,8 +42,9 @@ export default function OrderScreen() {
             };
             document.body.appendChild(script);
         }
-        if(!order || successPay || (order && order._id !== orderId)) {
+        if(!order || successPay|| successDeliver || (order && order._id !== orderId)) {
             dispatch({type: ORDER_PAY_RESET});
+            dispatch({type: ORDER_DELIVER_RESET});
             dispatch(detailsOrder(orderId));
         } else {
             if(!order.isPaid) {
@@ -48,12 +55,15 @@ export default function OrderScreen() {
                 }
             }
         }
-    }, [dispatch, orderId, order, setSdkReady, successPay])
+    }, [dispatch, orderId, order, setSdkReady, successPay, successDeliver])
 
     const successPaymentHandler = (paymentResult) => {
         dispatch(payOrder(order, paymentResult))
     }
     
+    const deliverHandler = () => {
+        dispatch(deliverOrder(order._id))
+    }
 return loading? (
     <Preloader class='menu-preloader'/>
     ):error? (
@@ -83,7 +93,7 @@ return loading? (
                             </div>
                             <address className="fs-normal py-1"><span className="fw-semibold">Address: </span>{order.shippingAddress.address}, {order.shippingAddress.landMark}, {order.shippingAddress.postalCode}</address>
                             {order.isDelivered? 
-                            <MessageBox variant='success'>Delivered at: {order.deliveredAt}</MessageBox>
+                            <MessageBox variant='success'>Delivered at: {order.deliveredAt.substring(0, 10)}</MessageBox>
                             : 
                             <MessageBox variant='danger'>Not Delivered</MessageBox>
                         }
@@ -170,6 +180,13 @@ return loading? (
                                     </div>
                                 )
                             }
+                            {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+                                <>
+                                {loadingDeliver && <Preloader class='menu-preloader'></Preloader>}
+                                {errorDeliver && <MessageBox>{errorDeliver}</MessageBox>}
+                                <button onClick={deliverHandler} type='button' className='btn btn-warning text-white w-75 mx-auto d-block fw-semibold'>Deliver Order</button>
+                                </>
+                            )}
                         </div>
                     </footer>
 
